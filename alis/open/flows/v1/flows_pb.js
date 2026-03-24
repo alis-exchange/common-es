@@ -4,9 +4,9 @@
 
 import { enumDesc, fileDesc, messageDesc, serviceDesc, tsEnum } from "@bufbuild/protobuf/codegenv2";
 import { file_alis_open_pubsub_v1_pubsub } from "../../pubsub/v1/pubsub_pb";
-import { file_google_protobuf_empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb";
-import { file_google_protobuf_field_mask } from "@alis-build/google-common-protos/google/protobuf/field_mask_pb";
-import { file_google_protobuf_timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
+import { file_google_protobuf_empty } from "../../../../google/protobuf/empty_pb";
+import { file_google_protobuf_field_mask } from "../../../../google/protobuf/field_mask_pb";
+import { file_google_protobuf_timestamp } from "../../../../google/protobuf/timestamp_pb";
 
 /**
  * Describes the file alis/open/flows/v1/flows.proto.
@@ -102,3 +102,4 @@ export const GenerateFlowTreeResponse_StepChildrenSchema = /*@__PURE__*/
  */
 export const FlowsService = /*@__PURE__*/
   serviceDesc(file_alis_open_flows_v1_flows, 0);
+

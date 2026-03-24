@@ -32,3 +32,4 @@ export const UploadImageResponseSchema = /*@__PURE__*/
  */
 export const PublicAttachmentsService = /*@__PURE__*/
   serviceDesc(file_alis_open_support_v1_attachments, 0);
+

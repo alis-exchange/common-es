@@ -7,7 +7,7 @@
 
 import { AgentCard, CancelTaskRequest, DeleteTaskPushNotificationConfigRequest, GetExtendedAgentCardRequest, GetTaskPushNotificationConfigRequest, GetTaskRequest, ListTaskPushNotificationConfigsRequest, ListTaskPushNotificationConfigsResponse, ListTasksRequest, ListTasksResponse, SendMessageRequest, SendMessageResponse, StreamResponse, SubscribeToTaskRequest, Task, TaskPushNotificationConfig } from "./a2a_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { Empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb.js";
+import { Empty } from "../../../google/protobuf/empty_pb.js";
 
 /**
  * Provides operations for interacting with agents using the A2A protocol.
@@ -146,3 +146,4 @@ export const A2AService = {
     },
   }
 };
+

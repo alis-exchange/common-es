@@ -160,3 +160,4 @@ export declare type Timestamp = Message<"google.protobuf.Timestamp"> & {
  * Use `create(TimestampSchema)` to create a new message.
  */
 export declare const TimestampSchema: GenMessage<Timestamp>;
+

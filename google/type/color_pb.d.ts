@@ -197,3 +197,4 @@ export declare type Color = Message<"google.type.Color"> & {
  * Use `create(ColorSchema)` to create a new message.
  */
 export declare const ColorSchema: GenMessage<Color>;
+

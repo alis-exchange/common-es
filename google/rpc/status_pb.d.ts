@@ -69,3 +69,4 @@ export declare type Status = Message<"google.rpc.Status"> & {
  * Use `create(StatusSchema)` to create a new message.
  */
 export declare const StatusSchema: GenMessage<Status>;
+

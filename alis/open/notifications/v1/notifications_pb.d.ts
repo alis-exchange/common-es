@@ -5,7 +5,7 @@
 import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { RetrieveRulesRequestSchema, RetrieveRulesResponseSchema, ValidateMessageRequestSchema, ValidateMessageResponseSchema } from "../../validation/v1/validation_pb";
-import type { TestIamPermissionsRequestSchema, TestIamPermissionsResponseSchema } from "@alis-build/google-common-protos/google/iam/v1/iam_policy_pb";
+import type { TestIamPermissionsRequestSchema, TestIamPermissionsResponseSchema } from "../../../../google/iam/v1/iam_policy_pb";
 
 /**
  * Describes the file alis/open/notifications/v1/notifications.proto.
@@ -194,3 +194,4 @@ export declare const NotificationsService: GenService<{
     output: typeof BatchSendFcmMessagesResponseSchema;
   },
 }>;
+

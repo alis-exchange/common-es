@@ -317,3 +317,4 @@ export declare type GenerateIdTokenResponse = Message<"google.iam.credentials.v1
  * Use `create(GenerateIdTokenResponseSchema)` to create a new message.
  */
 export declare const GenerateIdTokenResponseSchema: GenMessage<GenerateIdTokenResponse>;
+

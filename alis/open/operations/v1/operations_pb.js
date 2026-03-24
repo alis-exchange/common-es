@@ -3,9 +3,9 @@
 /* eslint-disable */
 
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import { file_google_protobuf_any } from "@alis-build/google-common-protos/google/protobuf/any_pb";
-import { file_google_protobuf_timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
-import { file_google_rpc_status } from "@alis-build/google-common-protos/google/rpc/status_pb";
+import { file_google_protobuf_any } from "../../../../google/protobuf/any_pb";
+import { file_google_protobuf_timestamp } from "../../../../google/protobuf/timestamp_pb";
+import { file_google_rpc_status } from "../../../../google/rpc/status_pb";
 
 /**
  * Describes the file alis/open/operations/v1/operations.proto.
@@ -26,3 +26,4 @@ export const OperationSchema = /*@__PURE__*/
  */
 export const Operation_CloudTaskSchema = /*@__PURE__*/
   messageDesc(file_alis_open_operations_v1_operations, 0, 0);
+

@@ -3,13 +3,13 @@
 /* eslint-disable */
 
 import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
-import { file_alis_open_iam_v1_iam } from "@open.alis.services/protobuf/alis/open/iam/v1/iam_pb";
-import { file_google_iam_v1_iam_policy } from "@alis-build/google-common-protos/google/iam/v1/iam_policy_pb";
-import { file_google_iam_v1_policy } from "@alis-build/google-common-protos/google/iam/v1/policy_pb";
-import { file_google_protobuf_empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb";
-import { file_google_protobuf_field_mask } from "@alis-build/google-common-protos/google/protobuf/field_mask_pb";
-import { file_google_protobuf_timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
-import { file_lf_a2a_v1_a2a } from "@alis-build/a2a/lf/a2a/v1/a2a_pb";
+import { file_alis_open_iam_v1_iam } from "../../../../open/iam/v1/iam_pb";
+import { file_google_iam_v1_iam_policy } from "../../../../../google/iam/v1/iam_policy_pb";
+import { file_google_iam_v1_policy } from "../../../../../google/iam/v1/policy_pb";
+import { file_google_protobuf_empty } from "../../../../../google/protobuf/empty_pb";
+import { file_google_protobuf_field_mask } from "../../../../../google/protobuf/field_mask_pb";
+import { file_google_protobuf_timestamp } from "../../../../../google/protobuf/timestamp_pb";
+import { file_lf_a2a_v1_a2a } from "../../../../../lf/a2a/v1/a2a_pb";
 
 /**
  * Describes the file alis/a2a/extension/history/v1/history.proto.
@@ -109,3 +109,4 @@ export const ThreadEventSchema = /*@__PURE__*/
  */
 export const ThreadService = /*@__PURE__*/
   serviceDesc(file_alis_a2a_extension_history_v1_history, 0);
+

@@ -655,3 +655,4 @@ export enum ErrorReason {
  * Describes the enum google.api.ErrorReason.
  */
 export declare const ErrorReasonSchema: GenEnum<ErrorReason>;
+

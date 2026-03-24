@@ -5,7 +5,7 @@
 
 import { RetrieveRulesRequest, RetrieveRulesResponse, ValidateMessageRequest, ValidateMessageResponse } from "../../validation/v1/validation_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { TestIamPermissionsRequest, TestIamPermissionsResponse } from "@alis-build/google-common-protos/google/iam/v1/iam_policy_pb.js";
+import { TestIamPermissionsRequest, TestIamPermissionsResponse } from "../../../../google/iam/v1/iam_policy_pb.js";
 import { BatchSendFcmMessagesRequest, BatchSendFcmMessagesResponse, SendFcmMessageRequest, SendFcmMessageResponse } from "./notifications_pb.js";
 
 /**
@@ -75,3 +75,4 @@ export const NotificationsService = {
     },
   }
 };
+

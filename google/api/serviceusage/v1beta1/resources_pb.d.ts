@@ -746,3 +746,4 @@ export enum QuotaSafetyCheck {
  * Describes the enum google.api.serviceusage.v1beta1.QuotaSafetyCheck.
  */
 export declare const QuotaSafetyCheckSchema: GenEnum<QuotaSafetyCheck>;
+

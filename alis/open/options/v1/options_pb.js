@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 import { extDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import { file_google_protobuf_descriptor } from "@alis-build/google-common-protos/google/protobuf/descriptor_pb";
+import { file_google_protobuf_descriptor } from "../../../../google/protobuf/descriptor_pb";
 
 /**
  * Describes the file alis/open/options/v1/options.proto.
@@ -83,3 +83,4 @@ export const message = /*@__PURE__*/
  */
 export const field = /*@__PURE__*/
   extDesc(file_alis_open_options_v1_options, 2);
+

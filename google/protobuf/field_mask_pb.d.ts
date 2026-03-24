@@ -257,3 +257,4 @@ export declare type FieldMask = Message<"google.protobuf.FieldMask"> & {
  * Use `create(FieldMaskSchema)` to create a new message.
  */
 export declare const FieldMaskSchema: GenMessage<FieldMask>;
+

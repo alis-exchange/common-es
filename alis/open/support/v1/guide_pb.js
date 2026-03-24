@@ -4,8 +4,8 @@
 
 import { enumDesc, fileDesc, messageDesc, serviceDesc, tsEnum } from "@bufbuild/protobuf/codegenv2";
 import { file_alis_open_validation_v1_validation } from "../../validation/v1/validation_pb";
-import { file_google_protobuf_field_mask } from "@alis-build/google-common-protos/google/protobuf/field_mask_pb";
-import { file_google_protobuf_timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
+import { file_google_protobuf_field_mask } from "../../../../google/protobuf/field_mask_pb";
+import { file_google_protobuf_timestamp } from "../../../../google/protobuf/timestamp_pb";
 
 /**
  * Describes the file alis/open/support/v1/guide.proto.
@@ -167,3 +167,4 @@ export const SyncGuideRequestSchema = /*@__PURE__*/
  */
 export const GuidesService = /*@__PURE__*/
   serviceDesc(file_alis_open_support_v1_guide, 0);
+

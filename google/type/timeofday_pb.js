@@ -30,3 +30,4 @@ export const file_google_type_timeofday = /*@__PURE__*/
  */
 export const TimeOfDaySchema = /*@__PURE__*/
   messageDesc(file_google_type_timeofday, 0);
+

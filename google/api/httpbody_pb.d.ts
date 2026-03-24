@@ -101,3 +101,4 @@ export declare type HttpBody = Message<"google.api.HttpBody"> & {
  * Use `create(HttpBodySchema)` to create a new message.
  */
 export declare const HttpBodySchema: GenMessage<HttpBody>;
+

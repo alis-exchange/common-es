@@ -108,3 +108,4 @@ export declare type Decimal = Message<"google.type.Decimal"> & {
  * Use `create(DecimalSchema)` to create a new message.
  */
 export declare const DecimalSchema: GenMessage<Decimal>;
+

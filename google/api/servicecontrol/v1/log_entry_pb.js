@@ -49,3 +49,4 @@ export const LogEntryOperationSchema = /*@__PURE__*/
  */
 export const LogEntrySourceLocationSchema = /*@__PURE__*/
   messageDesc(file_google_api_servicecontrol_v1_log_entry, 2);
+

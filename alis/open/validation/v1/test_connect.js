@@ -5,7 +5,7 @@
 
 import { Book, CreateBookRequest, DeleteBookRequest, GetBookRequest, ListBooksRequest, ListBooksResponse, UpdateBookRequest } from "./test_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { Empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb.js";
+import { Empty } from "../../../../google/protobuf/empty_pb.js";
 
 /**
  * TODO: Add service description
@@ -72,3 +72,4 @@ export const BookService = {
     },
   }
 };
+

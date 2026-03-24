@@ -339,3 +339,4 @@ export declare type ApiTarget = Message<"google.api.apikeys.v2.ApiTarget"> & {
  * Use `create(ApiTargetSchema)` to create a new message.
  */
 export declare const ApiTargetSchema: GenMessage<ApiTarget>;
+

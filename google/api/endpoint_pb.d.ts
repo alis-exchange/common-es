@@ -100,3 +100,4 @@ export declare type Endpoint = Message<"google.api.Endpoint"> & {
  * Use `create(EndpointSchema)` to create a new message.
  */
 export declare const EndpointSchema: GenMessage<Endpoint>;
+

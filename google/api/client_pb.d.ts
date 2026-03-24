@@ -689,3 +689,4 @@ export declare const default_host: GenExtension<ServiceOptions, string>;
  * @generated from extension: string oauth_scopes = 1050;
  */
 export declare const oauth_scopes: GenExtension<ServiceOptions, string>;
+

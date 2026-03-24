@@ -231,3 +231,4 @@ export declare type IdRef = Message<"google.api.expr.v1beta1.IdRef"> & {
  * Use `create(IdRefSchema)` to create a new message.
  */
 export declare const IdRefSchema: GenMessage<IdRef>;
+

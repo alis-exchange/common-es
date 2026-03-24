@@ -90,3 +90,4 @@ export enum LabelDescriptor_ValueType {
  * Describes the enum google.api.LabelDescriptor.ValueType.
  */
 export declare const LabelDescriptor_ValueTypeSchema: GenEnum<LabelDescriptor_ValueType>;
+

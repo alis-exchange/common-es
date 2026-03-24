@@ -246,3 +246,4 @@ export declare type Page = Message<"google.api.Page"> & {
  * Use `create(PageSchema)` to create a new message.
  */
 export declare const PageSchema: GenMessage<Page>;
+

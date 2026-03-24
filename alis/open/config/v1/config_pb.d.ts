@@ -59,3 +59,4 @@ export declare type ProductConfig = Message<"alis.open.config.v1.ProductConfig">
  * Use `create(ProductConfigSchema)` to create a new message.
  */
 export declare const ProductConfigSchema: GenMessage<ProductConfig>;
+

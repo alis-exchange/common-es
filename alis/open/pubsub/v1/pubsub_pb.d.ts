@@ -4,7 +4,7 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { Timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
+import type { Timestamp } from "../../../../google/protobuf/timestamp_pb";
 
 /**
  * Describes the file alis/open/pubsub/v1/pubsub.proto.
@@ -122,3 +122,4 @@ export declare type PubSubMessage_Message = Message<"alis.open.pubsub.v1.PubSubM
  * Use `create(PubSubMessage_MessageSchema)` to create a new message.
  */
 export declare const PubSubMessage_MessageSchema: GenMessage<PubSubMessage_Message>;
+

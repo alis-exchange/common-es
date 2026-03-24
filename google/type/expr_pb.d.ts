@@ -99,3 +99,4 @@ export declare type Expr = Message<"google.type.Expr"> & {
  * Use `create(ExprSchema)` to create a new message.
  */
 export declare const ExprSchema: GenMessage<Expr>;
+

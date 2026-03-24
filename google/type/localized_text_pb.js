@@ -30,3 +30,4 @@ export const file_google_type_localized_text = /*@__PURE__*/
  */
 export const LocalizedTextSchema = /*@__PURE__*/
   messageDesc(file_google_type_localized_text, 0);
+

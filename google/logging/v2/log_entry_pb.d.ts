@@ -380,3 +380,4 @@ export declare type LogSplit = Message<"google.logging.v2.LogSplit"> & {
  * Use `create(LogSplitSchema)` to create a new message.
  */
 export declare const LogSplitSchema: GenMessage<LogSplit>;
+

@@ -187,3 +187,4 @@ export declare type PostalAddress = Message<"google.type.PostalAddress"> & {
  * Use `create(PostalAddressSchema)` to create a new message.
  */
 export declare const PostalAddressSchema: GenMessage<PostalAddress>;
+

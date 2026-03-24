@@ -39,3 +39,4 @@ export const CalendarPeriodSchema = /*@__PURE__*/
  */
 export const CalendarPeriod = /*@__PURE__*/
   tsEnum(CalendarPeriodSchema);
+

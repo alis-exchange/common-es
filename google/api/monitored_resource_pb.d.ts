@@ -192,3 +192,4 @@ export declare type MonitoredResourceMetadata = Message<"google.api.MonitoredRes
  * Use `create(MonitoredResourceMetadataSchema)` to create a new message.
  */
 export declare const MonitoredResourceMetadataSchema: GenMessage<MonitoredResourceMetadata>;
+

@@ -302,3 +302,4 @@ export declare type Service = Message<"google.api.Service"> & {
  * Use `create(ServiceSchema)` to create a new message.
  */
 export declare const ServiceSchema: GenMessage<Service>;
+

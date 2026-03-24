@@ -267,3 +267,4 @@ export enum BackendRule_PathTranslation {
  * Describes the enum google.api.BackendRule.PathTranslation.
  */
 export declare const BackendRule_PathTranslationSchema: GenEnum<BackendRule_PathTranslation>;
+

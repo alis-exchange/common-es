@@ -51,3 +51,4 @@ export declare type Fraction = Message<"google.type.Fraction"> & {
  * Use `create(FractionSchema)` to create a new message.
  */
 export declare const FractionSchema: GenMessage<Fraction>;
+

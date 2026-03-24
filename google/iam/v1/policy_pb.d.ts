@@ -620,3 +620,4 @@ export enum AuditConfigDelta_Action {
  * Describes the enum google.iam.v1.AuditConfigDelta.Action.
  */
 export declare const AuditConfigDelta_ActionSchema: GenEnum<AuditConfigDelta_Action>;
+

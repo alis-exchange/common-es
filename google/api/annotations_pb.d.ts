@@ -31,3 +31,4 @@ export declare const file_google_api_annotations: GenFile;
  * @generated from extension: google.api.HttpRule http = 72295728;
  */
 export declare const http: GenExtension<MethodOptions, HttpRule>;
+

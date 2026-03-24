@@ -94,3 +94,4 @@ export const resource_definition = /*@__PURE__*/
  */
 export const resource = /*@__PURE__*/
   extDesc(file_google_api_resource, 2);
+

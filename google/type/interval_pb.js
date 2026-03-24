@@ -31,3 +31,4 @@ export const file_google_type_interval = /*@__PURE__*/
  */
 export const IntervalSchema = /*@__PURE__*/
   messageDesc(file_google_type_interval, 0);
+

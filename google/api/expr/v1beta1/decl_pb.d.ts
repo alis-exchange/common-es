@@ -181,3 +181,4 @@ export declare type FunctionDecl = Message<"google.api.expr.v1beta1.FunctionDecl
  * Use `create(FunctionDeclSchema)` to create a new message.
  */
 export declare const FunctionDeclSchema: GenMessage<FunctionDecl>;
+

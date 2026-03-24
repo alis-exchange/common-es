@@ -66,3 +66,4 @@ export const StateSchema = /*@__PURE__*/
  */
 export const State = /*@__PURE__*/
   tsEnum(StateSchema);
+

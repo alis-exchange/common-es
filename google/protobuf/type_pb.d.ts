@@ -529,3 +529,4 @@ export enum Syntax {
  * Describes the enum google.protobuf.Syntax.
  */
 export declare const SyntaxSchema: GenEnum<Syntax>;
+

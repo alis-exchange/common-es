@@ -46,3 +46,4 @@ export declare type AuditData = Message<"google.iam.v1.logging.AuditData"> & {
  * Use `create(AuditDataSchema)` to create a new message.
  */
 export declare const AuditDataSchema: GenMessage<AuditData>;
+

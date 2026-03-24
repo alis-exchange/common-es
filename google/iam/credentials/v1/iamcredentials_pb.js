@@ -42,3 +42,4 @@ export const file_google_iam_credentials_v1_iamcredentials = /*@__PURE__*/
  */
 export const IAMCredentials = /*@__PURE__*/
   serviceDesc(file_google_iam_credentials_v1_iamcredentials, 0);
+

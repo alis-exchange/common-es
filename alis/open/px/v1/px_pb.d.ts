@@ -4,9 +4,9 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { Timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
-import type { Date } from "@alis-build/google-common-protos/google/type/date_pb";
-import type { TimeOfDay } from "@alis-build/google-common-protos/google/type/timeofday_pb";
+import type { Timestamp } from "../../../../google/protobuf/timestamp_pb";
+import type { Date } from "../../../../google/type/date_pb";
+import type { TimeOfDay } from "../../../../google/type/timeofday_pb";
 
 /**
  * Describes the file alis/open/px/v1/px.proto.
@@ -2167,3 +2167,4 @@ export enum Source {
  * Describes the enum alis.open.px.v1.Source.
  */
 export declare const SourceSchema: GenEnum<Source>;
+

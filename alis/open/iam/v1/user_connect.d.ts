@@ -5,11 +5,11 @@
 
 import { RetrieveRulesRequest, RetrieveRulesResponse, ValidateMessageRequest, ValidateMessageResponse } from "../../validation/v1/validation_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { GetIamPolicyRequest, SetIamPolicyRequest, TestIamPermissionsRequest, TestIamPermissionsResponse } from "@alis-build/google-common-protos/google/iam/v1/iam_policy_pb.js";
-import { Policy } from "@alis-build/google-common-protos/google/iam/v1/policy_pb.js";
+import { GetIamPolicyRequest, SetIamPolicyRequest, TestIamPermissionsRequest, TestIamPermissionsResponse } from "../../../../google/iam/v1/iam_policy_pb.js";
+import { Policy } from "../../../../google/iam/v1/policy_pb.js";
 import { AddIamBindingsRequest, RemoveIamBindingsRequest } from "./iam_pb.js";
 import { BatchRetrieveMaskedUsersRequest, BatchRetrieveMaskedUsersResponse, CreateUserRequest, DeleteUserRequest, EditMyInfoRequest, EditMyMetadataRequest, EditUserInfoRequest, EditUserMetadataRequest, GetUserRequest, ListUsersRequest, ListUsersResponse, LookupUserRequest, LookupUserResponse, MaskedUser, RemoveMyUserRequest, RetrieveMaskedUserRequest, RetrieveMaskedUsersRequest, RetrieveMaskedUsersResponse, RetrieveMyUserRequest, RetrieveUserByEmailRequest, SetUserPictureRequest, SetUserPictureResponse, SyncToGoogleGroupRequest, SyncToGoogleGroupResponse, UpdateUserRequest, User } from "./user_pb.js";
-import { Empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb.js";
+import { Empty } from "../../../../google/protobuf/empty_pb.js";
 
 /**
  * UsersService provides RPCs for managing User resources.
@@ -325,3 +325,4 @@ export declare const UsersService: {
     },
   }
 };
+

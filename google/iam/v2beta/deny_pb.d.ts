@@ -137,3 +137,4 @@ export declare type DenyRule = Message<"google.iam.v2beta.DenyRule"> & {
  * Use `create(DenyRuleSchema)` to create a new message.
  */
 export declare const DenyRuleSchema: GenMessage<DenyRule>;
+

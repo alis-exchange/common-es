@@ -60,3 +60,4 @@ export declare type GetPolicyOptions = Message<"google.iam.v1.GetPolicyOptions">
  * Use `create(GetPolicyOptionsSchema)` to create a new message.
  */
 export declare const GetPolicyOptionsSchema: GenMessage<GetPolicyOptions>;
+

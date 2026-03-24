@@ -378,3 +378,4 @@ export declare type AuthRequirement = Message<"google.api.AuthRequirement"> & {
  * Use `create(AuthRequirementSchema)` to create a new message.
  */
 export declare const AuthRequirementSchema: GenMessage<AuthRequirement>;
+

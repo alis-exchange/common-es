@@ -179,3 +179,4 @@ export declare type Any = Message<"google.protobuf.Any"> & {
  * Use `create(AnySchema)` to create a new message.
  */
 export declare const AnySchema: GenMessage<Any>;
+

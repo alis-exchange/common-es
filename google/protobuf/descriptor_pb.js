@@ -501,3 +501,4 @@ export const EditionSchema = /*@__PURE__*/
  */
 export const Edition = /*@__PURE__*/
   tsEnum(EditionSchema);
+

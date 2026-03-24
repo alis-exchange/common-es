@@ -630,3 +630,4 @@ export enum Rollout_RolloutStatus {
  * Describes the enum google.api.servicemanagement.v1.Rollout.RolloutStatus.
  */
 export declare const Rollout_RolloutStatusSchema: GenEnum<Rollout_RolloutStatus>;
+

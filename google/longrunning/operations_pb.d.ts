@@ -418,3 +418,4 @@ export declare const Operations: GenService<{
  * @generated from extension: google.longrunning.OperationInfo operation_info = 1049;
  */
 export declare const operation_info: GenExtension<MethodOptions, OperationInfo>;
+

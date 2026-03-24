@@ -90,3 +90,4 @@ export enum DayOfWeek {
  * Describes the enum google.type.DayOfWeek.
  */
 export declare const DayOfWeekSchema: GenEnum<DayOfWeek>;
+

@@ -17,3 +17,4 @@ export const file_alis_open_config_v1_config = /*@__PURE__*/
  */
 export const ProductConfigSchema = /*@__PURE__*/
   messageDesc(file_alis_open_config_v1_config, 0);
+

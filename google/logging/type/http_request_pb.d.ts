@@ -162,3 +162,4 @@ export declare type HttpRequest = Message<"google.logging.type.HttpRequest"> & {
  * Use `create(HttpRequestSchema)` to create a new message.
  */
 export declare const HttpRequestSchema: GenMessage<HttpRequest>;
+

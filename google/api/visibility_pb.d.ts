@@ -155,3 +155,4 @@ export declare const method_visibility: GenExtension<MethodOptions, VisibilityRu
  * @generated from extension: google.api.VisibilityRule api_visibility = 72295727;
  */
 export declare const api_visibility: GenExtension<ServiceOptions, VisibilityRule>;
+

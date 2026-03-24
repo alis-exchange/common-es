@@ -44,3 +44,4 @@ export const LabelDescriptor_ValueTypeSchema = /*@__PURE__*/
  */
 export const LabelDescriptor_ValueType = /*@__PURE__*/
   tsEnum(LabelDescriptor_ValueTypeSchema);
+

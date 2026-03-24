@@ -30,3 +30,4 @@ export declare type Test = Message<"common.test.v1.Test"> & {
  * Use `create(TestSchema)` to create a new message.
  */
 export declare const TestSchema: GenMessage<Test>;
+

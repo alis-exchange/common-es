@@ -44,3 +44,4 @@ export const HttpRuleSchema = /*@__PURE__*/
  */
 export const CustomHttpPatternSchema = /*@__PURE__*/
   messageDesc(file_google_api_http, 2);
+

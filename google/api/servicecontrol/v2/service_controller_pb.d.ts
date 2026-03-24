@@ -298,3 +298,4 @@ export declare const ServiceController: GenService<{
     output: typeof ReportResponseSchema;
   },
 }>;
+

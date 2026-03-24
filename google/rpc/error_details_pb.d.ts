@@ -532,3 +532,4 @@ export declare type LocalizedMessage = Message<"google.rpc.LocalizedMessage"> & 
  * Use `create(LocalizedMessageSchema)` to create a new message.
  */
 export declare const LocalizedMessageSchema: GenMessage<LocalizedMessage>;
+

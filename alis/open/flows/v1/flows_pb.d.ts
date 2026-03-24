@@ -4,10 +4,10 @@
 
 import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { Timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
-import type { FieldMask } from "@alis-build/google-common-protos/google/protobuf/field_mask_pb";
+import type { Timestamp } from "../../../../google/protobuf/timestamp_pb";
+import type { FieldMask } from "../../../../google/protobuf/field_mask_pb";
 import type { PubSubMessageSchema } from "../../pubsub/v1/pubsub_pb";
-import type { EmptySchema } from "@alis-build/google-common-protos/google/protobuf/empty_pb";
+import type { EmptySchema } from "../../../../google/protobuf/empty_pb";
 
 /**
  * Describes the file alis/open/flows/v1/flows.proto.
@@ -544,3 +544,4 @@ export declare const FlowsService: GenService<{
     output: typeof EmptySchema;
   },
 }>;
+

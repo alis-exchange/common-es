@@ -112,3 +112,4 @@ export enum LaunchStage {
  * Describes the enum google.api.LaunchStage.
  */
 export declare const LaunchStageSchema: GenEnum<LaunchStage>;
+

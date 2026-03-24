@@ -548,3 +548,4 @@ export declare type Literal = Message<"google.api.expr.v1beta1.Literal"> & {
  * Use `create(LiteralSchema)` to create a new message.
  */
 export declare const LiteralSchema: GenMessage<Literal>;
+

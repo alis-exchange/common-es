@@ -172,3 +172,4 @@ export declare type TimeZone = Message<"google.type.TimeZone"> & {
  * Use `create(TimeZoneSchema)` to create a new message.
  */
 export declare const TimeZoneSchema: GenMessage<TimeZone>;
+

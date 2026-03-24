@@ -158,3 +158,4 @@ export declare type PhoneNumber_ShortCode = Message<"google.type.PhoneNumber.Sho
  * Use `create(PhoneNumber_ShortCodeSchema)` to create a new message.
  */
 export declare const PhoneNumber_ShortCodeSchema: GenMessage<PhoneNumber_ShortCode>;
+

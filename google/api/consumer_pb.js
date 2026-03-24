@@ -51,3 +51,4 @@ export const Property_PropertyTypeSchema = /*@__PURE__*/
  */
 export const Property_PropertyType = /*@__PURE__*/
   tsEnum(Property_PropertyTypeSchema);
+

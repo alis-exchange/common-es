@@ -4,7 +4,7 @@
 
 import { enumDesc, fileDesc, messageDesc, tsEnum } from "@bufbuild/protobuf/codegenv2";
 import { file_alis_open_iam_v1_user } from "./user_pb";
-import { file_google_protobuf_duration } from "@alis-build/google-common-protos/google/protobuf/duration_pb";
+import { file_google_protobuf_duration } from "../../../../google/protobuf/duration_pb";
 
 /**
  * Describes the file alis/open/iam/v1/oauth.proto.
@@ -109,3 +109,4 @@ export const AppleAuthProviderSchema = /*@__PURE__*/
  */
 export const RefreshTokenSchema = /*@__PURE__*/
   messageDesc(file_alis_open_iam_v1_oauth, 5);
+

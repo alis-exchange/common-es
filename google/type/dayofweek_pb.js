@@ -37,3 +37,4 @@ export const DayOfWeekSchema = /*@__PURE__*/
  */
 export const DayOfWeek = /*@__PURE__*/
   tsEnum(DayOfWeekSchema);
+

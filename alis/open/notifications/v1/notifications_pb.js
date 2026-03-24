@@ -4,7 +4,7 @@
 
 import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_alis_open_validation_v1_validation } from "../../validation/v1/validation_pb";
-import { file_google_iam_v1_iam_policy } from "@alis-build/google-common-protos/google/iam/v1/iam_policy_pb";
+import { file_google_iam_v1_iam_policy } from "../../../../google/iam/v1/iam_policy_pb";
 
 /**
  * Describes the file alis/open/notifications/v1/notifications.proto.
@@ -47,3 +47,4 @@ export const BatchSendFcmMessagesResponseSchema = /*@__PURE__*/
  */
 export const NotificationsService = /*@__PURE__*/
   serviceDesc(file_alis_open_notifications_v1_notifications, 0);
+

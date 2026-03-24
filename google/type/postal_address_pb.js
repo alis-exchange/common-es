@@ -30,3 +30,4 @@ export const file_google_type_postal_address = /*@__PURE__*/
  */
 export const PostalAddressSchema = /*@__PURE__*/
   messageDesc(file_google_type_postal_address, 0);
+

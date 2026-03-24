@@ -30,3 +30,4 @@ export const file_google_type_money = /*@__PURE__*/
  */
 export const MoneySchema = /*@__PURE__*/
   messageDesc(file_google_type_money, 0);
+

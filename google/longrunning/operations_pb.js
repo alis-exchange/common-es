@@ -115,3 +115,4 @@ export const Operations = /*@__PURE__*/
  */
 export const operation_info = /*@__PURE__*/
   extDesc(file_google_longrunning_operations, 0);
+

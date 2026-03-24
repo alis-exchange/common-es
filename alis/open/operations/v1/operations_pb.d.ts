@@ -4,9 +4,9 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { Any } from "@alis-build/google-common-protos/google/protobuf/any_pb";
-import type { Status } from "@alis-build/google-common-protos/google/rpc/status_pb";
-import type { Timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
+import type { Any } from "../../../../google/protobuf/any_pb";
+import type { Status } from "../../../../google/rpc/status_pb";
+import type { Timestamp } from "../../../../google/protobuf/timestamp_pb";
 
 /**
  * Describes the file alis/open/operations/v1/operations.proto.
@@ -192,3 +192,4 @@ export declare type Operation_CloudTask = Message<"alis.open.operations.v1.Opera
  * Use `create(Operation_CloudTaskSchema)` to create a new message.
  */
 export declare const Operation_CloudTaskSchema: GenMessage<Operation_CloudTask>;
+

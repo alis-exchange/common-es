@@ -63,3 +63,4 @@ export declare type Money = Message<"google.type.Money"> & {
  * Use `create(MoneySchema)` to create a new message.
  */
 export declare const MoneySchema: GenMessage<Money>;
+

@@ -45,3 +45,4 @@ export const CheckError_CodeSchema = /*@__PURE__*/
  */
 export const CheckError_Code = /*@__PURE__*/
   tsEnum(CheckError_CodeSchema);
+

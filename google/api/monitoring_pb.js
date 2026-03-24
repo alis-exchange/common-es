@@ -37,3 +37,4 @@ export const MonitoringSchema = /*@__PURE__*/
  */
 export const Monitoring_MonitoringDestinationSchema = /*@__PURE__*/
   messageDesc(file_google_api_monitoring, 0, 0);
+

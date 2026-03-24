@@ -6,7 +6,7 @@
 import { RetrieveRulesRequest, RetrieveRulesResponse, ValidateMessageRequest, ValidateMessageResponse } from "../../validation/v1/validation_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CreateCommentRequest, CreateIssueActivityRequest, DeleteCommentRequest, DeleteIssueActivityRequest, GetIssueActivityRequest, IssueActivity, ListIssueActivitiesRequest, ListIssueActivitiesResponse, UpdateCommentRequest, UpdateIssueActivityRequest } from "./issueactivity_pb.js";
-import { Empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb.js";
+import { Empty } from "../../../../google/protobuf/empty_pb.js";
 
 /**
  * IssueActivitiesService provides RPCs for managing IssueActivity resources.
@@ -137,3 +137,4 @@ export const IssueActivitiesService = {
     },
   }
 };
+

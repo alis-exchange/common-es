@@ -116,3 +116,4 @@ export declare type Logging_LoggingDestination = Message<"google.api.Logging.Log
  * Use `create(Logging_LoggingDestinationSchema)` to create a new message.
  */
 export declare const Logging_LoggingDestinationSchema: GenMessage<Logging_LoggingDestination>;
+

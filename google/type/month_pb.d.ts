@@ -125,3 +125,4 @@ export enum Month {
  * Describes the enum google.type.Month.
  */
 export declare const MonthSchema: GenEnum<Month>;
+

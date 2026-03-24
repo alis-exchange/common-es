@@ -102,3 +102,4 @@ export const DeleteLogMetricRequestSchema = /*@__PURE__*/
  */
 export const MetricsServiceV2 = /*@__PURE__*/
   serviceDesc(file_google_logging_v2_logging_metrics, 0);
+

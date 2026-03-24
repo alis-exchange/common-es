@@ -4,7 +4,7 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { Timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
+import type { Timestamp } from "../../../../google/protobuf/timestamp_pb";
 
 /**
  * Describes the file alis/open/cx/v1/cx.proto.
@@ -2151,3 +2151,4 @@ export enum Instrument_FigiType {
  * Describes the enum alis.open.cx.v1.Instrument.FigiType.
  */
 export declare const Instrument_FigiTypeSchema: GenEnum<Instrument_FigiType>;
+

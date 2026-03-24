@@ -53,3 +53,4 @@ export declare type LocalizedText = Message<"google.type.LocalizedText"> & {
  * Use `create(LocalizedTextSchema)` to create a new message.
  */
 export declare const LocalizedTextSchema: GenMessage<LocalizedText>;
+

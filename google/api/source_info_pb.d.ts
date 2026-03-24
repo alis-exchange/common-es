@@ -44,3 +44,4 @@ export declare type SourceInfo = Message<"google.api.SourceInfo"> & {
  * Use `create(SourceInfoSchema)` to create a new message.
  */
 export declare const SourceInfoSchema: GenMessage<SourceInfo>;
+

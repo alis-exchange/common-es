@@ -5,7 +5,7 @@
 
 import { AgentCard, CancelTaskRequest, CreateTaskPushNotificationConfigRequest, DeleteTaskPushNotificationConfigRequest, GetAgentCardRequest, GetTaskPushNotificationConfigRequest, GetTaskRequest, ListTaskPushNotificationConfigRequest, ListTaskPushNotificationConfigResponse, ListTasksRequest, ListTasksResponse, SendMessageRequest, SendMessageResponse, StreamResponse, Task, TaskPushNotificationConfig, TaskSubscriptionRequest } from "./agent_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { Empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb.js";
+import { Empty } from "../../../../google/protobuf/empty_pb.js";
 
 /**
  * A2AService defines the gRPC version of the A2A protocol. This has a slightly
@@ -153,3 +153,4 @@ export const A2AService = {
     },
   }
 };
+

@@ -4,14 +4,14 @@
 
 import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { Any } from "@alis-build/google-common-protos/google/protobuf/any_pb";
-import type { Timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
-import type { FieldMask } from "@alis-build/google-common-protos/google/protobuf/field_mask_pb";
+import type { Any } from "../../../../google/protobuf/any_pb";
+import type { Timestamp } from "../../../../google/protobuf/timestamp_pb";
+import type { FieldMask } from "../../../../google/protobuf/field_mask_pb";
 import type { RetrieveRulesRequestSchema, RetrieveRulesResponseSchema, ValidateMessageRequestSchema, ValidateMessageResponseSchema } from "../../validation/v1/validation_pb";
-import type { GetIamPolicyRequestSchema, SetIamPolicyRequestSchema, TestIamPermissionsRequestSchema, TestIamPermissionsResponseSchema } from "@alis-build/google-common-protos/google/iam/v1/iam_policy_pb";
-import type { PolicySchema } from "@alis-build/google-common-protos/google/iam/v1/policy_pb";
+import type { GetIamPolicyRequestSchema, SetIamPolicyRequestSchema, TestIamPermissionsRequestSchema, TestIamPermissionsResponseSchema } from "../../../../google/iam/v1/iam_policy_pb";
+import type { PolicySchema } from "../../../../google/iam/v1/policy_pb";
 import type { AddIamBindingsRequestSchema, RemoveIamBindingsRequestSchema } from "./iam_pb";
-import type { EmptySchema } from "@alis-build/google-common-protos/google/protobuf/empty_pb";
+import type { EmptySchema } from "../../../../google/protobuf/empty_pb";
 
 /**
  * Describes the file alis/open/iam/v1/user.proto.
@@ -1578,3 +1578,4 @@ export declare const UsersService: GenService<{
     output: typeof SetUserPictureResponseSchema;
   },
 }>;
+

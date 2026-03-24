@@ -69,3 +69,4 @@ export declare type TimeOfDay = Message<"google.type.TimeOfDay"> & {
  * Use `create(TimeOfDaySchema)` to create a new message.
  */
 export declare const TimeOfDaySchema: GenMessage<TimeOfDay>;
+

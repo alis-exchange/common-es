@@ -73,3 +73,4 @@ export declare type Date = Message<"google.type.Date"> & {
  * Use `create(DateSchema)` to create a new message.
  */
 export declare const DateSchema: GenMessage<Date>;
+

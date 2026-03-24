@@ -30,3 +30,4 @@ export const file_google_type_quaternion = /*@__PURE__*/
  */
 export const QuaternionSchema = /*@__PURE__*/
   messageDesc(file_google_type_quaternion, 0);
+

@@ -336,3 +336,4 @@ export declare const resource_definition: GenExtension<FileOptions, ResourceDesc
  * @generated from extension: google.api.ResourceDescriptor resource = 1053;
  */
 export declare const resource: GenExtension<MessageOptions, ResourceDescriptor>;
+

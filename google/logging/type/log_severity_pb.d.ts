@@ -112,3 +112,4 @@ export enum LogSeverity {
  * Describes the enum google.logging.type.LogSeverity.
  */
 export declare const LogSeveritySchema: GenEnum<LogSeverity>;
+

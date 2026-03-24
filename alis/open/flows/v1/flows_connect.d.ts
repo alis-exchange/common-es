@@ -6,7 +6,7 @@
 import { Flow, GenerateFlowTreeRequest, GenerateFlowTreeResponse, GetFlowRequest, ListFlowsRequest, ListFlowsResponse, StreamFlowsRequest } from "./flows_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { PubSubMessage } from "../../pubsub/v1/pubsub_pb.js";
-import { Empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb.js";
+import { Empty } from "../../../../google/protobuf/empty_pb.js";
 
 /**
  * Manages Flow resources with an API service.
@@ -92,3 +92,4 @@ export declare const FlowsService: {
     },
   }
 };
+

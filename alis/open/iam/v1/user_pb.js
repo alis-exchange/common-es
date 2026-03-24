@@ -5,12 +5,12 @@
 import { enumDesc, fileDesc, messageDesc, serviceDesc, tsEnum } from "@bufbuild/protobuf/codegenv2";
 import { file_alis_open_iam_v1_iam } from "./iam_pb";
 import { file_alis_open_validation_v1_validation } from "../../validation/v1/validation_pb";
-import { file_google_iam_v1_iam_policy } from "@alis-build/google-common-protos/google/iam/v1/iam_policy_pb";
-import { file_google_iam_v1_policy } from "@alis-build/google-common-protos/google/iam/v1/policy_pb";
-import { file_google_protobuf_any } from "@alis-build/google-common-protos/google/protobuf/any_pb";
-import { file_google_protobuf_empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb";
-import { file_google_protobuf_field_mask } from "@alis-build/google-common-protos/google/protobuf/field_mask_pb";
-import { file_google_protobuf_timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
+import { file_google_iam_v1_iam_policy } from "../../../../google/iam/v1/iam_policy_pb";
+import { file_google_iam_v1_policy } from "../../../../google/iam/v1/policy_pb";
+import { file_google_protobuf_any } from "../../../../google/protobuf/any_pb";
+import { file_google_protobuf_empty } from "../../../../google/protobuf/empty_pb";
+import { file_google_protobuf_field_mask } from "../../../../google/protobuf/field_mask_pb";
+import { file_google_protobuf_timestamp } from "../../../../google/protobuf/timestamp_pb";
 
 /**
  * Describes the file alis/open/iam/v1/user.proto.
@@ -277,3 +277,4 @@ export const IdentityProvider = /*@__PURE__*/
  */
 export const UsersService = /*@__PURE__*/
   serviceDesc(file_alis_open_iam_v1_user, 0);
+

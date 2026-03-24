@@ -148,3 +148,4 @@ export enum Property_PropertyType {
  * Describes the enum google.api.Property.PropertyType.
  */
 export declare const Property_PropertyTypeSchema: GenEnum<Property_PropertyType>;
+

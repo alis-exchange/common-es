@@ -229,3 +229,4 @@ export enum State {
  * Describes the enum google.api.serviceusage.v1.State.
  */
 export declare const StateSchema: GenEnum<State>;
+

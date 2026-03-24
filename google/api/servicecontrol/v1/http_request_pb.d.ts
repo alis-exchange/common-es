@@ -160,3 +160,4 @@ export declare type HttpRequest = Message<"google.api.servicecontrol.v1.HttpRequ
  * Use `create(HttpRequestSchema)` to create a new message.
  */
 export declare const HttpRequestSchema: GenMessage<HttpRequest>;
+

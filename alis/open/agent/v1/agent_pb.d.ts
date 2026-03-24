@@ -4,9 +4,9 @@
 
 import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { JsonObject, Message as Message$1 } from "@bufbuild/protobuf";
-import type { Timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
-import type { Any } from "@alis-build/google-common-protos/google/protobuf/any_pb";
-import type { EmptySchema } from "@alis-build/google-common-protos/google/protobuf/empty_pb";
+import type { Timestamp } from "../../../../google/protobuf/timestamp_pb";
+import type { Any } from "../../../../google/protobuf/any_pb";
+import type { EmptySchema } from "../../../../google/protobuf/empty_pb";
 
 /**
  * Describes the file alis/open/agent/v1/agent.proto.
@@ -2127,3 +2127,4 @@ export declare const A2AService: GenService<{
     output: typeof EmptySchema;
   },
 }>;
+

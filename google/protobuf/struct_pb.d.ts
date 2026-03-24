@@ -183,3 +183,4 @@ export enum NullValue {
  * Describes the enum google.protobuf.NullValue.
  */
 export declare const NullValueSchema: GenEnum<NullValue>;
+

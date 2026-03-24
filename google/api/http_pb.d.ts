@@ -470,3 +470,4 @@ export declare type CustomHttpPattern = Message<"google.api.CustomHttpPattern"> 
  * Use `create(CustomHttpPatternSchema)` to create a new message.
  */
 export declare const CustomHttpPatternSchema: GenMessage<CustomHttpPattern>;
+

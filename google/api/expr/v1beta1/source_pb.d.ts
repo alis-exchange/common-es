@@ -110,3 +110,4 @@ export declare type SourcePosition = Message<"google.api.expr.v1beta1.SourcePosi
  * Use `create(SourcePositionSchema)` to create a new message.
  */
 export declare const SourcePositionSchema: GenMessage<SourcePosition>;
+

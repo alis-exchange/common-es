@@ -2587,3 +2587,4 @@ export enum Edition {
  * Describes the enum google.protobuf.Edition.
  */
 export declare const EditionSchema: GenEnum<Edition>;
+

@@ -3,10 +3,10 @@
 /* eslint-disable */
 
 import { enumDesc, fileDesc, messageDesc, tsEnum } from "@bufbuild/protobuf/codegenv2";
-import { file_google_protobuf_timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
-import { file_google_protobuf_wrappers } from "@alis-build/google-common-protos/google/protobuf/wrappers_pb";
-import { file_google_type_date } from "@alis-build/google-common-protos/google/type/date_pb";
-import { file_google_type_timeofday } from "@alis-build/google-common-protos/google/type/timeofday_pb";
+import { file_google_protobuf_timestamp } from "../../../../google/protobuf/timestamp_pb";
+import { file_google_protobuf_wrappers } from "../../../../google/protobuf/wrappers_pb";
+import { file_google_type_date } from "../../../../google/type/date_pb";
+import { file_google_type_timeofday } from "../../../../google/type/timeofday_pb";
 
 /**
  * Describes the file alis/open/px/v1/px.proto.
@@ -279,3 +279,4 @@ export const SourceSchema = /*@__PURE__*/
  */
 export const Source = /*@__PURE__*/
   tsEnum(SourceSchema);
+

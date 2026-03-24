@@ -4,7 +4,7 @@
 
 import type { GenExtension, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { FieldOptions as FieldOptions$1, FileOptions as FileOptions$1, MessageOptions as MessageOptions$1 } from "@alis-build/google-common-protos/google/protobuf/descriptor_pb";
+import type { FieldOptions as FieldOptions$1, FileOptions as FileOptions$1, MessageOptions as MessageOptions$1 } from "../../../../google/protobuf/descriptor_pb";
 
 /**
  * Describes the file alis/open/options/v1/options.proto.
@@ -272,3 +272,4 @@ export declare const message: GenExtension<MessageOptions$1, MessageOptions>;
  * @generated from extension: alis.open.options.v1.FieldOptions field = 1001;
  */
 export declare const field: GenExtension<FieldOptions$1, FieldOptions>;
+

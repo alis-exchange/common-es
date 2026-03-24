@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { PubSubMessage } from "../../pubsub/v1/pubsub_pb.js";
-import { Empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb.js";
+import { Empty } from "../../../../google/protobuf/empty_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -28,3 +28,4 @@ export declare const EventsService: {
     },
   }
 };
+

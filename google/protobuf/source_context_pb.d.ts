@@ -61,3 +61,4 @@ export declare type SourceContext = Message<"google.protobuf.SourceContext"> & {
  * Use `create(SourceContextSchema)` to create a new message.
  */
 export declare const SourceContextSchema: GenMessage<SourceContext>;
+

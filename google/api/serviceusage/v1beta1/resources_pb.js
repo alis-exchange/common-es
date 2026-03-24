@@ -144,3 +144,4 @@ export const QuotaSafetyCheckSchema = /*@__PURE__*/
  */
 export const QuotaSafetyCheck = /*@__PURE__*/
   tsEnum(QuotaSafetyCheckSchema);
+

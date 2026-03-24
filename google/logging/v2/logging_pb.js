@@ -145,3 +145,4 @@ export const TailLogEntriesResponse_SuppressionInfo_Reason = /*@__PURE__*/
  */
 export const LoggingServiceV2 = /*@__PURE__*/
   serviceDesc(file_google_logging_v2_logging, 0);
+

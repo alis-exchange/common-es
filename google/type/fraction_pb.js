@@ -30,3 +30,4 @@ export const file_google_type_fraction = /*@__PURE__*/
  */
 export const FractionSchema = /*@__PURE__*/
   messageDesc(file_google_type_fraction, 0);
+

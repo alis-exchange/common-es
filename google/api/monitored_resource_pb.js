@@ -47,3 +47,4 @@ export const MonitoredResourceSchema = /*@__PURE__*/
  */
 export const MonitoredResourceMetadataSchema = /*@__PURE__*/
   messageDesc(file_google_api_monitored_resource, 2);
+

@@ -251,3 +251,4 @@ export declare type MapValue_Entry = Message<"google.api.expr.v1beta1.MapValue.E
  * Use `create(MapValue_EntrySchema)` to create a new message.
  */
 export declare const MapValue_EntrySchema: GenMessage<MapValue_Entry>;
+

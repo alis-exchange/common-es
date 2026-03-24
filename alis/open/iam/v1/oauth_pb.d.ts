@@ -5,7 +5,7 @@
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { IdentityProvider } from "./user_pb";
-import type { Duration } from "@alis-build/google-common-protos/google/protobuf/duration_pb";
+import type { Duration } from "../../../../google/protobuf/duration_pb";
 
 /**
  * Describes the file alis/open/iam/v1/oauth.proto.
@@ -562,3 +562,4 @@ export declare type RefreshToken = Message<"alis.open.iam.v1.RefreshToken"> & {
  * Use `create(RefreshTokenSchema)` to create a new message.
  */
 export declare const RefreshTokenSchema: GenMessage<RefreshToken>;
+

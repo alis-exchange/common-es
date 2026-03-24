@@ -119,3 +119,4 @@ export declare type Quaternion = Message<"google.type.Quaternion"> & {
  * Use `create(QuaternionSchema)` to create a new message.
  */
 export declare const QuaternionSchema: GenMessage<Quaternion>;
+

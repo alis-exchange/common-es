@@ -205,3 +205,4 @@ export const WorkloadIdentityPoolProviderOperationMetadataSchema = /*@__PURE__*/
  */
 export const WorkloadIdentityPools = /*@__PURE__*/
   serviceDesc(file_google_iam_v1beta_workload_identity_pool, 0);
+

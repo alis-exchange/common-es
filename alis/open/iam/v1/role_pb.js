@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import { file_google_protobuf_timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
+import { file_google_protobuf_timestamp } from "../../../../google/protobuf/timestamp_pb";
 
 /**
  * Describes the file alis/open/iam/v1/role.proto.
@@ -17,3 +17,4 @@ export const file_alis_open_iam_v1_role = /*@__PURE__*/
  */
 export const RoleSchema = /*@__PURE__*/
   messageDesc(file_alis_open_iam_v1_role, 0);
+

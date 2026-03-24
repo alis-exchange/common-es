@@ -59,3 +59,4 @@ export const LogEntrySourceLocationSchema = /*@__PURE__*/
  */
 export const LogSplitSchema = /*@__PURE__*/
   messageDesc(file_google_logging_v2_log_entry, 3);
+

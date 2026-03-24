@@ -82,3 +82,4 @@ export declare const PublicAttachmentsService: GenService<{
     output: typeof UploadImageResponseSchema;
   },
 }>;
+

@@ -107,3 +107,4 @@ export declare type Billing_BillingDestination = Message<"google.api.Billing.Bil
  * Use `create(Billing_BillingDestinationSchema)` to create a new message.
  */
 export declare const Billing_BillingDestinationSchema: GenMessage<Billing_BillingDestination>;
+

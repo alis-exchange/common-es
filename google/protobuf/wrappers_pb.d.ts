@@ -247,3 +247,4 @@ export declare type BytesValue = Message<"google.protobuf.BytesValue"> & {
  * Use `create(BytesValueSchema)` to create a new message.
  */
 export declare const BytesValueSchema: GenMessage<BytesValue>;
+

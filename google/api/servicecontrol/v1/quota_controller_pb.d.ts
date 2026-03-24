@@ -415,3 +415,4 @@ export declare const QuotaController: GenService<{
     output: typeof AllocateQuotaResponseSchema;
   },
 }>;
+

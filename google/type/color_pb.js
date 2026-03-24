@@ -31,3 +31,4 @@ export const file_google_type_color = /*@__PURE__*/
  */
 export const ColorSchema = /*@__PURE__*/
   messageDesc(file_google_type_color, 0);
+

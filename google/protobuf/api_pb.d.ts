@@ -299,3 +299,4 @@ export declare type Mixin = Message<"google.protobuf.Mixin"> & {
  * Use `create(MixinSchema)` to create a new message.
  */
 export declare const MixinSchema: GenMessage<Mixin>;
+

@@ -133,3 +133,4 @@ export declare type ContextRule = Message<"google.api.ContextRule"> & {
  * Use `create(ContextRuleSchema)` to create a new message.
  */
 export declare const ContextRuleSchema: GenMessage<ContextRule>;
+

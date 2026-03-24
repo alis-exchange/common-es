@@ -30,3 +30,4 @@ export const file_google_type_decimal = /*@__PURE__*/
  */
 export const DecimalSchema = /*@__PURE__*/
   messageDesc(file_google_type_decimal, 0);
+

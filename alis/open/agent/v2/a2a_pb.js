@@ -3,12 +3,12 @@
 /* eslint-disable */
 
 import { enumDesc, fileDesc, messageDesc, serviceDesc, tsEnum } from "@bufbuild/protobuf/codegenv2";
-import { file_google_api_annotations } from "@alis-build/google-common-protos/google/api/annotations_pb";
-import { file_google_api_client } from "@alis-build/google-common-protos/google/api/client_pb";
-import { file_google_api_field_behavior } from "@alis-build/google-common-protos/google/api/field_behavior_pb";
-import { file_google_protobuf_empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb";
-import { file_google_protobuf_struct } from "@alis-build/google-common-protos/google/protobuf/struct_pb";
-import { file_google_protobuf_timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
+import { file_google_api_annotations } from "../../../../google/api/annotations_pb";
+import { file_google_api_client } from "../../../../google/api/client_pb";
+import { file_google_api_field_behavior } from "../../../../google/api/field_behavior_pb";
+import { file_google_protobuf_empty } from "../../../../google/protobuf/empty_pb";
+import { file_google_protobuf_struct } from "../../../../google/protobuf/struct_pb";
+import { file_google_protobuf_timestamp } from "../../../../google/protobuf/timestamp_pb";
 
 /**
  * Describes the file alis/open/agent/v2/a2a.proto.
@@ -388,3 +388,4 @@ export const Role = /*@__PURE__*/
  */
 export const A2AService = /*@__PURE__*/
   serviceDesc(file_alis_open_agent_v2_a2a, 0);
+

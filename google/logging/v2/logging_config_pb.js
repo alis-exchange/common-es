@@ -358,3 +358,4 @@ export const OperationState = /*@__PURE__*/
  */
 export const ConfigServiceV2 = /*@__PURE__*/
   serviceDesc(file_google_logging_v2_logging_config, 0);
+

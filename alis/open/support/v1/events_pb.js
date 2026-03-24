@@ -4,7 +4,7 @@
 
 import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_alis_open_pubsub_v1_pubsub } from "../../pubsub/v1/pubsub_pb";
-import { file_google_protobuf_empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb";
+import { file_google_protobuf_empty } from "../../../../google/protobuf/empty_pb";
 
 /**
  * Describes the file alis/open/support/v1/events.proto.
@@ -82,3 +82,4 @@ export const IssueCommentAddedEventSchema = /*@__PURE__*/
  */
 export const EventsService = /*@__PURE__*/
   serviceDesc(file_alis_open_support_v1_events, 0);
+

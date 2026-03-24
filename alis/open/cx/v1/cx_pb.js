@@ -3,8 +3,8 @@
 /* eslint-disable */
 
 import { enumDesc, fileDesc, messageDesc, tsEnum } from "@bufbuild/protobuf/codegenv2";
-import { file_google_protobuf_timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
-import { file_google_protobuf_wrappers } from "@alis-build/google-common-protos/google/protobuf/wrappers_pb";
+import { file_google_protobuf_timestamp } from "../../../../google/protobuf/timestamp_pb";
+import { file_google_protobuf_wrappers } from "../../../../google/protobuf/wrappers_pb";
 
 /**
  * Describes the file alis/open/cx/v1/cx.proto.
@@ -228,3 +228,4 @@ export const Instrument_FigiTypeSchema = /*@__PURE__*/
  */
 export const Instrument_FigiType = /*@__PURE__*/
   tsEnum(Instrument_FigiTypeSchema);
+

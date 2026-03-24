@@ -269,3 +269,4 @@ export declare type QuotaLimit = Message<"google.api.QuotaLimit"> & {
  * Use `create(QuotaLimitSchema)` to create a new message.
  */
 export declare const QuotaLimitSchema: GenMessage<QuotaLimit>;
+

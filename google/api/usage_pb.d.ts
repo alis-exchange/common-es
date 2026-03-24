@@ -139,3 +139,4 @@ export declare type UsageRule = Message<"google.api.UsageRule"> & {
  * Use `create(UsageRuleSchema)` to create a new message.
  */
 export declare const UsageRuleSchema: GenMessage<UsageRule>;
+

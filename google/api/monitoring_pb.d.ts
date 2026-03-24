@@ -141,3 +141,4 @@ export declare type Monitoring_MonitoringDestination = Message<"google.api.Monit
  * Use `create(Monitoring_MonitoringDestinationSchema)` to create a new message.
  */
 export declare const Monitoring_MonitoringDestinationSchema: GenMessage<Monitoring_MonitoringDestination>;
+

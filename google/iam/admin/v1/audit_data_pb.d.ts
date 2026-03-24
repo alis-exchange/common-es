@@ -73,3 +73,4 @@ export declare type AuditData_PermissionDelta = Message<"google.iam.admin.v1.Aud
  * Use `create(AuditData_PermissionDeltaSchema)` to create a new message.
  */
 export declare const AuditData_PermissionDeltaSchema: GenMessage<AuditData_PermissionDelta>;
+

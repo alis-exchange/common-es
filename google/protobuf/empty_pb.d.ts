@@ -60,3 +60,4 @@ export declare type Empty = Message<"google.protobuf.Empty"> & {
  * Use `create(EmptySchema)` to create a new message.
  */
 export declare const EmptySchema: GenMessage<Empty>;
+

@@ -57,3 +57,4 @@ export const BackendRule_PathTranslationSchema = /*@__PURE__*/
  */
 export const BackendRule_PathTranslation = /*@__PURE__*/
   tsEnum(BackendRule_PathTranslationSchema);
+

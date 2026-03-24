@@ -5,11 +5,11 @@
 import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_alis_open_iam_v1_iam } from "../../iam/v1/iam_pb";
 import { file_alis_open_validation_v1_validation } from "../../validation/v1/validation_pb";
-import { file_google_iam_v1_iam_policy } from "@alis-build/google-common-protos/google/iam/v1/iam_policy_pb";
-import { file_google_iam_v1_policy } from "@alis-build/google-common-protos/google/iam/v1/policy_pb";
-import { file_google_protobuf_empty } from "@alis-build/google-common-protos/google/protobuf/empty_pb";
-import { file_google_protobuf_field_mask } from "@alis-build/google-common-protos/google/protobuf/field_mask_pb";
-import { file_google_protobuf_timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
+import { file_google_iam_v1_iam_policy } from "../../../../google/iam/v1/iam_policy_pb";
+import { file_google_iam_v1_policy } from "../../../../google/iam/v1/policy_pb";
+import { file_google_protobuf_empty } from "../../../../google/protobuf/empty_pb";
+import { file_google_protobuf_field_mask } from "../../../../google/protobuf/field_mask_pb";
+import { file_google_protobuf_timestamp } from "../../../../google/protobuf/timestamp_pb";
 
 /**
  * Describes the file alis/open/notifications/v1/devices.proto.
@@ -73,3 +73,4 @@ export const RegisterDeviceResponseSchema = /*@__PURE__*/
  */
 export const DevicesService = /*@__PURE__*/
   serviceDesc(file_alis_open_notifications_v1_devices, 0);
+

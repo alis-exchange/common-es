@@ -699,3 +699,4 @@ export declare type Reference = Message<"google.api.expr.v1alpha1.Reference"> & 
  * Use `create(ReferenceSchema)` to create a new message.
  */
 export declare const ReferenceSchema: GenMessage<Reference>;
+

@@ -302,3 +302,4 @@ export const GetServiceIdentityMetadataSchema = /*@__PURE__*/
  */
 export const ServiceUsage = /*@__PURE__*/
   serviceDesc(file_google_api_serviceusage_v1beta1_serviceusage, 0);
+

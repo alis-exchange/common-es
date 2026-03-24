@@ -131,3 +131,4 @@ export declare type Duration = Message<"google.protobuf.Duration"> & {
  * Use `create(DurationSchema)` to create a new message.
  */
 export declare const DurationSchema: GenMessage<Duration>;
+

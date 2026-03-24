@@ -153,3 +153,4 @@ export enum ChangeType {
  * Describes the enum google.api.ChangeType.
  */
 export declare const ChangeTypeSchema: GenEnum<ChangeType>;
+

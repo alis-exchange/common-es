@@ -184,3 +184,4 @@ export const GenerateConfigReportResponseSchema = /*@__PURE__*/
  */
 export const ServiceManager = /*@__PURE__*/
   serviceDesc(file_google_api_servicemanagement_v1_servicemanager, 0);
+

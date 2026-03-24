@@ -4,8 +4,8 @@
 
 import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { Timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
-import type { FieldMask } from "@alis-build/google-common-protos/google/protobuf/field_mask_pb";
+import type { Timestamp } from "../../../../google/protobuf/timestamp_pb";
+import type { FieldMask } from "../../../../google/protobuf/field_mask_pb";
 import type { RetrieveRulesRequestSchema, RetrieveRulesResponseSchema, ValidateMessageRequestSchema, ValidateMessageResponseSchema } from "../../validation/v1/validation_pb";
 
 /**
@@ -851,3 +851,4 @@ export declare const GuidesService: GenService<{
     output: typeof GuideSchema;
   },
 }>;
+

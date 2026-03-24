@@ -616,3 +616,4 @@ export declare type AttributeContext_Resource = Message<"google.rpc.context.Attr
  * Use `create(AttributeContext_ResourceSchema)` to create a new message.
  */
 export declare const AttributeContext_ResourceSchema: GenMessage<AttributeContext_Resource>;
+

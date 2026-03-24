@@ -5,7 +5,7 @@
 import { enumDesc, fileDesc, messageDesc, tsEnum } from "@bufbuild/protobuf/codegenv2";
 import { file_alis_open_cx_v1_cx } from "../../cx/v1/cx_pb";
 import { file_alis_open_px_v1_px } from "../../px/v1/px_pb";
-import { file_google_protobuf_timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
+import { file_google_protobuf_timestamp } from "../../../../google/protobuf/timestamp_pb";
 
 /**
  * Describes the file alis/open/in/v1/in.proto.
@@ -111,3 +111,4 @@ export const StateSchema = /*@__PURE__*/
  */
 export const State = /*@__PURE__*/
   tsEnum(StateSchema);
+

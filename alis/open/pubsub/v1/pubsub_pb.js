@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import { file_google_protobuf_timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
+import { file_google_protobuf_timestamp } from "../../../../google/protobuf/timestamp_pb";
 
 /**
  * Describes the file alis/open/pubsub/v1/pubsub.proto.
@@ -24,3 +24,4 @@ export const PubSubMessageSchema = /*@__PURE__*/
  */
 export const PubSubMessage_MessageSchema = /*@__PURE__*/
   messageDesc(file_alis_open_pubsub_v1_pubsub, 0, 0);
+

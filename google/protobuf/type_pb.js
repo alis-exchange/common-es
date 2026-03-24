@@ -118,3 +118,4 @@ export const SyntaxSchema = /*@__PURE__*/
  */
 export const Syntax = /*@__PURE__*/
   tsEnum(SyntaxSchema);
+

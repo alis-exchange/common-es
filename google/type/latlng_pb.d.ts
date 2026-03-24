@@ -54,3 +54,4 @@ export declare type LatLng = Message<"google.type.LatLng"> & {
  * Use `create(LatLngSchema)` to create a new message.
  */
 export declare const LatLngSchema: GenMessage<LatLng>;
+

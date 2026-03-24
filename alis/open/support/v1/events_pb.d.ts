@@ -5,7 +5,7 @@
 import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { PubSubMessageSchema } from "../../pubsub/v1/pubsub_pb";
-import type { EmptySchema } from "@alis-build/google-common-protos/google/protobuf/empty_pb";
+import type { EmptySchema } from "../../../../google/protobuf/empty_pb";
 
 /**
  * Describes the file alis/open/support/v1/events.proto.
@@ -234,3 +234,4 @@ export declare const EventsService: GenService<{
     output: typeof EmptySchema;
   },
 }>;
+

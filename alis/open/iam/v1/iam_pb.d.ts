@@ -169,3 +169,4 @@ export declare type BatchTestIamPermissionsResponse_ResourcePermissions = Messag
  * Use `create(BatchTestIamPermissionsResponse_ResourcePermissionsSchema)` to create a new message.
  */
 export declare const BatchTestIamPermissionsResponse_ResourcePermissionsSchema: GenMessage<BatchTestIamPermissionsResponse_ResourcePermissions>;
+

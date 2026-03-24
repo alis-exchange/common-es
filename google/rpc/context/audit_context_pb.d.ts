@@ -77,3 +77,4 @@ export declare type AuditContext = Message<"google.rpc.context.AuditContext"> & 
  * Use `create(AuditContextSchema)` to create a new message.
  */
 export declare const AuditContextSchema: GenMessage<AuditContext>;
+

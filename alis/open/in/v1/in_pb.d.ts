@@ -4,7 +4,7 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { Timestamp } from "@alis-build/google-common-protos/google/protobuf/timestamp_pb";
+import type { Timestamp } from "../../../../google/protobuf/timestamp_pb";
 import type { Instrument as Instrument$1 } from "../../px/v1/px_pb";
 import type { Instrument as Instrument$2 } from "../../cx/v1/cx_pb";
 
@@ -900,3 +900,4 @@ export enum State {
  * Describes the enum alis.open.in.v1.State.
  */
 export declare const StateSchema: GenEnum<State>;
+

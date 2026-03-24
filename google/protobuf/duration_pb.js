@@ -46,3 +46,4 @@ export const file_google_protobuf_duration = /*@__PURE__*/
  */
 export const DurationSchema = /*@__PURE__*/
   messageDesc(file_google_protobuf_duration, 0);
+

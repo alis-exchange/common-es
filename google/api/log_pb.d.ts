@@ -79,3 +79,4 @@ export declare type LogDescriptor = Message<"google.api.LogDescriptor"> & {
  * Use `create(LogDescriptorSchema)` to create a new message.
  */
 export declare const LogDescriptorSchema: GenMessage<LogDescriptor>;
+

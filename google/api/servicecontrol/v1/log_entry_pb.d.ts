@@ -235,3 +235,4 @@ export declare type LogEntrySourceLocation = Message<"google.api.servicecontrol.
  * Use `create(LogEntrySourceLocationSchema)` to create a new message.
  */
 export declare const LogEntrySourceLocationSchema: GenMessage<LogEntrySourceLocation>;
+

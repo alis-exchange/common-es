@@ -50,3 +50,4 @@ export declare type Control = Message<"google.api.Control"> & {
  * Use `create(ControlSchema)` to create a new message.
  */
 export declare const ControlSchema: GenMessage<Control>;
+

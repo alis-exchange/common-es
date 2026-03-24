@@ -31,3 +31,4 @@ export const file_google_iam_v2beta_deny = /*@__PURE__*/
  */
 export const DenyRuleSchema = /*@__PURE__*/
   messageDesc(file_google_iam_v2beta_deny, 0);
+

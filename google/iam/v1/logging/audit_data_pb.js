@@ -31,3 +31,4 @@ export const file_google_iam_v1_logging_audit_data = /*@__PURE__*/
  */
 export const AuditDataSchema = /*@__PURE__*/
   messageDesc(file_google_iam_v1_logging_audit_data, 0);
+

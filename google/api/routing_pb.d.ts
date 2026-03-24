@@ -494,3 +494,4 @@ export declare const RoutingParameterSchema: GenMessage<RoutingParameter>;
  * @generated from extension: google.api.RoutingRule routing = 72295729;
  */
 export declare const routing: GenExtension<MethodOptions, RoutingRule>;
+

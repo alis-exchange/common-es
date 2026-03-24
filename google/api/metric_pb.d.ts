@@ -420,3 +420,4 @@ export declare type Metric = Message<"google.api.Metric"> & {
  * Use `create(MetricSchema)` to create a new message.
  */
 export declare const MetricSchema: GenMessage<Metric>;
+

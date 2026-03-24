@@ -131,3 +131,4 @@ export declare const FieldBehaviorSchema: GenEnum<FieldBehavior>;
  * @generated from extension: repeated google.api.FieldBehavior field_behavior = 1052;
  */
 export declare const field_behavior: GenExtension<FieldOptions, FieldBehavior[]>;
+

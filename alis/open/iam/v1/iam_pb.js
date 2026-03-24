@@ -44,3 +44,4 @@ export const BatchTestIamPermissionsResponseSchema = /*@__PURE__*/
  */
 export const BatchTestIamPermissionsResponse_ResourcePermissionsSchema = /*@__PURE__*/
   messageDesc(file_alis_open_iam_v1_iam, 3, 0);
+
