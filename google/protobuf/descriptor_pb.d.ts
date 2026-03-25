@@ -110,6 +110,14 @@ export declare type FileDescriptorProto = Message<"google.protobuf.FileDescripto
   weakDependency: number[];
 
   /**
+   * Names of files imported by this file purely for the purpose of providing
+   * option extensions. These are excluded from the dependency list above.
+   *
+   * @generated from field: repeated string option_dependency = 15;
+   */
+  optionDependency: string[];
+
+  /**
    * All top-level definitions in this file.
    *
    * @generated from field: repeated google.protobuf.DescriptorProto message_type = 4;
@@ -151,6 +159,9 @@ export declare type FileDescriptorProto = Message<"google.protobuf.FileDescripto
    * The supported values are "proto2", "proto3", and "editions".
    *
    * If `edition` is present, this value must be "editions".
+   * WARNING: This field should only be used by protobuf plugins or special
+   * cases like the proto compiler. Other uses are discouraged and
+   * developers should rely on the protoreflect APIs for their client language.
    *
    * @generated from field: optional string syntax = 12;
    */
@@ -158,6 +169,9 @@ export declare type FileDescriptorProto = Message<"google.protobuf.FileDescripto
 
   /**
    * The edition of the proto file.
+   * WARNING: This field should only be used by protobuf plugins or special
+   * cases like the proto compiler. Other uses are discouraged and
+   * developers should rely on the protoreflect APIs for their client language.
    *
    * @generated from field: optional google.protobuf.Edition edition = 14;
    */
@@ -228,6 +242,13 @@ export declare type DescriptorProto = Message<"google.protobuf.DescriptorProto">
    * @generated from field: repeated string reserved_name = 10;
    */
   reservedName: string[];
+
+  /**
+   * Support for `export` and `local` keywords on enums.
+   *
+   * @generated from field: optional google.protobuf.SymbolVisibility visibility = 11;
+   */
+  visibility: SymbolVisibility;
 };
 
 /**
@@ -743,6 +764,13 @@ export declare type EnumDescriptorProto = Message<"google.protobuf.EnumDescripto
    * @generated from field: repeated string reserved_name = 5;
    */
   reservedName: string[];
+
+  /**
+   * Support for `export` and `local` keywords on enums.
+   *
+   * @generated from field: optional google.protobuf.SymbolVisibility visibility = 6;
+   */
+  visibility: SymbolVisibility;
 };
 
 /**
@@ -1072,6 +1100,9 @@ export declare type FileOptions = Message<"google.protobuf.FileOptions"> & {
 
   /**
    * Any features defined in the specific edition.
+   * WARNING: This field should only be used by protobuf plugins or special
+   * cases like the proto compiler. Other uses are discouraged and
+   * developers should rely on the protoreflect APIs for their client language.
    *
    * @generated from field: optional google.protobuf.FeatureSet features = 50;
    */
@@ -1220,6 +1251,9 @@ export declare type MessageOptions = Message<"google.protobuf.MessageOptions"> &
 
   /**
    * Any features defined in the specific edition.
+   * WARNING: This field should only be used by protobuf plugins or special
+   * cases like the proto compiler. Other uses are discouraged and
+   * developers should rely on the protoreflect APIs for their client language.
    *
    * @generated from field: optional google.protobuf.FeatureSet features = 12;
    */
@@ -1334,9 +1368,11 @@ export declare type FieldOptions = Message<"google.protobuf.FieldOptions"> & {
   deprecated: boolean;
 
   /**
+   * DEPRECATED. DO NOT USE!
    * For Google-internal migration only. Do not use.
    *
-   * @generated from field: optional bool weak = 10 [default = false];
+   * @generated from field: optional bool weak = 10 [default = false, deprecated = true];
+   * @deprecated
    */
   weak: boolean;
 
@@ -1365,6 +1401,9 @@ export declare type FieldOptions = Message<"google.protobuf.FieldOptions"> & {
 
   /**
    * Any features defined in the specific edition.
+   * WARNING: This field should only be used by protobuf plugins or special
+   * cases like the proto compiler. Other uses are discouraged and
+   * developers should rely on the protoreflect APIs for their client language.
    *
    * @generated from field: optional google.protobuf.FeatureSet features = 21;
    */
@@ -1621,6 +1660,9 @@ export declare const FieldOptions_OptionTargetTypeSchema: GenEnum<FieldOptions_O
 export declare type OneofOptions = Message<"google.protobuf.OneofOptions"> & {
   /**
    * Any features defined in the specific edition.
+   * WARNING: This field should only be used by protobuf plugins or special
+   * cases like the proto compiler. Other uses are discouraged and
+   * developers should rely on the protoreflect APIs for their client language.
    *
    * @generated from field: optional google.protobuf.FeatureSet features = 1;
    */
@@ -1677,6 +1719,9 @@ export declare type EnumOptions = Message<"google.protobuf.EnumOptions"> & {
 
   /**
    * Any features defined in the specific edition.
+   * WARNING: This field should only be used by protobuf plugins or special
+   * cases like the proto compiler. Other uses are discouraged and
+   * developers should rely on the protoreflect APIs for their client language.
    *
    * @generated from field: optional google.protobuf.FeatureSet features = 7;
    */
@@ -1712,6 +1757,9 @@ export declare type EnumValueOptions = Message<"google.protobuf.EnumValueOptions
 
   /**
    * Any features defined in the specific edition.
+   * WARNING: This field should only be used by protobuf plugins or special
+   * cases like the proto compiler. Other uses are discouraged and
+   * developers should rely on the protoreflect APIs for their client language.
    *
    * @generated from field: optional google.protobuf.FeatureSet features = 2;
    */
@@ -1753,6 +1801,9 @@ export declare const EnumValueOptionsSchema: GenMessage<EnumValueOptions>;
 export declare type ServiceOptions = Message<"google.protobuf.ServiceOptions"> & {
   /**
    * Any features defined in the specific edition.
+   * WARNING: This field should only be used by protobuf plugins or special
+   * cases like the proto compiler. Other uses are discouraged and
+   * developers should rely on the protoreflect APIs for their client language.
    *
    * @generated from field: optional google.protobuf.FeatureSet features = 34;
    */
@@ -1803,6 +1854,9 @@ export declare type MethodOptions = Message<"google.protobuf.MethodOptions"> & {
 
   /**
    * Any features defined in the specific edition.
+   * WARNING: This field should only be used by protobuf plugins or special
+   * cases like the proto compiler. Other uses are discouraged and
+   * developers should rely on the protoreflect APIs for their client language.
    *
    * @generated from field: optional google.protobuf.FeatureSet features = 35;
    */
@@ -1978,6 +2032,16 @@ export declare type FeatureSet = Message<"google.protobuf.FeatureSet"> & {
    * @generated from field: optional google.protobuf.FeatureSet.JsonFormat json_format = 6;
    */
   jsonFormat: FeatureSet_JsonFormat;
+
+  /**
+   * @generated from field: optional google.protobuf.FeatureSet.EnforceNamingStyle enforce_naming_style = 7;
+   */
+  enforceNamingStyle: FeatureSet_EnforceNamingStyle;
+
+  /**
+   * @generated from field: optional google.protobuf.FeatureSet.VisibilityFeature.DefaultSymbolVisibility default_symbol_visibility = 8;
+   */
+  defaultSymbolVisibility: FeatureSet_VisibilityFeature_DefaultSymbolVisibility;
 };
 
 /**
@@ -1985,6 +2049,63 @@ export declare type FeatureSet = Message<"google.protobuf.FeatureSet"> & {
  * Use `create(FeatureSetSchema)` to create a new message.
  */
 export declare const FeatureSetSchema: GenMessage<FeatureSet>;
+
+/**
+ * @generated from message google.protobuf.FeatureSet.VisibilityFeature
+ */
+export declare type FeatureSet_VisibilityFeature = Message<"google.protobuf.FeatureSet.VisibilityFeature"> & {
+};
+
+/**
+ * Describes the message google.protobuf.FeatureSet.VisibilityFeature.
+ * Use `create(FeatureSet_VisibilityFeatureSchema)` to create a new message.
+ */
+export declare const FeatureSet_VisibilityFeatureSchema: GenMessage<FeatureSet_VisibilityFeature>;
+
+/**
+ * @generated from enum google.protobuf.FeatureSet.VisibilityFeature.DefaultSymbolVisibility
+ */
+export enum FeatureSet_VisibilityFeature_DefaultSymbolVisibility {
+  /**
+   * @generated from enum value: DEFAULT_SYMBOL_VISIBILITY_UNKNOWN = 0;
+   */
+  DEFAULT_SYMBOL_VISIBILITY_UNKNOWN = 0,
+
+  /**
+   * Default pre-EDITION_2024, all UNSET visibility are export.
+   *
+   * @generated from enum value: EXPORT_ALL = 1;
+   */
+  EXPORT_ALL = 1,
+
+  /**
+   * All top-level symbols default to export, nested default to local.
+   *
+   * @generated from enum value: EXPORT_TOP_LEVEL = 2;
+   */
+  EXPORT_TOP_LEVEL = 2,
+
+  /**
+   * All symbols default to local.
+   *
+   * @generated from enum value: LOCAL_ALL = 3;
+   */
+  LOCAL_ALL = 3,
+
+  /**
+   * All symbols local by default. Nested types cannot be exported.
+   * With special case caveat for message { enum {} reserved 1 to max; }
+   * This is the recommended setting for new protos.
+   *
+   * @generated from enum value: STRICT = 4;
+   */
+  STRICT = 4,
+}
+
+/**
+ * Describes the enum google.protobuf.FeatureSet.VisibilityFeature.DefaultSymbolVisibility.
+ */
+export declare const FeatureSet_VisibilityFeature_DefaultSymbolVisibilitySchema: GenEnum<FeatureSet_VisibilityFeature_DefaultSymbolVisibility>;
 
 /**
  * @generated from enum google.protobuf.FeatureSet.FieldPresence
@@ -2140,6 +2261,31 @@ export enum FeatureSet_JsonFormat {
  * Describes the enum google.protobuf.FeatureSet.JsonFormat.
  */
 export declare const FeatureSet_JsonFormatSchema: GenEnum<FeatureSet_JsonFormat>;
+
+/**
+ * @generated from enum google.protobuf.FeatureSet.EnforceNamingStyle
+ */
+export enum FeatureSet_EnforceNamingStyle {
+  /**
+   * @generated from enum value: ENFORCE_NAMING_STYLE_UNKNOWN = 0;
+   */
+  ENFORCE_NAMING_STYLE_UNKNOWN = 0,
+
+  /**
+   * @generated from enum value: STYLE2024 = 1;
+   */
+  STYLE2024 = 1,
+
+  /**
+   * @generated from enum value: STYLE_LEGACY = 2;
+   */
+  STYLE_LEGACY = 2,
+}
+
+/**
+ * Describes the enum google.protobuf.FeatureSet.EnforceNamingStyle.
+ */
+export declare const FeatureSet_EnforceNamingStyleSchema: GenEnum<FeatureSet_EnforceNamingStyle>;
 
 /**
  * A compiled specification for the defaults of a set of features.  These
@@ -2587,4 +2733,35 @@ export enum Edition {
  * Describes the enum google.protobuf.Edition.
  */
 export declare const EditionSchema: GenEnum<Edition>;
+
+/**
+ * Describes the 'visibility' of a symbol with respect to the proto import
+ * system. Symbols can only be imported when the visibility rules do not prevent
+ * it (ex: local symbols cannot be imported).  Visibility modifiers can only set
+ * on `message` and `enum` as they are the only types available to be referenced
+ * from other files.
+ *
+ * @generated from enum google.protobuf.SymbolVisibility
+ */
+export enum SymbolVisibility {
+  /**
+   * @generated from enum value: VISIBILITY_UNSET = 0;
+   */
+  VISIBILITY_UNSET = 0,
+
+  /**
+   * @generated from enum value: VISIBILITY_LOCAL = 1;
+   */
+  VISIBILITY_LOCAL = 1,
+
+  /**
+   * @generated from enum value: VISIBILITY_EXPORT = 2;
+   */
+  VISIBILITY_EXPORT = 2,
+}
+
+/**
+ * Describes the enum google.protobuf.SymbolVisibility.
+ */
+export declare const SymbolVisibilitySchema: GenEnum<SymbolVisibility>;
 

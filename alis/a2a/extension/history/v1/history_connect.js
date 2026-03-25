@@ -3,12 +3,12 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddIamBindingsRequest, BatchTestIamPermissionsRequest, BatchTestIamPermissionsResponse, RemoveIamBindingsRequest } from "../../../../open/iam/v1/iam_pb.js";
+import { GetIamPolicyRequest, SetIamPolicyRequest } from "../../../../../google/iam/v1/iam_policy_pb.js";
 import { Policy } from "../../../../../google/iam/v1/policy_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
+import { AddIamBindingsRequest, RemoveIamBindingsRequest } from "../../../../open/iam/v1/iam_pb.js";
 import { AppendThreadEventRequest, AppendThreadEventResponse, DeleteThreadRequest, GetThreadRequest, ListThreadEventsRequest, ListThreadEventsResponse, ListThreadsRequest, ListThreadsResponse, StreamThreadEventsRequest, Thread, ThreadEvent } from "./history_pb.js";
 import { Empty } from "../../../../../google/protobuf/empty_pb.js";
-import { GetIamPolicyRequest, SetIamPolicyRequest, TestIamPermissionsRequest, TestIamPermissionsResponse } from "../../../../../google/iam/v1/iam_policy_pb.js";
 
 /**
  * Manages persisted A2A conversation threads and their events, including
@@ -20,50 +20,6 @@ export const ThreadService = {
   typeName: "alis.a2a.extension.history.v1.ThreadService",
   methods: {
     /**
-     * Adds principals or updates the roles existing principals have on an IAM Policy protected resource.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.AddIamBindings
-     */
-    addIamBindings: {
-      name: "AddIamBindings",
-      I: AddIamBindingsRequest,
-      O: Policy,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Appends an event to a given Thread
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.AppendThreadEvent
-     */
-    appendThreadEvent: {
-      name: "AppendThreadEvent",
-      I: AppendThreadEventRequest,
-      O: AppendThreadEventResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Returns permissions that a caller has on the specified resources.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.BatchTestIamPermissions
-     */
-    batchTestIamPermissions: {
-      name: "BatchTestIamPermissions",
-      I: BatchTestIamPermissionsRequest,
-      O: BatchTestIamPermissionsResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Deletes an Thread.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.DeleteThread
-     */
-    deleteThread: {
-      name: "DeleteThread",
-      I: DeleteThreadRequest,
-      O: Empty,
-      kind: MethodKind.Unary,
-    },
-    /**
      * Gets the IAM policy for a resource implemented in this service.
      *
      * @generated from rpc alis.a2a.extension.history.v1.ThreadService.GetIamPolicy
@@ -71,50 +27,6 @@ export const ThreadService = {
     getIamPolicy: {
       name: "GetIamPolicy",
       I: GetIamPolicyRequest,
-      O: Policy,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Gets an Thread by its resource name.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.GetThread
-     */
-    getThread: {
-      name: "GetThread",
-      I: GetThreadRequest,
-      O: Thread,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Lists all events.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.ListThreadEvents
-     */
-    listThreadEvents: {
-      name: "ListThreadEvents",
-      I: ListThreadEventsRequest,
-      O: ListThreadEventsResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Lists all Threads.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.ListThreads
-     */
-    listThreads: {
-      name: "ListThreads",
-      I: ListThreadsRequest,
-      O: ListThreadsResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Removes principals or some of the roles they have on an IAM Policy protected resource.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.RemoveIamBindings
-     */
-    removeIamBindings: {
-      name: "RemoveIamBindings",
-      I: RemoveIamBindingsRequest,
       O: Policy,
       kind: MethodKind.Unary,
     },
@@ -130,6 +42,83 @@ export const ThreadService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Adds principals or updates the roles existing principals have on an IAM Policy protected resource.
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.AddIamBindings
+     */
+    addIamBindings: {
+      name: "AddIamBindings",
+      I: AddIamBindingsRequest,
+      O: Policy,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Removes principals or some of the roles they have on an IAM Policy protected resource.
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.RemoveIamBindings
+     */
+    removeIamBindings: {
+      name: "RemoveIamBindings",
+      I: RemoveIamBindingsRequest,
+      O: Policy,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Lists all Threads.
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.ListThreads
+     */
+    listThreads: {
+      name: "ListThreads",
+      I: ListThreadsRequest,
+      O: ListThreadsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Gets an Thread by its resource name.
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.GetThread
+     */
+    getThread: {
+      name: "GetThread",
+      I: GetThreadRequest,
+      O: Thread,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes an Thread.
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.DeleteThread
+     */
+    deleteThread: {
+      name: "DeleteThread",
+      I: DeleteThreadRequest,
+      O: Empty,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Appends an event to a given Thread
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.AppendThreadEvent
+     */
+    appendThreadEvent: {
+      name: "AppendThreadEvent",
+      I: AppendThreadEventRequest,
+      O: AppendThreadEventResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Lists all events.
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.ListThreadEvents
+     */
+    listThreadEvents: {
+      name: "ListThreadEvents",
+      I: ListThreadEventsRequest,
+      O: ListThreadEventsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Stream events.
      *
      * @generated from rpc alis.a2a.extension.history.v1.ThreadService.StreamThreadEvents
@@ -139,17 +128,6 @@ export const ThreadService = {
       I: StreamThreadEventsRequest,
       O: ThreadEvent,
       kind: MethodKind.ServerStreaming,
-    },
-    /**
-     * Returns permissions that a caller has on the specified resource.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.TestIamPermissions
-     */
-    testIamPermissions: {
-      name: "TestIamPermissions",
-      I: TestIamPermissionsRequest,
-      O: TestIamPermissionsResponse,
-      kind: MethodKind.Unary,
     },
   }
 };

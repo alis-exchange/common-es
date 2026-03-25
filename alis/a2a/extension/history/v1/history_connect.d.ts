@@ -3,12 +3,12 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddIamBindingsRequest, BatchTestIamPermissionsRequest, BatchTestIamPermissionsResponse, RemoveIamBindingsRequest } from "../../../../open/iam/v1/iam_pb.js";
+import { GetIamPolicyRequest, SetIamPolicyRequest } from "../../../../../google/iam/v1/iam_policy_pb.js";
 import { Policy } from "../../../../../google/iam/v1/policy_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
+import { AddIamBindingsRequest, RemoveIamBindingsRequest } from "../../../../open/iam/v1/iam_pb.js";
 import { AppendThreadEventRequest, AppendThreadEventResponse, DeleteThreadRequest, GetThreadRequest, ListThreadEventsRequest, ListThreadEventsResponse, ListThreadsRequest, ListThreadsResponse, StreamThreadEventsRequest, Thread, ThreadEvent } from "./history_pb.js";
 import { Empty } from "../../../../../google/protobuf/empty_pb.js";
-import { GetIamPolicyRequest, SetIamPolicyRequest, TestIamPermissionsRequest, TestIamPermissionsResponse } from "../../../../../google/iam/v1/iam_policy_pb.js";
 
 /**
  * Manages persisted A2A conversation threads and their events, including
@@ -20,50 +20,6 @@ export declare const ThreadService: {
   readonly typeName: "alis.a2a.extension.history.v1.ThreadService",
   readonly methods: {
     /**
-     * Adds principals or updates the roles existing principals have on an IAM Policy protected resource.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.AddIamBindings
-     */
-    readonly addIamBindings: {
-      readonly name: "AddIamBindings",
-      readonly I: typeof AddIamBindingsRequest,
-      readonly O: typeof Policy,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Appends an event to a given Thread
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.AppendThreadEvent
-     */
-    readonly appendThreadEvent: {
-      readonly name: "AppendThreadEvent",
-      readonly I: typeof AppendThreadEventRequest,
-      readonly O: typeof AppendThreadEventResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Returns permissions that a caller has on the specified resources.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.BatchTestIamPermissions
-     */
-    readonly batchTestIamPermissions: {
-      readonly name: "BatchTestIamPermissions",
-      readonly I: typeof BatchTestIamPermissionsRequest,
-      readonly O: typeof BatchTestIamPermissionsResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Deletes an Thread.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.DeleteThread
-     */
-    readonly deleteThread: {
-      readonly name: "DeleteThread",
-      readonly I: typeof DeleteThreadRequest,
-      readonly O: typeof Empty,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
      * Gets the IAM policy for a resource implemented in this service.
      *
      * @generated from rpc alis.a2a.extension.history.v1.ThreadService.GetIamPolicy
@@ -71,50 +27,6 @@ export declare const ThreadService: {
     readonly getIamPolicy: {
       readonly name: "GetIamPolicy",
       readonly I: typeof GetIamPolicyRequest,
-      readonly O: typeof Policy,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Gets an Thread by its resource name.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.GetThread
-     */
-    readonly getThread: {
-      readonly name: "GetThread",
-      readonly I: typeof GetThreadRequest,
-      readonly O: typeof Thread,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Lists all events.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.ListThreadEvents
-     */
-    readonly listThreadEvents: {
-      readonly name: "ListThreadEvents",
-      readonly I: typeof ListThreadEventsRequest,
-      readonly O: typeof ListThreadEventsResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Lists all Threads.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.ListThreads
-     */
-    readonly listThreads: {
-      readonly name: "ListThreads",
-      readonly I: typeof ListThreadsRequest,
-      readonly O: typeof ListThreadsResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Removes principals or some of the roles they have on an IAM Policy protected resource.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.RemoveIamBindings
-     */
-    readonly removeIamBindings: {
-      readonly name: "RemoveIamBindings",
-      readonly I: typeof RemoveIamBindingsRequest,
       readonly O: typeof Policy,
       readonly kind: MethodKind.Unary,
     },
@@ -130,6 +42,83 @@ export declare const ThreadService: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * Adds principals or updates the roles existing principals have on an IAM Policy protected resource.
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.AddIamBindings
+     */
+    readonly addIamBindings: {
+      readonly name: "AddIamBindings",
+      readonly I: typeof AddIamBindingsRequest,
+      readonly O: typeof Policy,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Removes principals or some of the roles they have on an IAM Policy protected resource.
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.RemoveIamBindings
+     */
+    readonly removeIamBindings: {
+      readonly name: "RemoveIamBindings",
+      readonly I: typeof RemoveIamBindingsRequest,
+      readonly O: typeof Policy,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Lists all Threads.
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.ListThreads
+     */
+    readonly listThreads: {
+      readonly name: "ListThreads",
+      readonly I: typeof ListThreadsRequest,
+      readonly O: typeof ListThreadsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Gets an Thread by its resource name.
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.GetThread
+     */
+    readonly getThread: {
+      readonly name: "GetThread",
+      readonly I: typeof GetThreadRequest,
+      readonly O: typeof Thread,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes an Thread.
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.DeleteThread
+     */
+    readonly deleteThread: {
+      readonly name: "DeleteThread",
+      readonly I: typeof DeleteThreadRequest,
+      readonly O: typeof Empty,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Appends an event to a given Thread
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.AppendThreadEvent
+     */
+    readonly appendThreadEvent: {
+      readonly name: "AppendThreadEvent",
+      readonly I: typeof AppendThreadEventRequest,
+      readonly O: typeof AppendThreadEventResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Lists all events.
+     *
+     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.ListThreadEvents
+     */
+    readonly listThreadEvents: {
+      readonly name: "ListThreadEvents",
+      readonly I: typeof ListThreadEventsRequest,
+      readonly O: typeof ListThreadEventsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
      * Stream events.
      *
      * @generated from rpc alis.a2a.extension.history.v1.ThreadService.StreamThreadEvents
@@ -139,17 +128,6 @@ export declare const ThreadService: {
       readonly I: typeof StreamThreadEventsRequest,
       readonly O: typeof ThreadEvent,
       readonly kind: MethodKind.ServerStreaming,
-    },
-    /**
-     * Returns permissions that a caller has on the specified resource.
-     *
-     * @generated from rpc alis.a2a.extension.history.v1.ThreadService.TestIamPermissions
-     */
-    readonly testIamPermissions: {
-      readonly name: "TestIamPermissions",
-      readonly I: typeof TestIamPermissionsRequest,
-      readonly O: typeof TestIamPermissionsResponse,
-      readonly kind: MethodKind.Unary,
     },
   }
 };

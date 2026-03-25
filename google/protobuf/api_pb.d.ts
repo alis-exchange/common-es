@@ -53,6 +53,11 @@ export declare const file_google_protobuf_api: GenFile;
  * this message itself. See https://cloud.google.com/apis/design/glossary for
  * detailed terminology.
  *
+ * New usages of this message as an alternative to ServiceDescriptorProto are
+ * strongly discouraged. This message does not reliability preserve all
+ * information necessary to model the schema and preserve semantics. Instead
+ * make use of FileDescriptorSet which preserves the necessary information.
+ *
  * @generated from message google.protobuf.Api
  */
 export declare type Api = Message<"google.protobuf.Api"> & {
@@ -125,6 +130,13 @@ export declare type Api = Message<"google.protobuf.Api"> & {
    * @generated from field: google.protobuf.Syntax syntax = 7;
    */
   syntax: Syntax;
+
+  /**
+   * The source edition string, only valid when syntax is SYNTAX_EDITIONS.
+   *
+   * @generated from field: string edition = 8;
+   */
+  edition: string;
 };
 
 /**
@@ -135,6 +147,11 @@ export declare const ApiSchema: GenMessage<Api>;
 
 /**
  * Method represents a method of an API interface.
+ *
+ * New usages of this message as an alternative to MethodDescriptorProto are
+ * strongly discouraged. This message does not reliability preserve all
+ * information necessary to model the schema and preserve semantics. Instead
+ * make use of FileDescriptorSet which preserves the necessary information.
  *
  * @generated from message google.protobuf.Method
  */
@@ -184,9 +201,24 @@ export declare type Method = Message<"google.protobuf.Method"> & {
   /**
    * The source syntax of this method.
    *
-   * @generated from field: google.protobuf.Syntax syntax = 7;
+   * This field should be ignored, instead the syntax should be inherited from
+   * Api. This is similar to Field and EnumValue.
+   *
+   * @generated from field: google.protobuf.Syntax syntax = 7 [deprecated = true];
+   * @deprecated
    */
   syntax: Syntax;
+
+  /**
+   * The source edition string, only valid when syntax is SYNTAX_EDITIONS.
+   *
+   * This field should be ignored, instead the edition should be inherited from
+   * Api. This is similar to Field and EnumValue.
+   *
+   * @generated from field: string edition = 8 [deprecated = true];
+   * @deprecated
+   */
+  edition: string;
 };
 
 /**

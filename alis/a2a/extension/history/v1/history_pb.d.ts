@@ -4,307 +4,18 @@
 
 import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { FieldMask } from "../../../../../google/protobuf/field_mask_pb";
 import type { Timestamp } from "../../../../../google/protobuf/timestamp_pb";
 import type { Message as Message$1, Task, TaskArtifactUpdateEvent, TaskStatusUpdateEvent } from "../../../../../lf/a2a/v1/a2a_pb";
-import type { AddIamBindingsRequestSchema, BatchTestIamPermissionsRequestSchema, BatchTestIamPermissionsResponseSchema, RemoveIamBindingsRequestSchema } from "../../../../open/iam/v1/iam_pb";
+import type { FieldMask } from "../../../../../google/protobuf/field_mask_pb";
+import type { GetIamPolicyRequestSchema, SetIamPolicyRequestSchema } from "../../../../../google/iam/v1/iam_policy_pb";
 import type { PolicySchema } from "../../../../../google/iam/v1/policy_pb";
+import type { AddIamBindingsRequestSchema, RemoveIamBindingsRequestSchema } from "../../../../open/iam/v1/iam_pb";
 import type { EmptySchema } from "../../../../../google/protobuf/empty_pb";
-import type { GetIamPolicyRequestSchema, SetIamPolicyRequestSchema, TestIamPermissionsRequestSchema, TestIamPermissionsResponseSchema } from "../../../../../google/iam/v1/iam_policy_pb";
 
 /**
  * Describes the file alis/a2a/extension/history/v1/history.proto.
  */
 export declare const file_alis_a2a_extension_history_v1_history: GenFile;
-
-/**
- * Request to appending an event.
- *
- * @generated from message alis.a2a.extension.history.v1.AppendThreadEventRequest
- */
-export declare type AppendThreadEventRequest = Message<"alis.a2a.extension.history.v1.AppendThreadEventRequest"> & {
-  /**
-   * The event to create.
-   * Parent Thread deduced from the event-provided context_id.
-   *
-   * @generated from field: alis.a2a.extension.history.v1.ThreadEvent event = 2;
-   */
-  event?: ThreadEvent;
-
-  /**
-   * The agent_id, e.g. finance-agent-v1
-   * Only used on first event in a Thread.
-   *
-   * @generated from field: string agent_id = 3;
-   */
-  agentId: string;
-};
-
-/**
- * Describes the message alis.a2a.extension.history.v1.AppendThreadEventRequest.
- * Use `create(AppendThreadEventRequestSchema)` to create a new message.
- */
-export declare const AppendThreadEventRequestSchema: GenMessage<AppendThreadEventRequest>;
-
-/**
- * Response to appending an event.
- *
- * @generated from message alis.a2a.extension.history.v1.AppendThreadEventResponse
- */
-export declare type AppendThreadEventResponse = Message<"alis.a2a.extension.history.v1.AppendThreadEventResponse"> & {
-};
-
-/**
- * Describes the message alis.a2a.extension.history.v1.AppendThreadEventResponse.
- * Use `create(AppendThreadEventResponseSchema)` to create a new message.
- */
-export declare const AppendThreadEventResponseSchema: GenMessage<AppendThreadEventResponse>;
-
-/**
- * Request to delete an Thread.
- *
- * @generated from message alis.a2a.extension.history.v1.DeleteThreadRequest
- */
-export declare type DeleteThreadRequest = Message<"alis.a2a.extension.history.v1.DeleteThreadRequest"> & {
-  /**
-   * The resource name of the Thread to delete.
-   *
-   * @generated from field: string name = 1;
-   */
-  name: string;
-};
-
-/**
- * Describes the message alis.a2a.extension.history.v1.DeleteThreadRequest.
- * Use `create(DeleteThreadRequestSchema)` to create a new message.
- */
-export declare const DeleteThreadRequestSchema: GenMessage<DeleteThreadRequest>;
-
-/**
- * Request to get an event.
- *
- * @generated from message alis.a2a.extension.history.v1.GetThreadEventRequest
- */
-export declare type GetThreadEventRequest = Message<"alis.a2a.extension.history.v1.GetThreadEventRequest"> & {
-  /**
-   * The resource name of the event to retrieve.
-   * Format: threads/{context_id}/events/{event_id}
-   *
-   * @generated from field: string name = 1;
-   */
-  name: string;
-
-  /**
-   * A read mask to specify which fields to return.
-   * If not specified, view will determine the fields returned.
-   *
-   * @generated from field: google.protobuf.FieldMask read_mask = 3;
-   */
-  readMask?: FieldMask;
-};
-
-/**
- * Describes the message alis.a2a.extension.history.v1.GetThreadEventRequest.
- * Use `create(GetThreadEventRequestSchema)` to create a new message.
- */
-export declare const GetThreadEventRequestSchema: GenMessage<GetThreadEventRequest>;
-
-/**
- * Request to get an Thread.
- *
- * @generated from message alis.a2a.extension.history.v1.GetThreadRequest
- */
-export declare type GetThreadRequest = Message<"alis.a2a.extension.history.v1.GetThreadRequest"> & {
-  /**
-   * The resource name of the Thread to retrieve.
-   *
-   * @generated from field: string name = 1;
-   */
-  name: string;
-
-  /**
-   * A read mask to specify which fields to return.
-   * If not specified, view will determine the fields returned.
-   *
-   * @generated from field: google.protobuf.FieldMask read_mask = 3;
-   */
-  readMask?: FieldMask;
-};
-
-/**
- * Describes the message alis.a2a.extension.history.v1.GetThreadRequest.
- * Use `create(GetThreadRequestSchema)` to create a new message.
- */
-export declare const GetThreadRequestSchema: GenMessage<GetThreadRequest>;
-
-/**
- * Request to list events.
- *
- * @generated from message alis.a2a.extension.history.v1.ListThreadEventsRequest
- */
-export declare type ListThreadEventsRequest = Message<"alis.a2a.extension.history.v1.ListThreadEventsRequest"> & {
-  /**
-   * The parent Thread resource name.
-   * Format: threads/{context_id}
-   *
-   * @generated from field: string parent = 1;
-   */
-  parent: string;
-
-  /**
-   * The maximum number of events to return.
-   *
-   * @generated from field: int32 page_size = 2;
-   */
-  pageSize: number;
-
-  /**
-   * A page token to retrieve the next page of results.
-   *
-   * @generated from field: string page_token = 3;
-   */
-  pageToken: string;
-
-  /**
-   * A read mask to specify which fields to return.
-   * If not specified, view will determine the fields returned.
-   *
-   * @generated from field: google.protobuf.FieldMask read_mask = 5;
-   */
-  readMask?: FieldMask;
-};
-
-/**
- * Describes the message alis.a2a.extension.history.v1.ListThreadEventsRequest.
- * Use `create(ListThreadEventsRequestSchema)` to create a new message.
- */
-export declare const ListThreadEventsRequestSchema: GenMessage<ListThreadEventsRequest>;
-
-/**
- * Response for ListThreadEvents.
- *
- * @generated from message alis.a2a.extension.history.v1.ListThreadEventsResponse
- */
-export declare type ListThreadEventsResponse = Message<"alis.a2a.extension.history.v1.ListThreadEventsResponse"> & {
-  /**
-   * The list of events.
-   *
-   * @generated from field: repeated alis.a2a.extension.history.v1.ThreadEvent events = 1;
-   */
-  events: ThreadEvent[];
-
-  /**
-   * A token to retrieve the next page of results.
-   *
-   * @generated from field: string next_page_token = 2;
-   */
-  nextPageToken: string;
-};
-
-/**
- * Describes the message alis.a2a.extension.history.v1.ListThreadEventsResponse.
- * Use `create(ListThreadEventsResponseSchema)` to create a new message.
- */
-export declare const ListThreadEventsResponseSchema: GenMessage<ListThreadEventsResponse>;
-
-/**
- * Request to list Threads.
- *
- * @generated from message alis.a2a.extension.history.v1.ListThreadsRequest
- */
-export declare type ListThreadsRequest = Message<"alis.a2a.extension.history.v1.ListThreadsRequest"> & {
-  /**
-   * The maximum number of A2A Threads to return.
-   *
-   * @generated from field: int32 page_size = 2;
-   */
-  pageSize: number;
-
-  /**
-   * A page token to retrieve the next page of results.
-   *
-   * @generated from field: string page_token = 3;
-   */
-  pageToken: string;
-
-  /**
-   * Optional filtering of Threads by the "agent_id" who produced the underlying Events.
-   * Example: my-agent-v1. However, this can be any unique identifier that client decides to use.
-   *
-   * @generated from field: string agent_id = 4;
-   */
-  agentId: string;
-
-  /**
-   * A read mask to specify which fields to return.
-   * If not specified, view will determine the fields returned.
-   *
-   * @generated from field: google.protobuf.FieldMask read_mask = 5;
-   */
-  readMask?: FieldMask;
-};
-
-/**
- * Describes the message alis.a2a.extension.history.v1.ListThreadsRequest.
- * Use `create(ListThreadsRequestSchema)` to create a new message.
- */
-export declare const ListThreadsRequestSchema: GenMessage<ListThreadsRequest>;
-
-/**
- * Response for ListThreads.
- *
- * @generated from message alis.a2a.extension.history.v1.ListThreadsResponse
- */
-export declare type ListThreadsResponse = Message<"alis.a2a.extension.history.v1.ListThreadsResponse"> & {
-  /**
-   * The list of a2a treads.
-   *
-   * @generated from field: repeated alis.a2a.extension.history.v1.Thread threads = 1;
-   */
-  threads: Thread[];
-
-  /**
-   * A token to retrieve the next page of results.
-   *
-   * @generated from field: string next_page_token = 2;
-   */
-  nextPageToken: string;
-};
-
-/**
- * Describes the message alis.a2a.extension.history.v1.ListThreadsResponse.
- * Use `create(ListThreadsResponseSchema)` to create a new message.
- */
-export declare const ListThreadsResponseSchema: GenMessage<ListThreadsResponse>;
-
-/**
- * Request to stream events.
- *
- * @generated from message alis.a2a.extension.history.v1.StreamThreadEventsRequest
- */
-export declare type StreamThreadEventsRequest = Message<"alis.a2a.extension.history.v1.StreamThreadEventsRequest"> & {
-  /**
-   * The parent Thread resource name
-   * Format: threads/{context_id}
-   *
-   * @generated from field: string parent = 1;
-   */
-  parent: string;
-
-  /**
-   * A read mask to specify which fields to return.
-   * If not specified, view will determine the fields returned.
-   *
-   * @generated from field: google.protobuf.FieldMask read_mask = 3;
-   */
-  readMask?: FieldMask;
-};
-
-/**
- * Describes the message alis.a2a.extension.history.v1.StreamThreadEventsRequest.
- * Use `create(StreamThreadEventsRequestSchema)` to create a new message.
- */
-export declare const StreamThreadEventsRequestSchema: GenMessage<StreamThreadEventsRequest>;
 
 /**
  * An Thread resource
@@ -421,52 +132,301 @@ export declare type ThreadEvent = Message<"alis.a2a.extension.history.v1.ThreadE
 export declare const ThreadEventSchema: GenMessage<ThreadEvent>;
 
 /**
+ * Request to get an Thread.
+ *
+ * @generated from message alis.a2a.extension.history.v1.GetThreadRequest
+ */
+export declare type GetThreadRequest = Message<"alis.a2a.extension.history.v1.GetThreadRequest"> & {
+  /**
+   * The resource name of the Thread to retrieve.
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * A read mask to specify which fields to return.
+   * If not specified, view will determine the fields returned.
+   *
+   * @generated from field: google.protobuf.FieldMask read_mask = 3;
+   */
+  readMask?: FieldMask;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.GetThreadRequest.
+ * Use `create(GetThreadRequestSchema)` to create a new message.
+ */
+export declare const GetThreadRequestSchema: GenMessage<GetThreadRequest>;
+
+/**
+ * Request to delete an Thread.
+ *
+ * @generated from message alis.a2a.extension.history.v1.DeleteThreadRequest
+ */
+export declare type DeleteThreadRequest = Message<"alis.a2a.extension.history.v1.DeleteThreadRequest"> & {
+  /**
+   * The resource name of the Thread to delete.
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.DeleteThreadRequest.
+ * Use `create(DeleteThreadRequestSchema)` to create a new message.
+ */
+export declare const DeleteThreadRequestSchema: GenMessage<DeleteThreadRequest>;
+
+/**
+ * Request to list Threads.
+ *
+ * @generated from message alis.a2a.extension.history.v1.ListThreadsRequest
+ */
+export declare type ListThreadsRequest = Message<"alis.a2a.extension.history.v1.ListThreadsRequest"> & {
+  /**
+   * The maximum number of A2A Threads to return.
+   *
+   * @generated from field: int32 page_size = 2;
+   */
+  pageSize: number;
+
+  /**
+   * A page token to retrieve the next page of results.
+   *
+   * @generated from field: string page_token = 3;
+   */
+  pageToken: string;
+
+  /**
+   * Optional filtering of Threads by the "agent_id" who produced the underlying Events.
+   * Example: my-agent-v1. However, this can be any unique identifier that client decides to use.
+   *
+   * @generated from field: string agent_id = 4;
+   */
+  agentId: string;
+
+  /**
+   * A read mask to specify which fields to return.
+   * If not specified, view will determine the fields returned.
+   *
+   * @generated from field: google.protobuf.FieldMask read_mask = 5;
+   */
+  readMask?: FieldMask;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.ListThreadsRequest.
+ * Use `create(ListThreadsRequestSchema)` to create a new message.
+ */
+export declare const ListThreadsRequestSchema: GenMessage<ListThreadsRequest>;
+
+/**
+ * Response for ListThreads.
+ *
+ * @generated from message alis.a2a.extension.history.v1.ListThreadsResponse
+ */
+export declare type ListThreadsResponse = Message<"alis.a2a.extension.history.v1.ListThreadsResponse"> & {
+  /**
+   * The list of a2a treads.
+   *
+   * @generated from field: repeated alis.a2a.extension.history.v1.Thread threads = 1;
+   */
+  threads: Thread[];
+
+  /**
+   * A token to retrieve the next page of results.
+   *
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.ListThreadsResponse.
+ * Use `create(ListThreadsResponseSchema)` to create a new message.
+ */
+export declare const ListThreadsResponseSchema: GenMessage<ListThreadsResponse>;
+
+/**
+ * Request to get an event.
+ *
+ * @generated from message alis.a2a.extension.history.v1.GetThreadEventRequest
+ */
+export declare type GetThreadEventRequest = Message<"alis.a2a.extension.history.v1.GetThreadEventRequest"> & {
+  /**
+   * The resource name of the event to retrieve.
+   * Format: threads/{context_id}/events/{event_id}
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * A read mask to specify which fields to return.
+   * If not specified, view will determine the fields returned.
+   *
+   * @generated from field: google.protobuf.FieldMask read_mask = 3;
+   */
+  readMask?: FieldMask;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.GetThreadEventRequest.
+ * Use `create(GetThreadEventRequestSchema)` to create a new message.
+ */
+export declare const GetThreadEventRequestSchema: GenMessage<GetThreadEventRequest>;
+
+/**
+ * Request to list events.
+ *
+ * @generated from message alis.a2a.extension.history.v1.ListThreadEventsRequest
+ */
+export declare type ListThreadEventsRequest = Message<"alis.a2a.extension.history.v1.ListThreadEventsRequest"> & {
+  /**
+   * The parent Thread resource name.
+   * Format: threads/{context_id}
+   *
+   * @generated from field: string parent = 1;
+   */
+  parent: string;
+
+  /**
+   * The maximum number of events to return.
+   *
+   * @generated from field: int32 page_size = 2;
+   */
+  pageSize: number;
+
+  /**
+   * A page token to retrieve the next page of results.
+   *
+   * @generated from field: string page_token = 3;
+   */
+  pageToken: string;
+
+  /**
+   * A read mask to specify which fields to return.
+   * If not specified, view will determine the fields returned.
+   *
+   * @generated from field: google.protobuf.FieldMask read_mask = 5;
+   */
+  readMask?: FieldMask;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.ListThreadEventsRequest.
+ * Use `create(ListThreadEventsRequestSchema)` to create a new message.
+ */
+export declare const ListThreadEventsRequestSchema: GenMessage<ListThreadEventsRequest>;
+
+/**
+ * Response for ListThreadEvents.
+ *
+ * @generated from message alis.a2a.extension.history.v1.ListThreadEventsResponse
+ */
+export declare type ListThreadEventsResponse = Message<"alis.a2a.extension.history.v1.ListThreadEventsResponse"> & {
+  /**
+   * The list of events.
+   *
+   * @generated from field: repeated alis.a2a.extension.history.v1.ThreadEvent events = 1;
+   */
+  events: ThreadEvent[];
+
+  /**
+   * A token to retrieve the next page of results.
+   *
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.ListThreadEventsResponse.
+ * Use `create(ListThreadEventsResponseSchema)` to create a new message.
+ */
+export declare const ListThreadEventsResponseSchema: GenMessage<ListThreadEventsResponse>;
+
+/**
+ * Request to stream events.
+ *
+ * @generated from message alis.a2a.extension.history.v1.StreamThreadEventsRequest
+ */
+export declare type StreamThreadEventsRequest = Message<"alis.a2a.extension.history.v1.StreamThreadEventsRequest"> & {
+  /**
+   * The parent Thread resource name
+   * Format: threads/{context_id}
+   *
+   * @generated from field: string parent = 1;
+   */
+  parent: string;
+
+  /**
+   * A read mask to specify which fields to return.
+   * If not specified, view will determine the fields returned.
+   *
+   * @generated from field: google.protobuf.FieldMask read_mask = 3;
+   */
+  readMask?: FieldMask;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.StreamThreadEventsRequest.
+ * Use `create(StreamThreadEventsRequestSchema)` to create a new message.
+ */
+export declare const StreamThreadEventsRequestSchema: GenMessage<StreamThreadEventsRequest>;
+
+/**
+ * Request to appending an event.
+ *
+ * @generated from message alis.a2a.extension.history.v1.AppendThreadEventRequest
+ */
+export declare type AppendThreadEventRequest = Message<"alis.a2a.extension.history.v1.AppendThreadEventRequest"> & {
+  /**
+   * The event to create.
+   * Parent Thread deduced from the event-provided context_id.
+   *
+   * @generated from field: alis.a2a.extension.history.v1.ThreadEvent event = 2;
+   */
+  event?: ThreadEvent;
+
+  /**
+   * The agent_id, e.g. finance-agent-v1
+   * Only used on first event in a Thread.
+   *
+   * @generated from field: string agent_id = 3;
+   */
+  agentId: string;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.AppendThreadEventRequest.
+ * Use `create(AppendThreadEventRequestSchema)` to create a new message.
+ */
+export declare const AppendThreadEventRequestSchema: GenMessage<AppendThreadEventRequest>;
+
+/**
+ * Response to appending an event.
+ *
+ * @generated from message alis.a2a.extension.history.v1.AppendThreadEventResponse
+ */
+export declare type AppendThreadEventResponse = Message<"alis.a2a.extension.history.v1.AppendThreadEventResponse"> & {
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.AppendThreadEventResponse.
+ * Use `create(AppendThreadEventResponseSchema)` to create a new message.
+ */
+export declare const AppendThreadEventResponseSchema: GenMessage<AppendThreadEventResponse>;
+
+/**
  * Manages persisted A2A conversation threads and their events, including
  * thread listing, event appends, event streaming, and IAM policy access.
  *
  * @generated from service alis.a2a.extension.history.v1.ThreadService
  */
 export declare const ThreadService: GenService<{
-  /**
-   * Adds principals or updates the roles existing principals have on an IAM Policy protected resource.
-   *
-   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.AddIamBindings
-   */
-  addIamBindings: {
-    methodKind: "unary";
-    input: typeof AddIamBindingsRequestSchema;
-    output: typeof PolicySchema;
-  },
-  /**
-   * Appends an event to a given Thread
-   *
-   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.AppendThreadEvent
-   */
-  appendThreadEvent: {
-    methodKind: "unary";
-    input: typeof AppendThreadEventRequestSchema;
-    output: typeof AppendThreadEventResponseSchema;
-  },
-  /**
-   * Returns permissions that a caller has on the specified resources.
-   *
-   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.BatchTestIamPermissions
-   */
-  batchTestIamPermissions: {
-    methodKind: "unary";
-    input: typeof BatchTestIamPermissionsRequestSchema;
-    output: typeof BatchTestIamPermissionsResponseSchema;
-  },
-  /**
-   * Deletes an Thread.
-   *
-   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.DeleteThread
-   */
-  deleteThread: {
-    methodKind: "unary";
-    input: typeof DeleteThreadRequestSchema;
-    output: typeof EmptySchema;
-  },
   /**
    * Gets the IAM policy for a resource implemented in this service.
    *
@@ -475,46 +435,6 @@ export declare const ThreadService: GenService<{
   getIamPolicy: {
     methodKind: "unary";
     input: typeof GetIamPolicyRequestSchema;
-    output: typeof PolicySchema;
-  },
-  /**
-   * Gets an Thread by its resource name.
-   *
-   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.GetThread
-   */
-  getThread: {
-    methodKind: "unary";
-    input: typeof GetThreadRequestSchema;
-    output: typeof ThreadSchema;
-  },
-  /**
-   * Lists all events.
-   *
-   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.ListThreadEvents
-   */
-  listThreadEvents: {
-    methodKind: "unary";
-    input: typeof ListThreadEventsRequestSchema;
-    output: typeof ListThreadEventsResponseSchema;
-  },
-  /**
-   * Lists all Threads.
-   *
-   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.ListThreads
-   */
-  listThreads: {
-    methodKind: "unary";
-    input: typeof ListThreadsRequestSchema;
-    output: typeof ListThreadsResponseSchema;
-  },
-  /**
-   * Removes principals or some of the roles they have on an IAM Policy protected resource.
-   *
-   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.RemoveIamBindings
-   */
-  removeIamBindings: {
-    methodKind: "unary";
-    input: typeof RemoveIamBindingsRequestSchema;
     output: typeof PolicySchema;
   },
   /**
@@ -528,6 +448,76 @@ export declare const ThreadService: GenService<{
     output: typeof PolicySchema;
   },
   /**
+   * Adds principals or updates the roles existing principals have on an IAM Policy protected resource.
+   *
+   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.AddIamBindings
+   */
+  addIamBindings: {
+    methodKind: "unary";
+    input: typeof AddIamBindingsRequestSchema;
+    output: typeof PolicySchema;
+  },
+  /**
+   * Removes principals or some of the roles they have on an IAM Policy protected resource.
+   *
+   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.RemoveIamBindings
+   */
+  removeIamBindings: {
+    methodKind: "unary";
+    input: typeof RemoveIamBindingsRequestSchema;
+    output: typeof PolicySchema;
+  },
+  /**
+   * Lists all Threads.
+   *
+   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.ListThreads
+   */
+  listThreads: {
+    methodKind: "unary";
+    input: typeof ListThreadsRequestSchema;
+    output: typeof ListThreadsResponseSchema;
+  },
+  /**
+   * Gets an Thread by its resource name.
+   *
+   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.GetThread
+   */
+  getThread: {
+    methodKind: "unary";
+    input: typeof GetThreadRequestSchema;
+    output: typeof ThreadSchema;
+  },
+  /**
+   * Deletes an Thread.
+   *
+   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.DeleteThread
+   */
+  deleteThread: {
+    methodKind: "unary";
+    input: typeof DeleteThreadRequestSchema;
+    output: typeof EmptySchema;
+  },
+  /**
+   * Appends an event to a given Thread
+   *
+   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.AppendThreadEvent
+   */
+  appendThreadEvent: {
+    methodKind: "unary";
+    input: typeof AppendThreadEventRequestSchema;
+    output: typeof AppendThreadEventResponseSchema;
+  },
+  /**
+   * Lists all events.
+   *
+   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.ListThreadEvents
+   */
+  listThreadEvents: {
+    methodKind: "unary";
+    input: typeof ListThreadEventsRequestSchema;
+    output: typeof ListThreadEventsResponseSchema;
+  },
+  /**
    * Stream events.
    *
    * @generated from rpc alis.a2a.extension.history.v1.ThreadService.StreamThreadEvents
@@ -536,16 +526,6 @@ export declare const ThreadService: GenService<{
     methodKind: "server_streaming";
     input: typeof StreamThreadEventsRequestSchema;
     output: typeof ThreadEventSchema;
-  },
-  /**
-   * Returns permissions that a caller has on the specified resource.
-   *
-   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.TestIamPermissions
-   */
-  testIamPermissions: {
-    methodKind: "unary";
-    input: typeof TestIamPermissionsRequestSchema;
-    output: typeof TestIamPermissionsResponseSchema;
   },
 }>;
 
