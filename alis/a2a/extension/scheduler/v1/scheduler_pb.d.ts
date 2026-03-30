@@ -2,7 +2,7 @@
 // @generated from file alis/a2a/extension/scheduler/v1/scheduler.proto (package alis.a2a.extension.scheduler.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Timestamp } from "../../../../../google/protobuf/timestamp_pb";
 import type { FieldMask } from "../../../../../google/protobuf/field_mask_pb";
@@ -31,28 +31,45 @@ export declare type Cron = Message<"alis.a2a.extension.scheduler.v1.Cron"> & {
   name: string;
 
   /**
-   * The prompt that the agent will be invoked with when the Cron runs.
+   * The prompt payload that the agent will be invoked with when the Cron runs.
    *
    * @generated from field: string prompt = 2;
    */
   prompt: string;
 
   /**
-   * A schedule defined using the unix-cron string format (* * * * *).
+   * The unix-cron string format expression (* * * * *) for recurring jobs.
+   * Required when using type='TYPE_CRON'.
    * See https://docs.cloud.google.com/scheduler/docs/configuring/cron-job-schedules for details.
    *
-   * @generated from field: string schedule = 3;
+   * @generated from field: string expr = 3;
    */
-  schedule: string;
+  expr: string;
 
   /**
-   * Timezone to be used in interpreting schedule. Must be part of the tz database. 
+   * Timezone to be used in interpreting the cron expr. Must exist within the tz database. 
+   * Required when using type='TYPE_CRON'.
    * See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for list of valid values.
    * Example: Europe/London, America/New_York, etc.
    *
    * @generated from field: string timezone = 4;
    */
   timezone: string;
+
+  /**
+   * The specified (once-off) timestamp for when this Cron will be invoked.
+   * Required when using type='TYPE_AT'.
+   *
+   * @generated from field: google.protobuf.Timestamp at = 5;
+   */
+  at?: Timestamp;
+
+  /**
+   * The Cron type.
+   *
+   * @generated from field: alis.a2a.extension.scheduler.v1.Cron.Type type = 6;
+   */
+  type: Cron_Type;
 
   /**
    * When this Cron was created.
@@ -74,6 +91,39 @@ export declare type Cron = Message<"alis.a2a.extension.scheduler.v1.Cron"> & {
  * Use `create(CronSchema)` to create a new message.
  */
 export declare const CronSchema: GenMessage<Cron>;
+
+/**
+ * Cron Type definition.
+ *
+ * @generated from enum alis.a2a.extension.scheduler.v1.Cron.Type
+ */
+export enum Cron_Type {
+  /**
+   * Unspecified type
+   *
+   * @generated from enum value: TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * CRON type. Must be used for tasks that run on a recurring schedule.
+   *
+   * @generated from enum value: TYPE_CRON = 1;
+   */
+  CRON = 1,
+
+  /**
+   * AT type. Must be used for once-off, non-recurring tasks that run at a specified time only.
+   *
+   * @generated from enum value: TYPE_AT = 2;
+   */
+  AT = 2,
+}
+
+/**
+ * Describes the enum alis.a2a.extension.scheduler.v1.Cron.Type.
+ */
+export declare const Cron_TypeSchema: GenEnum<Cron_Type>;
 
 /**
  * Request to the CreateCron method.
