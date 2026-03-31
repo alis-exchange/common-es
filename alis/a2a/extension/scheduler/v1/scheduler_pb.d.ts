@@ -6,9 +6,6 @@ import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobu
 import type { Message } from "@bufbuild/protobuf";
 import type { Timestamp } from "../../../../../google/protobuf/timestamp_pb";
 import type { FieldMask } from "../../../../../google/protobuf/field_mask_pb";
-import type { GetIamPolicyRequestSchema, SetIamPolicyRequestSchema } from "../../../../../google/iam/v1/iam_policy_pb";
-import type { PolicySchema } from "../../../../../google/iam/v1/policy_pb";
-import type { AddIamBindingsRequestSchema, RemoveIamBindingsRequestSchema } from "../../../../open/iam/v1/iam_pb";
 import type { EmptySchema } from "../../../../../google/protobuf/empty_pb";
 
 /**
@@ -72,12 +69,20 @@ export declare type Cron = Message<"alis.a2a.extension.scheduler.v1.Cron"> & {
   type: Cron_Type;
 
   /**
-   * Cron owner.
+   * Cron owner. Used for 'on-behalf-of' when invoking agent.
    * Format: users/*
    *
    * @generated from field: string owner = 7;
    */
   owner: string;
+
+  /**
+   * Cron owner email. Used in combination with owner for 'on-behalf-of'
+   * E.g. me@email.com
+   *
+   * @generated from field: string email = 8;
+   */
+  email: string;
 
   /**
    * When this Cron was created.
@@ -332,46 +337,6 @@ export declare const RunCronResponseSchema: GenMessage<RunCronResponse>;
  * @generated from service alis.a2a.extension.scheduler.v1.SchedulerService
  */
 export declare const SchedulerService: GenService<{
-  /**
-   * Gets the IAM policy for a resource implemented in this service.
-   *
-   * @generated from rpc alis.a2a.extension.scheduler.v1.SchedulerService.GetIamPolicy
-   */
-  getIamPolicy: {
-    methodKind: "unary";
-    input: typeof GetIamPolicyRequestSchema;
-    output: typeof PolicySchema;
-  },
-  /**
-   * Sets the IAM policy for a resource implemented in this service.
-   *
-   * @generated from rpc alis.a2a.extension.scheduler.v1.SchedulerService.SetIamPolicy
-   */
-  setIamPolicy: {
-    methodKind: "unary";
-    input: typeof SetIamPolicyRequestSchema;
-    output: typeof PolicySchema;
-  },
-  /**
-   * Adds principals or updates the roles existing principals have on an IAM Policy protected resource.
-   *
-   * @generated from rpc alis.a2a.extension.scheduler.v1.SchedulerService.AddIamBindings
-   */
-  addIamBindings: {
-    methodKind: "unary";
-    input: typeof AddIamBindingsRequestSchema;
-    output: typeof PolicySchema;
-  },
-  /**
-   * Removes principals or some of the roles they have on an IAM Policy protected resource.
-   *
-   * @generated from rpc alis.a2a.extension.scheduler.v1.SchedulerService.RemoveIamBindings
-   */
-  removeIamBindings: {
-    methodKind: "unary";
-    input: typeof RemoveIamBindingsRequestSchema;
-    output: typeof PolicySchema;
-  },
   /**
    * Creates a Cron.
    *

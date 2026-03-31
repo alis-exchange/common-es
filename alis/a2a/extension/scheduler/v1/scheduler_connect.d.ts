@@ -3,11 +3,8 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetIamPolicyRequest, SetIamPolicyRequest } from "../../../../../google/iam/v1/iam_policy_pb.js";
-import { Policy } from "../../../../../google/iam/v1/policy_pb.js";
-import { MethodKind } from "@bufbuild/protobuf";
-import { AddIamBindingsRequest, RemoveIamBindingsRequest } from "../../../../open/iam/v1/iam_pb.js";
 import { CreateCronRequest, Cron, DeleteCronRequest, GetCronRequest, ListCronsRequest, ListCronsResponse, RunCronRequest, RunCronResponse, UpdateCronRequest } from "./scheduler_pb.js";
+import { MethodKind } from "@bufbuild/protobuf";
 import { Empty } from "../../../../../google/protobuf/empty_pb.js";
 
 /**
@@ -18,50 +15,6 @@ import { Empty } from "../../../../../google/protobuf/empty_pb.js";
 export declare const SchedulerService: {
   readonly typeName: "alis.a2a.extension.scheduler.v1.SchedulerService",
   readonly methods: {
-    /**
-     * Gets the IAM policy for a resource implemented in this service.
-     *
-     * @generated from rpc alis.a2a.extension.scheduler.v1.SchedulerService.GetIamPolicy
-     */
-    readonly getIamPolicy: {
-      readonly name: "GetIamPolicy",
-      readonly I: typeof GetIamPolicyRequest,
-      readonly O: typeof Policy,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Sets the IAM policy for a resource implemented in this service.
-     *
-     * @generated from rpc alis.a2a.extension.scheduler.v1.SchedulerService.SetIamPolicy
-     */
-    readonly setIamPolicy: {
-      readonly name: "SetIamPolicy",
-      readonly I: typeof SetIamPolicyRequest,
-      readonly O: typeof Policy,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Adds principals or updates the roles existing principals have on an IAM Policy protected resource.
-     *
-     * @generated from rpc alis.a2a.extension.scheduler.v1.SchedulerService.AddIamBindings
-     */
-    readonly addIamBindings: {
-      readonly name: "AddIamBindings",
-      readonly I: typeof AddIamBindingsRequest,
-      readonly O: typeof Policy,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Removes principals or some of the roles they have on an IAM Policy protected resource.
-     *
-     * @generated from rpc alis.a2a.extension.scheduler.v1.SchedulerService.RemoveIamBindings
-     */
-    readonly removeIamBindings: {
-      readonly name: "RemoveIamBindings",
-      readonly I: typeof RemoveIamBindingsRequest,
-      readonly O: typeof Policy,
-      readonly kind: MethodKind.Unary,
-    },
     /**
      * Creates a Cron.
      *

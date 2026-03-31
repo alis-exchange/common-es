@@ -3,11 +3,8 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetIamPolicyRequest, SetIamPolicyRequest } from "../../../../../google/iam/v1/iam_policy_pb.js";
-import { Policy } from "../../../../../google/iam/v1/policy_pb.js";
-import { MethodKind } from "@bufbuild/protobuf";
-import { AddIamBindingsRequest, RemoveIamBindingsRequest } from "../../../../open/iam/v1/iam_pb.js";
 import { CreateCronRequest, Cron, DeleteCronRequest, GetCronRequest, ListCronsRequest, ListCronsResponse, RunCronRequest, RunCronResponse, UpdateCronRequest } from "./scheduler_pb.js";
+import { MethodKind } from "@bufbuild/protobuf";
 import { Empty } from "../../../../../google/protobuf/empty_pb.js";
 
 /**
@@ -18,50 +15,6 @@ import { Empty } from "../../../../../google/protobuf/empty_pb.js";
 export const SchedulerService = {
   typeName: "alis.a2a.extension.scheduler.v1.SchedulerService",
   methods: {
-    /**
-     * Gets the IAM policy for a resource implemented in this service.
-     *
-     * @generated from rpc alis.a2a.extension.scheduler.v1.SchedulerService.GetIamPolicy
-     */
-    getIamPolicy: {
-      name: "GetIamPolicy",
-      I: GetIamPolicyRequest,
-      O: Policy,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Sets the IAM policy for a resource implemented in this service.
-     *
-     * @generated from rpc alis.a2a.extension.scheduler.v1.SchedulerService.SetIamPolicy
-     */
-    setIamPolicy: {
-      name: "SetIamPolicy",
-      I: SetIamPolicyRequest,
-      O: Policy,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Adds principals or updates the roles existing principals have on an IAM Policy protected resource.
-     *
-     * @generated from rpc alis.a2a.extension.scheduler.v1.SchedulerService.AddIamBindings
-     */
-    addIamBindings: {
-      name: "AddIamBindings",
-      I: AddIamBindingsRequest,
-      O: Policy,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Removes principals or some of the roles they have on an IAM Policy protected resource.
-     *
-     * @generated from rpc alis.a2a.extension.scheduler.v1.SchedulerService.RemoveIamBindings
-     */
-    removeIamBindings: {
-      name: "RemoveIamBindings",
-      I: RemoveIamBindingsRequest,
-      O: Policy,
-      kind: MethodKind.Unary,
-    },
     /**
      * Creates a Cron.
      *
