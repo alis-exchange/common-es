@@ -72,6 +72,14 @@ export declare type Cron = Message<"alis.a2a.extension.scheduler.v1.Cron"> & {
   type: Cron_Type;
 
   /**
+   * Cron owner.
+   * Format: users/*
+   *
+   * @generated from field: string owner = 7;
+   */
+  owner: string;
+
+  /**
    * When this Cron was created.
    *
    * @generated from field: google.protobuf.Timestamp create_time = 98;
