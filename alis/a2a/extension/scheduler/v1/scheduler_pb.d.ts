@@ -85,6 +85,15 @@ export declare type Cron = Message<"alis.a2a.extension.scheduler.v1.Cron"> & {
   email: string;
 
   /**
+   * Optional A2A context to send the scheduled message into.
+   * When set, executions attach to the existing conversation/thread for this context.
+   * When empty, each execution starts a new conversation/context.
+   *
+   * @generated from field: string context_id = 9;
+   */
+  contextId: string;
+
+  /**
    * When this Cron was created.
    *
    * @generated from field: google.protobuf.Timestamp create_time = 98;

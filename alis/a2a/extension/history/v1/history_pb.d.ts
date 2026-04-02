@@ -53,6 +53,39 @@ export declare type Thread = Message<"alis.a2a.extension.history.v1.Thread"> & {
   agentDisplayName: string;
 
   /**
+   * Internal monotonic counter for assigning event sequence numbers.
+   *
+   * @generated from field: int64 next_sequence = 5;
+   */
+  nextSequence: bigint;
+
+  /**
+   * Highest event sequence currently present in the thread.
+   * This is shared thread state and is the source of truth for unread calculations.
+   *
+   * @generated from field: int64 latest_sequence = 6;
+   */
+  latestSequence: bigint;
+
+  /**
+   * Caller-specific read cursor for the thread.
+   * This is a response projection, not shared thread state.
+   * It is populated on read APIs that have caller context, such as ListThreads.
+   * Future multi-user implementations may expose per-user read state separately.
+   *
+   * @generated from field: int64 read_sequence = 7;
+   */
+  readSequence: bigint;
+
+  /**
+   * True when the caller has unread events in this thread.
+   * This is a response projection derived from latest_sequence and read_sequence.
+   *
+   * @generated from field: bool has_unread = 8;
+   */
+  hasUnread: boolean;
+
+  /**
    * When this Thread was created.
    *
    * @generated from field: google.protobuf.Timestamp create_time = 98;
@@ -116,6 +149,14 @@ export declare type ThreadEvent = Message<"alis.a2a.extension.history.v1.ThreadE
     value: TaskArtifactUpdateEvent;
     case: "artifactUpdate";
   } | { case: undefined; value?: undefined };
+
+  /**
+   * Monotonic sequence number within a thread.
+   * Clients can use this as a stable read cursor.
+   *
+   * @generated from field: int64 sequence = 6;
+   */
+  sequence: bigint;
 
   /**
    * When this event was created.
