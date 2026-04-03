@@ -35,6 +35,17 @@ export declare type Cron = Message<"alis.a2a.extension.scheduler.v1.Cron"> & {
   prompt: string;
 
   /**
+   * Optional initial prompt for TYPE_CRON jobs.
+   * When set, this prompt is sent before the recurring prompt to establish context
+   * for future executions.
+   * Example initial_prompt: "You need to summarise my emails and tell me if there is anything urgent."
+   * Example prompt: "Anything new I need to be aware of?"
+   *
+   * @generated from field: string initial_prompt = 13;
+   */
+  initialPrompt: string;
+
+  /**
    * The unix-cron string format expression (* * * * *) for recurring jobs.
    * Required when using type='TYPE_CRON'.
    * See https://docs.cloud.google.com/scheduler/docs/configuring/cron-job-schedules for details.
@@ -94,6 +105,28 @@ export declare type Cron = Message<"alis.a2a.extension.scheduler.v1.Cron"> & {
   contextId: string;
 
   /**
+   * The lifecycle state of the Cron.
+   *
+   * @generated from field: alis.a2a.extension.scheduler.v1.Cron.State state = 10;
+   */
+  state: Cron_State;
+
+  /**
+   * When this Cron was last executed.
+   *
+   * @generated from field: google.protobuf.Timestamp last_run_time = 11;
+   */
+  lastRunTime?: Timestamp;
+
+  /**
+   * When this Cron was archived.
+   * For TYPE_AT jobs this is typically set automatically after successful execution.
+   *
+   * @generated from field: google.protobuf.Timestamp archive_time = 12;
+   */
+  archiveTime?: Timestamp;
+
+  /**
    * When this Cron was created.
    *
    * @generated from field: google.protobuf.Timestamp create_time = 98;
@@ -115,27 +148,27 @@ export declare type Cron = Message<"alis.a2a.extension.scheduler.v1.Cron"> & {
 export declare const CronSchema: GenMessage<Cron>;
 
 /**
- * Cron Type definition.
+ * Supported schedule types for a Cron.
  *
  * @generated from enum alis.a2a.extension.scheduler.v1.Cron.Type
  */
 export enum Cron_Type {
   /**
-   * Unspecified type
+   * Default value. Indicates the type has not been specified.
    *
    * @generated from enum value: TYPE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
-   * CRON type. Must be used for tasks that run on a recurring schedule.
+   * Recurring schedule using the cron expression and timezone fields.
    *
    * @generated from enum value: TYPE_CRON = 1;
    */
   CRON = 1,
 
   /**
-   * AT type. Must be used for once-off, non-recurring tasks that run at a specified time only.
+   * One-off schedule that runs once at the specified `at` timestamp.
    *
    * @generated from enum value: TYPE_AT = 2;
    */
@@ -146,6 +179,39 @@ export enum Cron_Type {
  * Describes the enum alis.a2a.extension.scheduler.v1.Cron.Type.
  */
 export declare const Cron_TypeSchema: GenEnum<Cron_Type>;
+
+/**
+ * Lifecycle states for a Cron.
+ *
+ * @generated from enum alis.a2a.extension.scheduler.v1.Cron.State
+ */
+export enum Cron_State {
+  /**
+   * Default value. Indicates the lifecycle state has not been specified.
+   *
+   * @generated from enum value: STATE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * The Cron is scheduled and eligible to run.
+   *
+   * @generated from enum value: STATE_ACTIVE = 1;
+   */
+  ACTIVE = 1,
+
+  /**
+   * The Cron has been archived and is no longer eligible to run.
+   *
+   * @generated from enum value: STATE_ARCHIVED = 2;
+   */
+  ARCHIVED = 2,
+}
+
+/**
+ * Describes the enum alis.a2a.extension.scheduler.v1.Cron.State.
+ */
+export declare const Cron_StateSchema: GenEnum<Cron_State>;
 
 /**
  * Request to the CreateCron method.
