@@ -68,24 +68,6 @@ export declare type Thread = Message<"alis.a2a.extension.history.v1.Thread"> & {
   latestSequence: bigint;
 
   /**
-   * Caller-specific read cursor for the thread.
-   * This is a response projection, not shared thread state.
-   * It is populated on read APIs that have caller context, such as ListThreads.
-   * Future multi-user implementations may expose per-user read state separately.
-   *
-   * @generated from field: int64 read_sequence = 7;
-   */
-  readSequence: bigint;
-
-  /**
-   * True when the caller has unread events in this thread.
-   * This is a response projection derived from latest_sequence and read_sequence.
-   *
-   * @generated from field: bool has_unread = 8;
-   */
-  hasUnread: boolean;
-
-  /**
    * When this Thread was created.
    *
    * @generated from field: google.protobuf.Timestamp create_time = 98;
@@ -173,6 +155,72 @@ export declare type ThreadEvent = Message<"alis.a2a.extension.history.v1.ThreadE
 export declare const ThreadEventSchema: GenMessage<ThreadEvent>;
 
 /**
+ * Per-user state for a Thread.
+ *
+ * @generated from message alis.a2a.extension.history.v1.UserThreadState
+ */
+export declare type UserThreadState = Message<"alis.a2a.extension.history.v1.UserThreadState"> & {
+  /**
+   * The resource name of the user-thread-state row.
+   * threads/{context_id}/userStates/{userId}
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * The parent Thread resource name.
+   * threads/{context_id}
+   *
+   * @generated from field: string thread = 2;
+   */
+  thread: string;
+
+  /**
+   * The user resource name this user-thread state belongs to.
+   * Format: users/{user}
+   *
+   * @generated from field: string user = 3;
+   */
+  user: string;
+
+  /**
+   * Highest event sequence acknowledged by this user.
+   *
+   * @generated from field: int64 read_sequence = 4;
+   */
+  readSequence: bigint;
+
+  /**
+   * True when this user has pinned the thread.
+   *
+   * @generated from field: bool pinned = 5;
+   */
+  pinned: boolean;
+
+  /**
+   * When this user pinned the thread.
+   * Unset when pinned is false.
+   *
+   * @generated from field: google.protobuf.Timestamp pinned_time = 6;
+   */
+  pinnedTime?: Timestamp;
+
+  /**
+   * When this user-thread state was last updated.
+   *
+   * @generated from field: google.protobuf.Timestamp update_time = 98;
+   */
+  updateTime?: Timestamp;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.UserThreadState.
+ * Use `create(UserThreadStateSchema)` to create a new message.
+ */
+export declare const UserThreadStateSchema: GenMessage<UserThreadState>;
+
+/**
  * Request to get an Thread.
  *
  * @generated from message alis.a2a.extension.history.v1.GetThreadRequest
@@ -199,6 +247,35 @@ export declare type GetThreadRequest = Message<"alis.a2a.extension.history.v1.Ge
  * Use `create(GetThreadRequestSchema)` to create a new message.
  */
 export declare const GetThreadRequestSchema: GenMessage<GetThreadRequest>;
+
+/**
+ * Request to get UserThreadState.
+ *
+ * @generated from message alis.a2a.extension.history.v1.GetUserThreadStateRequest
+ */
+export declare type GetUserThreadStateRequest = Message<"alis.a2a.extension.history.v1.GetUserThreadStateRequest"> & {
+  /**
+   * The resource name of the user-thread state to retrieve.
+   * Format: threads/{context_id}/userStates/{userId}
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * A read mask to specify which fields to return.
+   * If not specified, view will determine the fields returned.
+   *
+   * @generated from field: google.protobuf.FieldMask read_mask = 3;
+   */
+  readMask?: FieldMask;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.GetUserThreadStateRequest.
+ * Use `create(GetUserThreadStateRequestSchema)` to create a new message.
+ */
+export declare const GetUserThreadStateRequestSchema: GenMessage<GetUserThreadStateRequest>;
 
 /**
  * Request to delete an Thread.
@@ -264,17 +341,65 @@ export declare type ListThreadsRequest = Message<"alis.a2a.extension.history.v1.
 export declare const ListThreadsRequestSchema: GenMessage<ListThreadsRequest>;
 
 /**
+ * Caller-scoped thread projection returned by list/read APIs.
+ *
+ * @generated from message alis.a2a.extension.history.v1.ThreadView
+ */
+export declare type ThreadView = Message<"alis.a2a.extension.history.v1.ThreadView"> & {
+  /**
+   * The shared thread resource.
+   *
+   * @generated from field: alis.a2a.extension.history.v1.Thread thread = 1;
+   */
+  thread?: Thread;
+
+  /**
+   * Highest event sequence acknowledged by the caller.
+   *
+   * @generated from field: int64 read_sequence = 2;
+   */
+  readSequence: bigint;
+
+  /**
+   * True when latest_sequence is greater than read_sequence.
+   *
+   * @generated from field: bool has_unread = 3;
+   */
+  hasUnread: boolean;
+
+  /**
+   * True when the caller has pinned this thread.
+   *
+   * @generated from field: bool pinned = 4;
+   */
+  pinned: boolean;
+
+  /**
+   * When the caller pinned this thread.
+   *
+   * @generated from field: google.protobuf.Timestamp pinned_time = 5;
+   */
+  pinnedTime?: Timestamp;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.ThreadView.
+ * Use `create(ThreadViewSchema)` to create a new message.
+ */
+export declare const ThreadViewSchema: GenMessage<ThreadView>;
+
+/**
  * Response for ListThreads.
  *
  * @generated from message alis.a2a.extension.history.v1.ListThreadsResponse
  */
 export declare type ListThreadsResponse = Message<"alis.a2a.extension.history.v1.ListThreadsResponse"> & {
   /**
-   * The list of a2a treads.
+   * The list of caller-scoped thread views.
    *
-   * @generated from field: repeated alis.a2a.extension.history.v1.Thread threads = 1;
+   * @generated from field: repeated alis.a2a.extension.history.v1.ThreadView threads = 1;
    */
-  threads: Thread[];
+  threads: ThreadView[];
 
   /**
    * A token to retrieve the next page of results.
@@ -388,6 +513,33 @@ export declare type ListThreadEventsResponse = Message<"alis.a2a.extension.histo
  * Use `create(ListThreadEventsResponseSchema)` to create a new message.
  */
 export declare const ListThreadEventsResponseSchema: GenMessage<ListThreadEventsResponse>;
+
+/**
+ * Request to update UserThreadState.
+ *
+ * @generated from message alis.a2a.extension.history.v1.UpdateUserThreadStateRequest
+ */
+export declare type UpdateUserThreadStateRequest = Message<"alis.a2a.extension.history.v1.UpdateUserThreadStateRequest"> & {
+  /**
+   * The user-thread-state resource to update.
+   *
+   * @generated from field: alis.a2a.extension.history.v1.UserThreadState user_thread_state = 1;
+   */
+  userThreadState?: UserThreadState;
+
+  /**
+   * A field mask controlling which fields are updated.
+   *
+   * @generated from field: google.protobuf.FieldMask update_mask = 2;
+   */
+  updateMask?: FieldMask;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.UpdateUserThreadStateRequest.
+ * Use `create(UpdateUserThreadStateRequestSchema)` to create a new message.
+ */
+export declare const UpdateUserThreadStateRequestSchema: GenMessage<UpdateUserThreadStateRequest>;
 
 /**
  * Request to stream events.
@@ -547,6 +699,26 @@ export declare const ThreadService: GenService<{
     methodKind: "unary";
     input: typeof AppendThreadEventRequestSchema;
     output: typeof AppendThreadEventResponseSchema;
+  },
+  /**
+   * Gets per-user state for a Thread.
+   *
+   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.GetUserThreadState
+   */
+  getUserThreadState: {
+    methodKind: "unary";
+    input: typeof GetUserThreadStateRequestSchema;
+    output: typeof UserThreadStateSchema;
+  },
+  /**
+   * Updates per-user state for a Thread.
+   *
+   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.UpdateUserThreadState
+   */
+  updateUserThreadState: {
+    methodKind: "unary";
+    input: typeof UpdateUserThreadStateRequestSchema;
+    output: typeof UserThreadStateSchema;
   },
   /**
    * Lists all events.
