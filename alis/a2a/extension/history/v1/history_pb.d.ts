@@ -9,7 +9,7 @@ import type { Message as Message$1, Task, TaskArtifactUpdateEvent, TaskStatusUpd
 import type { FieldMask } from "../../../../../google/protobuf/field_mask_pb";
 import type { GetIamPolicyRequestSchema, SetIamPolicyRequestSchema } from "../../../../../google/iam/v1/iam_policy_pb";
 import type { PolicySchema } from "../../../../../google/iam/v1/policy_pb";
-import type { AddIamBindingsRequestSchema, RemoveIamBindingsRequestSchema } from "../../../../open/iam/v1/iam_pb";
+import type { AddIamBindingsRequestSchema, RemoveIamBindingsRequestSchema } from "../../../../iam/v1/iam_pb";
 import type { EmptySchema } from "../../../../../google/protobuf/empty_pb";
 
 /**
