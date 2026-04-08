@@ -2,12 +2,14 @@
 // @generated from file alis/adk/sessions/v1/sessions.proto (package alis.adk.sessions.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { JsonObject, Message } from "@bufbuild/protobuf";
 import type { Timestamp } from "../../../../google/protobuf/timestamp_pb";
 import type { Duration } from "../../../../google/protobuf/duration_pb";
+import type { FieldMask } from "../../../../google/protobuf/field_mask_pb";
 import type { Date } from "../../../../google/type/date_pb";
 import type { Value } from "../../../../google/protobuf/struct_pb";
+import type { EmptySchema } from "../../../../google/protobuf/empty_pb";
 
 /**
  * Describes the file alis/adk/sessions/v1/sessions.proto.
@@ -383,6 +385,333 @@ export declare type SessionEvent = Message<"alis.adk.sessions.v1.SessionEvent"> 
  * Use `create(SessionEventSchema)` to create a new message.
  */
 export declare const SessionEventSchema: GenMessage<SessionEvent>;
+
+/**
+ * Request message for SessionService.CreateSession.
+ *
+ * @generated from message alis.adk.sessions.v1.CreateSessionRequest
+ */
+export declare type CreateSessionRequest = Message<"alis.adk.sessions.v1.CreateSessionRequest"> & {
+  /**
+   * Required. The session to create.
+   *
+   * @generated from field: alis.adk.sessions.v1.Session session = 1;
+   */
+  session?: Session;
+
+  /**
+   * Optional. The session ID to create.
+   * If not provided, a new session ID will be generated.
+   *
+   * @generated from field: string session_id = 2;
+   */
+  sessionId: string;
+};
+
+/**
+ * Describes the message alis.adk.sessions.v1.CreateSessionRequest.
+ * Use `create(CreateSessionRequestSchema)` to create a new message.
+ */
+export declare const CreateSessionRequestSchema: GenMessage<CreateSessionRequest>;
+
+/**
+ * Request message for SessionService.GetSession.
+ *
+ * @generated from message alis.adk.sessions.v1.GetSessionRequest
+ */
+export declare type GetSessionRequest = Message<"alis.adk.sessions.v1.GetSessionRequest"> & {
+  /**
+   * Required. The resource name of the session.
+   * Format: `sessions/{session}`
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+};
+
+/**
+ * Describes the message alis.adk.sessions.v1.GetSessionRequest.
+ * Use `create(GetSessionRequestSchema)` to create a new message.
+ */
+export declare const GetSessionRequestSchema: GenMessage<GetSessionRequest>;
+
+/**
+ * Request message for SessionService.ListSessions.
+ *
+ * @generated from message alis.adk.sessions.v1.ListSessionsRequest
+ */
+export declare type ListSessionsRequest = Message<"alis.adk.sessions.v1.ListSessionsRequest"> & {
+  /**
+   * Optional. The maximum number of sessions to return.
+   * The service may return fewer than this value.
+   * If unspecified, at most 100 sessions will be returned.
+   *
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
+
+  /**
+   * Optional. A page token, received from a previous ListSessions call.
+   * Provide this to retrieve the next page of results.
+   *
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
+
+  /**
+   * Optional. The standard list filter.
+   * Supported fields:
+   *   - `display_name`
+   *   - `user_id`
+   *   - `app_name`
+   *
+   * @generated from field: string filter = 3;
+   */
+  filter: string;
+
+  /**
+   * Optional. A comma-separated list of fields to order by, sorted in ascending
+   * order. Use "desc" after a field name for descending.
+   * Supported fields:
+   *   - `create_time`
+   *   - `update_time`
+   *
+   * @generated from field: string order_by = 4;
+   */
+  orderBy: string;
+};
+
+/**
+ * Describes the message alis.adk.sessions.v1.ListSessionsRequest.
+ * Use `create(ListSessionsRequestSchema)` to create a new message.
+ */
+export declare const ListSessionsRequestSchema: GenMessage<ListSessionsRequest>;
+
+/**
+ * Response message for SessionService.ListSessions.
+ *
+ * @generated from message alis.adk.sessions.v1.ListSessionsResponse
+ */
+export declare type ListSessionsResponse = Message<"alis.adk.sessions.v1.ListSessionsResponse"> & {
+  /**
+   * A list of sessions matching the request.
+   *
+   * @generated from field: repeated alis.adk.sessions.v1.Session sessions = 1;
+   */
+  sessions: Session[];
+
+  /**
+   * A token, which can be sent as ListSessionsRequest.page_token to retrieve
+   * the next page. Absence of this field indicates there are no subsequent
+   * pages.
+   *
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
+
+/**
+ * Describes the message alis.adk.sessions.v1.ListSessionsResponse.
+ * Use `create(ListSessionsResponseSchema)` to create a new message.
+ */
+export declare const ListSessionsResponseSchema: GenMessage<ListSessionsResponse>;
+
+/**
+ * Request message for SessionService.UpdateSession.
+ *
+ * @generated from message alis.adk.sessions.v1.UpdateSessionRequest
+ */
+export declare type UpdateSessionRequest = Message<"alis.adk.sessions.v1.UpdateSessionRequest"> & {
+  /**
+   * Required. The session to update.
+   *
+   * @generated from field: alis.adk.sessions.v1.Session session = 1;
+   */
+  session?: Session;
+
+  /**
+   * Required. The list of fields to update.
+   *
+   * @generated from field: google.protobuf.FieldMask update_mask = 2;
+   */
+  updateMask?: FieldMask;
+};
+
+/**
+ * Describes the message alis.adk.sessions.v1.UpdateSessionRequest.
+ * Use `create(UpdateSessionRequestSchema)` to create a new message.
+ */
+export declare const UpdateSessionRequestSchema: GenMessage<UpdateSessionRequest>;
+
+/**
+ * Request message for SessionService.DeleteSession.
+ *
+ * @generated from message alis.adk.sessions.v1.DeleteSessionRequest
+ */
+export declare type DeleteSessionRequest = Message<"alis.adk.sessions.v1.DeleteSessionRequest"> & {
+  /**
+   * Required. The resource name of the session.
+   * Format: `sessions/{session}`
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+};
+
+/**
+ * Describes the message alis.adk.sessions.v1.DeleteSessionRequest.
+ * Use `create(DeleteSessionRequestSchema)` to create a new message.
+ */
+export declare const DeleteSessionRequestSchema: GenMessage<DeleteSessionRequest>;
+
+/**
+ * Request message for SessionService.GetEvent.
+ *
+ * @generated from message alis.adk.sessions.v1.GetEventRequest
+ */
+export declare type GetEventRequest = Message<"alis.adk.sessions.v1.GetEventRequest"> & {
+  /**
+   * Required. The resource name of the event.
+   * Format: `sessions/{session}/events/{event}`
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+};
+
+/**
+ * Describes the message alis.adk.sessions.v1.GetEventRequest.
+ * Use `create(GetEventRequestSchema)` to create a new message.
+ */
+export declare const GetEventRequestSchema: GenMessage<GetEventRequest>;
+
+/**
+ * Request message for SessionService.ListEvents.
+ *
+ * @generated from message alis.adk.sessions.v1.ListEventsRequest
+ */
+export declare type ListEventsRequest = Message<"alis.adk.sessions.v1.ListEventsRequest"> & {
+  /**
+   * Required. The resource name of the session to list events from.
+   * Format: `sessions/{session}`
+   *
+   * @generated from field: string parent = 1;
+   */
+  parent: string;
+
+  /**
+   * Optional. The maximum number of events to return.
+   * The service may return fewer than this value.
+   * If unspecified, at most 100 events will be returned.
+   *
+   * @generated from field: int32 page_size = 2;
+   */
+  pageSize: number;
+
+  /**
+   * Optional. A page token, received from a previous ListEvents call.
+   * Provide this to retrieve the next page of results.
+   *
+   * @generated from field: string page_token = 3;
+   */
+  pageToken: string;
+
+  /**
+   * Optional. The standard list filter.
+   * Supported fields:
+   *   - `timestamp` range in RFC 3339 format.
+   *
+   * @generated from field: string filter = 4;
+   */
+  filter: string;
+
+  /**
+   * Optional. A comma-separated list of fields to order by, sorted in ascending
+   * order. Use "desc" after a field name for descending.
+   * Supported fields:
+   *   - `timestamp`
+   *
+   * @generated from field: string order_by = 5;
+   */
+  orderBy: string;
+};
+
+/**
+ * Describes the message alis.adk.sessions.v1.ListEventsRequest.
+ * Use `create(ListEventsRequestSchema)` to create a new message.
+ */
+export declare const ListEventsRequestSchema: GenMessage<ListEventsRequest>;
+
+/**
+ * Response message for SessionService.ListEvents.
+ *
+ * @generated from message alis.adk.sessions.v1.ListEventsResponse
+ */
+export declare type ListEventsResponse = Message<"alis.adk.sessions.v1.ListEventsResponse"> & {
+  /**
+   * A list of events matching the request.
+   *
+   * @generated from field: repeated alis.adk.sessions.v1.SessionEvent session_events = 1;
+   */
+  sessionEvents: SessionEvent[];
+
+  /**
+   * A token, which can be sent as ListEventsRequest.page_token to retrieve
+   * the next page. Absence of this field indicates there are no subsequent
+   * pages.
+   *
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
+
+/**
+ * Describes the message alis.adk.sessions.v1.ListEventsResponse.
+ * Use `create(ListEventsResponseSchema)` to create a new message.
+ */
+export declare const ListEventsResponseSchema: GenMessage<ListEventsResponse>;
+
+/**
+ * Request message for SessionService.AppendEvent.
+ *
+ * @generated from message alis.adk.sessions.v1.AppendEventRequest
+ */
+export declare type AppendEventRequest = Message<"alis.adk.sessions.v1.AppendEventRequest"> & {
+  /**
+   * Required. The resource name of the session to append the event to.
+   * Format: `sessions/{session}`
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * Required. The event to append.
+   *
+   * @generated from field: alis.adk.sessions.v1.SessionEvent event = 2;
+   */
+  event?: SessionEvent;
+};
+
+/**
+ * Describes the message alis.adk.sessions.v1.AppendEventRequest.
+ * Use `create(AppendEventRequestSchema)` to create a new message.
+ */
+export declare const AppendEventRequestSchema: GenMessage<AppendEventRequest>;
+
+/**
+ * Response message for SessionService.AppendEvent.
+ *
+ * @generated from message alis.adk.sessions.v1.AppendEventResponse
+ */
+export declare type AppendEventResponse = Message<"alis.adk.sessions.v1.AppendEventResponse"> & {
+};
+
+/**
+ * Describes the message alis.adk.sessions.v1.AppendEventResponse.
+ * Use `create(AppendEventResponseSchema)` to create a new message.
+ */
+export declare const AppendEventResponseSchema: GenMessage<AppendEventResponse>;
 
 /**
  * EventMetadata contains metadata relating to an LLM response event.
@@ -2220,4 +2549,92 @@ export enum FinishReason {
  * Describes the enum alis.adk.sessions.v1.FinishReason.
  */
 export declare const FinishReasonSchema: GenEnum<FinishReason>;
+
+/**
+ * SessionService manages agent sessions and session events.
+ *
+ * @generated from service alis.adk.sessions.v1.SessionService
+ */
+export declare const SessionService: GenService<{
+  /**
+   * Creates a new session.
+   *
+   * @generated from rpc alis.adk.sessions.v1.SessionService.CreateSession
+   */
+  createSession: {
+    methodKind: "unary";
+    input: typeof CreateSessionRequestSchema;
+    output: typeof SessionSchema;
+  },
+  /**
+   * Gets details of a specific session.
+   *
+   * @generated from rpc alis.adk.sessions.v1.SessionService.GetSession
+   */
+  getSession: {
+    methodKind: "unary";
+    input: typeof GetSessionRequestSchema;
+    output: typeof SessionSchema;
+  },
+  /**
+   * Lists sessions with optional filtering and ordering.
+   *
+   * @generated from rpc alis.adk.sessions.v1.SessionService.ListSessions
+   */
+  listSessions: {
+    methodKind: "unary";
+    input: typeof ListSessionsRequestSchema;
+    output: typeof ListSessionsResponseSchema;
+  },
+  /**
+   * Updates a specific session.
+   *
+   * @generated from rpc alis.adk.sessions.v1.SessionService.UpdateSession
+   */
+  updateSession: {
+    methodKind: "unary";
+    input: typeof UpdateSessionRequestSchema;
+    output: typeof SessionSchema;
+  },
+  /**
+   * Deletes a specific session.
+   *
+   * @generated from rpc alis.adk.sessions.v1.SessionService.DeleteSession
+   */
+  deleteSession: {
+    methodKind: "unary";
+    input: typeof DeleteSessionRequestSchema;
+    output: typeof EmptySchema;
+  },
+  /**
+   * Gets a specific event from a session.
+   *
+   * @generated from rpc alis.adk.sessions.v1.SessionService.GetEvent
+   */
+  getEvent: {
+    methodKind: "unary";
+    input: typeof GetEventRequestSchema;
+    output: typeof SessionEventSchema;
+  },
+  /**
+   * Lists events in a given session with optional filtering and ordering.
+   *
+   * @generated from rpc alis.adk.sessions.v1.SessionService.ListEvents
+   */
+  listEvents: {
+    methodKind: "unary";
+    input: typeof ListEventsRequestSchema;
+    output: typeof ListEventsResponseSchema;
+  },
+  /**
+   * Appends an event to a given session.
+   *
+   * @generated from rpc alis.adk.sessions.v1.SessionService.AppendEvent
+   */
+  appendEvent: {
+    methodKind: "unary";
+    input: typeof AppendEventRequestSchema;
+    output: typeof AppendEventResponseSchema;
+  },
+}>;
 
