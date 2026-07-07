@@ -149,6 +149,21 @@ export declare type Cron = Message<"alis.agui.scheduler.v1.Cron"> & {
   metadata?: JsonObject | undefined;
 
   /**
+   * When this Cron was last failed.
+   *
+   * @generated from field: google.protobuf.Timestamp last_failure_time = 16;
+   */
+  lastFailureTime?: Timestamp | undefined;
+
+  /**
+   * Optional message describing the last failure.
+   * This will only be set for jobs that fail to run.
+   *
+   * @generated from field: optional string last_failure_message = 17;
+   */
+  lastFailureMessage?: string | undefined;
+
+  /**
    * When this Cron was created.
    *
    * @generated from field: google.protobuf.Timestamp create_time = 98;
