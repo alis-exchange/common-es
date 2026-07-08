@@ -125,7 +125,8 @@ export declare type Cron = Message<"alis.agui.scheduler.v1.Cron"> & {
 
   /**
    * When this Cron was archived.
-   * For TYPE_AT jobs this is typically set automatically after successful execution.
+   * For TYPE_AT jobs this is set automatically after successful execution or a
+   * terminal failed execution.
    *
    * @generated from field: google.protobuf.Timestamp archive_time = 12;
    */
