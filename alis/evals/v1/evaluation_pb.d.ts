@@ -768,6 +768,13 @@ export declare type AgentEvalResults_Case_Metric_RubricScore = Message<"alis.eva
    * @generated from field: optional double score = 3;
    */
   score?: number | undefined;
+
+  /**
+   * The rationale for the score, when applicable.
+   *
+   * @generated from field: optional string rationale = 4;
+   */
+  rationale?: string | undefined;
 };
 
 /**
@@ -1139,6 +1146,28 @@ export declare type RunAgentEvalResponse = Message<"alis.evals.v1.RunAgentEvalRe
  * Use `create(RunAgentEvalResponseSchema)` to create a new message.
  */
 export declare const RunAgentEvalResponseSchema: GenMessage<RunAgentEvalResponse>;
+
+/**
+ * Event published when a completed test or evaluation run is ready for
+ * persistence and downstream consumers (for example BigQuery or Pub/Sub).
+ *
+ * @generated from message alis.evals.v1.RunPublishedEvent
+ */
+export declare type RunPublishedEvent = Message<"alis.evals.v1.RunPublishedEvent"> & {
+  /**
+   * The completed run, including per-case status and check results for the
+   * suite that finished.
+   *
+   * @generated from field: alis.evals.v1.Run run = 1;
+   */
+  run?: Run | undefined;
+};
+
+/**
+ * Describes the message alis.evals.v1.RunPublishedEvent.
+ * Use `create(RunPublishedEventSchema)` to create a new message.
+ */
+export declare const RunPublishedEventSchema: GenMessage<RunPublishedEvent>;
 
 /**
  * Outcome status for runs, cases, checks, metrics, and rubric dimensions.
