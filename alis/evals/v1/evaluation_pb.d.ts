@@ -342,6 +342,15 @@ export declare type LoadTestResults_Case = Message<"alis.evals.v1.LoadTestResult
    * @generated from field: repeated alis.evals.v1.LoadTestResults.SloCheck checks = 4;
    */
   checks: LoadTestResults_SloCheck[];
+
+  /**
+   * Author-declared labels for filtering and grouping in reports (for example
+   * model name, RPC method, or dataset slice). Empty when the case declares
+   * no tags.
+   *
+   * @generated from field: map<string, string> tags = 5;
+   */
+  tags: { [key: string]: string };
 };
 
 /**
@@ -424,6 +433,54 @@ export declare type LoadTestResults_Summary = Message<"alis.evals.v1.LoadTestRes
    * @generated from field: map<string, int64> errors_by_code = 9;
    */
   errorsByCode: { [key: string]: bigint };
+
+  /**
+   * Scheduled request ticks that were not dispatched because all workers
+   * were busy. Distinct from error_count; surfaces generator saturation.
+   *
+   * @generated from field: int64 dropped_count = 10;
+   */
+  droppedCount: bigint;
+
+  /**
+   * Semantic assertion outcomes during the load window. Distinct from
+   * transport error_count — a request may succeed at the wire layer yet
+   * fail a check (for example an unexpected eval score).
+   *
+   * @generated from field: int64 check_passed_count = 11;
+   */
+  checkPassedCount: bigint;
+
+  /**
+   * Semantic assertion failures during the load window.
+   *
+   * @generated from field: int64 check_failed_count = 12;
+   */
+  checkFailedCount: bigint;
+
+  /**
+   * Streaming RPC metrics when the case exercised client or server streaming.
+   * Omitted for unary-only cases.
+   *
+   * @generated from field: alis.evals.v1.LoadTestResults.StreamSummary stream = 13;
+   */
+  stream?: LoadTestResults_StreamSummary | undefined;
+
+  /**
+   * Resolved QPS stage configuration. Empty when the profile used a
+   * constant target_qps for the entire window.
+   *
+   * @generated from field: repeated alis.evals.v1.LoadTestResults.LoadStage qps_stages = 14;
+   */
+  qpsStages: LoadTestResults_LoadStage[];
+
+  /**
+   * Resolved concurrency stage configuration. Empty when the profile used
+   * a constant concurrency for the entire window.
+   *
+   * @generated from field: repeated alis.evals.v1.LoadTestResults.LoadStage concurrency_stages = 15;
+   */
+  concurrencyStages: LoadTestResults_LoadStage[];
 };
 
 /**
@@ -431,6 +488,84 @@ export declare type LoadTestResults_Summary = Message<"alis.evals.v1.LoadTestRes
  * Use `create(LoadTestResults_SummarySchema)` to create a new message.
  */
 export declare const LoadTestResults_SummarySchema: GenMessage<LoadTestResults_Summary>;
+
+/**
+ * One step in a staged load profile (QPS or concurrency depending on context).
+ *
+ * @generated from message alis.evals.v1.LoadTestResults.LoadStage
+ */
+export declare type LoadTestResults_LoadStage = Message<"alis.evals.v1.LoadTestResults.LoadStage"> & {
+  /**
+   * Wall-clock duration of this stage.
+   *
+   * @generated from field: google.protobuf.Duration duration = 1;
+   */
+  duration?: Duration | undefined;
+
+  /**
+   * Target value for this stage: queries per second when nested under
+   * qps_stages, or worker count when nested under concurrency_stages.
+   *
+   * @generated from field: double target = 2;
+   */
+  target: number;
+};
+
+/**
+ * Describes the message alis.evals.v1.LoadTestResults.LoadStage.
+ * Use `create(LoadTestResults_LoadStageSchema)` to create a new message.
+ */
+export declare const LoadTestResults_LoadStageSchema: GenMessage<LoadTestResults_LoadStage>;
+
+/**
+ * Aggregate streaming metrics for a load case that exercised streaming RPCs.
+ *
+ * @generated from message alis.evals.v1.LoadTestResults.StreamSummary
+ */
+export declare type LoadTestResults_StreamSummary = Message<"alis.evals.v1.LoadTestResults.StreamSummary"> & {
+  /**
+   * Number of streaming invocations measured during the load window.
+   *
+   * @generated from field: int64 stream_count = 1;
+   */
+  streamCount: bigint;
+
+  /**
+   * Total messages sent across all measured streams.
+   *
+   * @generated from field: int64 messages_sent_total = 2;
+   */
+  messagesSentTotal: bigint;
+
+  /**
+   * Time-to-first-byte / send-phase latency distribution in milliseconds.
+   * For client streaming, this spans stream open through the last successful
+   * Send (or through the first send error).
+   *
+   * @generated from field: alis.evals.v1.LoadTestResults.LatencyPercentiles ttfb = 3;
+   */
+  ttfb?: LoadTestResults_LatencyPercentiles | undefined;
+
+  /**
+   * CloseAndRecv / response-phase latency distribution in milliseconds.
+   *
+   * @generated from field: alis.evals.v1.LoadTestResults.LatencyPercentiles response_latency = 4;
+   */
+  responseLatency?: LoadTestResults_LatencyPercentiles | undefined;
+
+  /**
+   * End-to-end stream call duration distribution in milliseconds.
+   *
+   * @generated from field: alis.evals.v1.LoadTestResults.LatencyPercentiles total_duration = 5;
+   */
+  totalDuration?: LoadTestResults_LatencyPercentiles | undefined;
+};
+
+/**
+ * Describes the message alis.evals.v1.LoadTestResults.StreamSummary.
+ * Use `create(LoadTestResults_StreamSummarySchema)` to create a new message.
+ */
+export declare const LoadTestResults_StreamSummarySchema: GenMessage<LoadTestResults_StreamSummary>;
 
 /**
  * Request latency distribution for a load case, in milliseconds.
