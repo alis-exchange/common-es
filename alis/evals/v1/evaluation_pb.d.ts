@@ -69,22 +69,36 @@ export declare type Run = Message<"alis.evals.v1.Run"> & {
    */
   data: {
     /**
+     * Integration test case results (RunIntegrationTest).
+     *
      * @generated from field: alis.evals.v1.IntegrationTestResults integration_test = 6;
      */
     value: IntegrationTestResults;
     case: "integrationTest";
   } | {
     /**
+     * Load test case results (RunLoadTest).
+     *
      * @generated from field: alis.evals.v1.LoadTestResults load_test = 7;
      */
     value: LoadTestResults;
     case: "loadTest";
   } | {
     /**
+     * Agent evaluation case results (RunAgentEval).
+     *
      * @generated from field: alis.evals.v1.AgentEvalResults agent_eval = 8;
      */
     value: AgentEvalResults;
     case: "agentEval";
+  } | {
+    /**
+     * Infrastructure observation case results (RunInfraObservation).
+     *
+     * @generated from field: alis.evals.v1.InfraObservationResults infra_observation = 9;
+     */
+    value: InfraObservationResults;
+    case: "infraObservation";
   } | { case: undefined; value?: undefined };
 
   /**
@@ -114,7 +128,7 @@ export declare type Run = Message<"alis.evals.v1.Run"> & {
    * Optional. Populated when the run could not complete. Root-cause summary
    * for triage.
    *
-   * @generated from field: google.rpc.Status error = 24;
+   * @generated from field: optional google.rpc.Status error = 24;
    */
   error?: Status$1 | undefined;
 
@@ -173,6 +187,13 @@ export enum Run_Type {
    * @generated from enum value: AGENT_EVAL = 3;
    */
   AGENT_EVAL = 3,
+
+  /**
+   * An infrastructure observation run (RunInfraObservation).
+   *
+   * @generated from enum value: INFRA_OBSERVATION = 4;
+   */
+  INFRA_OBSERVATION = 4,
 }
 
 /**
@@ -281,6 +302,72 @@ export declare type IntegrationTestResults_Case_Check = Message<"alis.evals.v1.I
 export declare const IntegrationTestResults_Case_CheckSchema: GenMessage<IntegrationTestResults_Case_Check>;
 
 /**
+ * Request latency distribution, in milliseconds.
+ *
+ * Percentile fields give the latency at or below which that fraction of
+ * requests completed. For example, p95_ms is the latency experienced by
+ * the fastest 95% of requests; the remaining 5% were slower. Percentiles
+ * surface tail latency that a mean would hide and are the usual basis for
+ * SLO checks.
+ *
+ * Package-level so load summaries, Cloud Run metrics, and Spanner metrics
+ * share an identical BQ column shape.
+ *
+ * @generated from message alis.evals.v1.LatencyPercentiles
+ */
+export declare type LatencyPercentiles = Message<"alis.evals.v1.LatencyPercentiles"> & {
+  /**
+   * Median latency. Half of requests completed at or below this value.
+   *
+   * @generated from field: double p50_ms = 1;
+   */
+  p50Ms: number;
+
+  /**
+   * 95th percentile latency. 95% of requests completed at or below this
+   * value; the slowest 5% exceeded it.
+   *
+   * @generated from field: double p95_ms = 2;
+   */
+  p95Ms: number;
+
+  /**
+   * 99th percentile latency. 99% of requests completed at or below this
+   * value; the slowest 1% exceeded it.
+   *
+   * @generated from field: double p99_ms = 3;
+   */
+  p99Ms: number;
+
+  /**
+   * The fastest observed request latency.
+   *
+   * @generated from field: double min_ms = 4;
+   */
+  minMs: number;
+
+  /**
+   * The arithmetic mean of observed request latencies.
+   *
+   * @generated from field: double mean_ms = 5;
+   */
+  meanMs: number;
+
+  /**
+   * The slowest observed request latency.
+   *
+   * @generated from field: double max_ms = 6;
+   */
+  maxMs: number;
+};
+
+/**
+ * Describes the message alis.evals.v1.LatencyPercentiles.
+ * Use `create(LatencyPercentilesSchema)` to create a new message.
+ */
+export declare const LatencyPercentilesSchema: GenMessage<LatencyPercentiles>;
+
+/**
  * Result detail for a load test run. The runner generates sustained traffic
  * against each selected load case, records per-case performance in the case's
  * summary, and evaluates the configured Service Level Objectives (SLOs). An
@@ -351,6 +438,30 @@ export declare type LoadTestResults_Case = Message<"alis.evals.v1.LoadTestResult
    * @generated from field: map<string, string> tags = 5;
    */
   tags: { [key: string]: string };
+
+  /**
+   * Server-side Cloud Run metrics for declared targets over this case's
+   * observation window. Empty when the suite declares no Cloud Run targets.
+   *
+   * @generated from field: repeated alis.evals.v1.CloudRunTargetSnapshot cloud_run = 6;
+   */
+  cloudRun: CloudRunTargetSnapshot[];
+
+  /**
+   * Server-side Spanner metrics for declared targets over this case's
+   * observation window. Empty when the suite declares no Spanner targets.
+   *
+   * @generated from field: repeated alis.evals.v1.SpannerTargetSnapshot spanner = 7;
+   */
+  spanner: SpannerTargetSnapshot[];
+
+  /**
+   * Infrastructure SLO check outcomes. Diagnostics-only in v1: always empty
+   * on the wire until infra SLO evaluators ship.
+   *
+   * @generated from field: repeated alis.evals.v1.InfraSloCheck infra_checks = 8;
+   */
+  infraChecks: InfraSloCheck[];
 };
 
 /**
@@ -422,9 +533,9 @@ export declare type LoadTestResults_Summary = Message<"alis.evals.v1.LoadTestRes
   /**
    * Request latency distribution for the load window.
    *
-   * @generated from field: alis.evals.v1.LoadTestResults.LatencyPercentiles latency = 8;
+   * @generated from field: alis.evals.v1.LatencyPercentiles latency = 8;
    */
-  latency?: LoadTestResults_LatencyPercentiles | undefined;
+  latency?: LatencyPercentiles | undefined;
 
   /**
    * Request errors grouped by canonical gRPC status code name (for example
@@ -462,7 +573,7 @@ export declare type LoadTestResults_Summary = Message<"alis.evals.v1.LoadTestRes
    * Streaming RPC metrics when the case exercised client or server streaming.
    * Omitted for unary-only cases.
    *
-   * @generated from field: alis.evals.v1.LoadTestResults.StreamSummary stream = 13;
+   * @generated from field: optional alis.evals.v1.LoadTestResults.StreamSummary stream = 13;
    */
   stream?: LoadTestResults_StreamSummary | undefined;
 
@@ -542,23 +653,23 @@ export declare type LoadTestResults_StreamSummary = Message<"alis.evals.v1.LoadT
    * For client streaming, this spans stream open through the last successful
    * Send (or through the first send error).
    *
-   * @generated from field: alis.evals.v1.LoadTestResults.LatencyPercentiles ttfb = 3;
+   * @generated from field: alis.evals.v1.LatencyPercentiles ttfb = 3;
    */
-  ttfb?: LoadTestResults_LatencyPercentiles | undefined;
+  ttfb?: LatencyPercentiles | undefined;
 
   /**
    * CloseAndRecv / response-phase latency distribution in milliseconds.
    *
-   * @generated from field: alis.evals.v1.LoadTestResults.LatencyPercentiles response_latency = 4;
+   * @generated from field: alis.evals.v1.LatencyPercentiles response_latency = 4;
    */
-  responseLatency?: LoadTestResults_LatencyPercentiles | undefined;
+  responseLatency?: LatencyPercentiles | undefined;
 
   /**
    * End-to-end stream call duration distribution in milliseconds.
    *
-   * @generated from field: alis.evals.v1.LoadTestResults.LatencyPercentiles total_duration = 5;
+   * @generated from field: alis.evals.v1.LatencyPercentiles total_duration = 5;
    */
-  totalDuration?: LoadTestResults_LatencyPercentiles | undefined;
+  totalDuration?: LatencyPercentiles | undefined;
 };
 
 /**
@@ -566,69 +677,6 @@ export declare type LoadTestResults_StreamSummary = Message<"alis.evals.v1.LoadT
  * Use `create(LoadTestResults_StreamSummarySchema)` to create a new message.
  */
 export declare const LoadTestResults_StreamSummarySchema: GenMessage<LoadTestResults_StreamSummary>;
-
-/**
- * Request latency distribution for a load case, in milliseconds.
- *
- * Percentile fields give the latency at or below which that fraction of
- * requests completed. For example, p95_ms is the latency experienced by
- * the fastest 95% of requests; the remaining 5% were slower. Percentiles
- * surface tail latency that a mean would hide and are the usual basis for
- * SLO checks.
- *
- * @generated from message alis.evals.v1.LoadTestResults.LatencyPercentiles
- */
-export declare type LoadTestResults_LatencyPercentiles = Message<"alis.evals.v1.LoadTestResults.LatencyPercentiles"> & {
-  /**
-   * Median latency. Half of requests completed at or below this value.
-   *
-   * @generated from field: double p50_ms = 1;
-   */
-  p50Ms: number;
-
-  /**
-   * 95th percentile latency. 95% of requests completed at or below this
-   * value; the slowest 5% exceeded it.
-   *
-   * @generated from field: double p95_ms = 2;
-   */
-  p95Ms: number;
-
-  /**
-   * 99th percentile latency. 99% of requests completed at or below this
-   * value; the slowest 1% exceeded it.
-   *
-   * @generated from field: double p99_ms = 3;
-   */
-  p99Ms: number;
-
-  /**
-   * The fastest observed request latency.
-   *
-   * @generated from field: double min_ms = 4;
-   */
-  minMs: number;
-
-  /**
-   * The arithmetic mean of observed request latencies.
-   *
-   * @generated from field: double mean_ms = 5;
-   */
-  meanMs: number;
-
-  /**
-   * The slowest observed request latency.
-   *
-   * @generated from field: double max_ms = 6;
-   */
-  maxMs: number;
-};
-
-/**
- * Describes the message alis.evals.v1.LoadTestResults.LatencyPercentiles.
- * Use `create(LoadTestResults_LatencyPercentilesSchema)` to create a new message.
- */
-export declare const LoadTestResults_LatencyPercentilesSchema: GenMessage<LoadTestResults_LatencyPercentiles>;
 
 /**
  * One Service Level Objective (SLO) check outcome.
@@ -711,9 +759,10 @@ export declare type AgentEvalResults = Message<"alis.evals.v1.AgentEvalResults">
   cases: AgentEvalResults_Case[];
 
   /**
-   * Judge model provenance and call statistics for this run.
+   * Judge model provenance and call statistics for this run. Unset when the
+   * run used no LLM-as-judge metrics.
    *
-   * @generated from field: alis.evals.v1.AgentEvalResults.JudgeInfo judge = 2;
+   * @generated from field: optional alis.evals.v1.AgentEvalResults.JudgeInfo judge = 2;
    */
   judge?: AgentEvalResults_JudgeInfo | undefined;
 };
@@ -744,9 +793,9 @@ export declare type AgentEvalResults_JudgeInfo = Message<"alis.evals.v1.AgentEva
   /**
    * The pinned model version, when available.
    *
-   * @generated from field: string model_version = 2;
+   * @generated from field: optional string model_version = 2;
    */
-  modelVersion: string;
+  modelVersion?: string | undefined;
 
   /**
    * Total judge API calls made during this run (one or more per metric).
@@ -850,9 +899,9 @@ export declare type AgentEvalResults_Case_Metric = Message<"alis.evals.v1.AgentE
   /**
    * The minimum score required for this metric to pass, when applicable.
    *
-   * @generated from field: double threshold = 4;
+   * @generated from field: optional double threshold = 4;
    */
-  threshold: number;
+  threshold?: number | undefined;
 
   /**
    * Human-readable detail: validation failures, score below threshold,
@@ -917,6 +966,540 @@ export declare type AgentEvalResults_Case_Metric_RubricScore = Message<"alis.eva
  * Use `create(AgentEvalResults_Case_Metric_RubricScoreSchema)` to create a new message.
  */
 export declare const AgentEvalResults_Case_Metric_RubricScoreSchema: GenMessage<AgentEvalResults_Case_Metric_RubricScore>;
+
+/**
+ * Declared Cloud Run target for infrastructure observation.
+ *
+ * Identifies the Monitoring resource filters used when fetching server-side
+ * Cloud Run metrics. Referenced from CloudRunTargetSnapshot.target.
+ *
+ * @generated from message alis.evals.v1.CloudRunTargetRef
+ */
+export declare type CloudRunTargetRef = Message<"alis.evals.v1.CloudRunTargetRef"> & {
+  /**
+   * Google Cloud project ID hosting the Cloud Run service.
+   *
+   * @generated from field: string project_id = 1;
+   */
+  projectId: string;
+
+  /**
+   * Cloud Run region (for example `europe-west1`).
+   *
+   * @generated from field: string region = 2;
+   */
+  region: string;
+
+  /**
+   * Cloud Run service name (for example `search-v1`).
+   *
+   * @generated from field: string service_name = 3;
+   */
+  serviceName: string;
+
+  /**
+   * Optional revision filter. Empty aggregates all revisions.
+   *
+   * @generated from field: optional string revision = 4;
+   */
+  revision?: string | undefined;
+};
+
+/**
+ * Describes the message alis.evals.v1.CloudRunTargetRef.
+ * Use `create(CloudRunTargetRefSchema)` to create a new message.
+ */
+export declare const CloudRunTargetRefSchema: GenMessage<CloudRunTargetRef>;
+
+/**
+ * Declared Spanner target for infrastructure observation.
+ *
+ * Identifies the Monitoring resource filters used when fetching server-side
+ * Spanner metrics. Referenced from SpannerTargetSnapshot.target.
+ *
+ * @generated from message alis.evals.v1.SpannerTargetRef
+ */
+export declare type SpannerTargetRef = Message<"alis.evals.v1.SpannerTargetRef"> & {
+  /**
+   * Google Cloud project ID hosting the Spanner instance.
+   *
+   * @generated from field: string project_id = 1;
+   */
+  projectId: string;
+
+  /**
+   * Spanner instance ID (for example `prod-spanner`).
+   *
+   * @generated from field: string instance_id = 2;
+   */
+  instanceId: string;
+
+  /**
+   * Spanner instance location (for example `europe-west1`).
+   *
+   * @generated from field: string location = 3;
+   */
+  location: string;
+
+  /**
+   * Required database within the instance (for example `orders`).
+   *
+   * @generated from field: string database = 4;
+   */
+  database: string;
+};
+
+/**
+ * Describes the message alis.evals.v1.SpannerTargetRef.
+ * Use `create(SpannerTargetRefSchema)` to create a new message.
+ */
+export declare const SpannerTargetRefSchema: GenMessage<SpannerTargetRef>;
+
+/**
+ * Observed Cloud Run server-side metrics for one target and window.
+ *
+ * @generated from message alis.evals.v1.CloudRunMetrics
+ */
+export declare type CloudRunMetrics = Message<"alis.evals.v1.CloudRunMetrics"> & {
+  /**
+   * Server-side request count. Zero when the service saw no traffic.
+   *
+   * @generated from field: int64 request_count = 1;
+   */
+  requestCount: bigint;
+
+  /**
+   * Server-side request latency distribution (run.googleapis.com/request_latencies).
+   * Unset when this metric type could not be fetched.
+   *
+   * @generated from field: optional alis.evals.v1.LatencyPercentiles latency = 2;
+   */
+  latency?: LatencyPercentiles | undefined;
+
+  /**
+   * Fraction of server-side responses with 5xx status (0.0–1.0). Unset when
+   * this metric type could not be fetched.
+   *
+   * @generated from field: optional double error_5xx_rate = 3;
+   */
+  error5xxRate?: number | undefined;
+
+  /**
+   * Peak concurrent instance count during the window. Unset when this metric
+   * type could not be fetched.
+   *
+   * @generated from field: optional double max_instance_count = 4;
+   */
+  maxInstanceCount?: number | undefined;
+
+  /**
+   * Container CPU utilization 99th percentile during the window (0.0–1.0).
+   * Unset when this metric type could not be fetched.
+   *
+   * @generated from field: optional double cpu_utilization_p99 = 5;
+   */
+  cpuUtilizationP99?: number | undefined;
+
+  /**
+   * Container memory utilization 99th percentile during the window (0.0–1.0).
+   * Unset when this metric type could not be fetched.
+   *
+   * @generated from field: optional double memory_utilization_p99 = 6;
+   */
+  memoryUtilizationP99?: number | undefined;
+
+  /**
+   * Container startup latency 99th percentile in milliseconds, when available.
+   *
+   * @generated from field: optional double startup_latency_p99 = 7;
+   */
+  startupLatencyP99?: number | undefined;
+};
+
+/**
+ * Describes the message alis.evals.v1.CloudRunMetrics.
+ * Use `create(CloudRunMetricsSchema)` to create a new message.
+ */
+export declare const CloudRunMetricsSchema: GenMessage<CloudRunMetrics>;
+
+/**
+ * Observed Spanner server-side metrics for one target and window.
+ *
+ * @generated from message alis.evals.v1.SpannerMetrics
+ */
+export declare type SpannerMetrics = Message<"alis.evals.v1.SpannerMetrics"> & {
+  /**
+   * Query count for the database during the window. Zero when no queries ran.
+   *
+   * @generated from field: int64 query_count = 1;
+   */
+  queryCount: bigint;
+
+  /**
+   * Query count where status was not OK during the window.
+   *
+   * @generated from field: int64 query_error_count = 2;
+   */
+  queryErrorCount: bigint;
+
+  /**
+   * API request latency distribution (spanner.googleapis.com/api/request_latencies).
+   * Unset when this metric type could not be fetched.
+   *
+   * @generated from field: optional alis.evals.v1.LatencyPercentiles api_latency = 3;
+   */
+  apiLatency?: LatencyPercentiles | undefined;
+
+  /**
+   * Query execution latency distribution
+   * (spanner.googleapis.com/query_stat/total/query_latencies). Unset when this
+   * metric type could not be fetched.
+   *
+   * @generated from field: optional alis.evals.v1.LatencyPercentiles query_latency = 4;
+   */
+  queryLatency?: LatencyPercentiles | undefined;
+
+  /**
+   * Instance CPU utilization maximum during the window (0.0–1.0). Instance-
+   * scoped; not attributable to a single database when multiple databases share
+   * the instance. Unset when this metric type could not be fetched.
+   *
+   * @generated from field: optional double cpu_utilization_max = 5;
+   */
+  cpuUtilizationMax?: number | undefined;
+};
+
+/**
+ * Describes the message alis.evals.v1.SpannerMetrics.
+ * Use `create(SpannerMetricsSchema)` to create a new message.
+ */
+export declare const SpannerMetricsSchema: GenMessage<SpannerMetrics>;
+
+/**
+ * Cloud Run infrastructure snapshot for one declared target.
+ *
+ * Always emitted for every target declared on the suite, even when
+ * request_count is zero or the fetch partially failed. Pairs configuration
+ * (id, role, target) with observed metrics over window_start..window_end.
+ *
+ * @generated from message alis.evals.v1.CloudRunTargetSnapshot
+ */
+export declare type CloudRunTargetSnapshot = Message<"alis.evals.v1.CloudRunTargetSnapshot"> & {
+  /**
+   * Stable target identifier from suite configuration (for example `search-v1`).
+   *
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * Role of this target within the case (ENTRY or DEPENDENCY).
+   *
+   * @generated from field: alis.evals.v1.InfraTargetRole role = 2;
+   */
+  role: InfraTargetRole;
+
+  /**
+   * Declared Cloud Run resource coordinates used for the Monitoring query.
+   *
+   * @generated from field: alis.evals.v1.CloudRunTargetRef target = 3;
+   */
+  target?: CloudRunTargetRef | undefined;
+
+  /**
+   * Inclusive start of the observation window (UTC).
+   *
+   * @generated from field: google.protobuf.Timestamp window_start = 4;
+   */
+  windowStart?: Timestamp | undefined;
+
+  /**
+   * Exclusive end of the observation window (UTC).
+   *
+   * @generated from field: google.protobuf.Timestamp window_end = 5;
+   */
+  windowEnd?: Timestamp | undefined;
+
+  /**
+   * Outcome of the Monitoring fetch for this target.
+   *
+   * @generated from field: alis.evals.v1.InfraFetchStatus fetch_status = 6;
+   */
+  fetchStatus: InfraFetchStatus;
+
+  /**
+   * Human-readable detail when fetch_status is not OK or when individual
+   * metrics failed partially. Unset on full success.
+   *
+   * @generated from field: optional string fetch_message = 7;
+   */
+  fetchMessage?: string | undefined;
+
+  /**
+   * Observed server-side metrics for this target and window. Populated on
+   * best-effort basis when fetch_status is OK; fields may be unset when a
+   * specific metric type failed.
+   *
+   * @generated from field: alis.evals.v1.CloudRunMetrics metrics = 8;
+   */
+  metrics?: CloudRunMetrics | undefined;
+};
+
+/**
+ * Describes the message alis.evals.v1.CloudRunTargetSnapshot.
+ * Use `create(CloudRunTargetSnapshotSchema)` to create a new message.
+ */
+export declare const CloudRunTargetSnapshotSchema: GenMessage<CloudRunTargetSnapshot>;
+
+/**
+ * Spanner infrastructure snapshot for one declared target.
+ *
+ * Always emitted for every target declared on the suite, even when
+ * query_count is zero or the fetch partially failed. Pairs configuration
+ * (id, role, target) with observed metrics over window_start..window_end.
+ *
+ * @generated from message alis.evals.v1.SpannerTargetSnapshot
+ */
+export declare type SpannerTargetSnapshot = Message<"alis.evals.v1.SpannerTargetSnapshot"> & {
+  /**
+   * Stable target identifier from suite configuration (for example `orders-db`).
+   *
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * Always INFRA_TARGET_ROLE_DEPENDENCY on the wire for Spanner targets.
+   *
+   * @generated from field: alis.evals.v1.InfraTargetRole role = 2;
+   */
+  role: InfraTargetRole;
+
+  /**
+   * Declared Spanner resource coordinates used for the Monitoring query.
+   *
+   * @generated from field: alis.evals.v1.SpannerTargetRef target = 3;
+   */
+  target?: SpannerTargetRef | undefined;
+
+  /**
+   * Inclusive start of the observation window (UTC).
+   *
+   * @generated from field: google.protobuf.Timestamp window_start = 4;
+   */
+  windowStart?: Timestamp | undefined;
+
+  /**
+   * Exclusive end of the observation window (UTC).
+   *
+   * @generated from field: google.protobuf.Timestamp window_end = 5;
+   */
+  windowEnd?: Timestamp | undefined;
+
+  /**
+   * Outcome of the Monitoring fetch for this target.
+   *
+   * @generated from field: alis.evals.v1.InfraFetchStatus fetch_status = 6;
+   */
+  fetchStatus: InfraFetchStatus;
+
+  /**
+   * Human-readable detail when fetch_status is not OK or when individual
+   * metrics failed partially. Unset on full success.
+   *
+   * @generated from field: optional string fetch_message = 7;
+   */
+  fetchMessage?: string | undefined;
+
+  /**
+   * Observed server-side metrics for this target and window. Populated on
+   * best-effort basis when fetch_status is OK; fields may be unset when a
+   * specific metric type failed.
+   *
+   * @generated from field: alis.evals.v1.SpannerMetrics metrics = 8;
+   */
+  metrics?: SpannerMetrics | undefined;
+};
+
+/**
+ * Describes the message alis.evals.v1.SpannerTargetSnapshot.
+ * Use `create(SpannerTargetSnapshotSchema)` to create a new message.
+ */
+export declare const SpannerTargetSnapshotSchema: GenMessage<SpannerTargetSnapshot>;
+
+/**
+ * One infrastructure SLO check outcome.
+ *
+ * Mirrors SloCheck on the client side: snapshots carry observed values;
+ * infra_checks carry pass/fail against configured limits. Diagnostics-only in
+ * v1: infra_checks is always empty on the wire until infra SLO evaluators ship.
+ *
+ * @generated from message alis.evals.v1.InfraSloCheck
+ */
+export declare type InfraSloCheck = Message<"alis.evals.v1.InfraSloCheck"> & {
+  /**
+   * Resource kind this check evaluated (CLOUD_RUN or SPANNER).
+   *
+   * @generated from field: alis.evals.v1.InfraKind kind = 1;
+   */
+  kind: InfraKind;
+
+  /**
+   * Matches CloudRunTargetSnapshot.id or SpannerTargetSnapshot.id.
+   *
+   * @generated from field: string target_id = 2;
+   */
+  targetId: string;
+
+  /**
+   * Stable metric key (for example `latency.p99_ms` or `query_error_rate`).
+   *
+   * @generated from field: string check_id = 3;
+   */
+  checkId: string;
+
+  /**
+   * The outcome of the check. FAILED when the observed value crossed the
+   * limit or the metric could not be measured.
+   *
+   * @generated from field: alis.evals.v1.Status status = 4;
+   */
+  status: Status;
+
+  /**
+   * Human-readable detail. Unset when the check passed with no extra context.
+   *
+   * @generated from field: optional string message = 5;
+   */
+  message?: string | undefined;
+
+  /**
+   * The metric value measured during the observation window (for example 612.4
+   * when unit is `ms`).
+   *
+   * @generated from field: double observed = 6;
+   */
+  observed: number;
+
+  /**
+   * The configured SLO bound (for example 500.0 when unit is `ms`).
+   *
+   * @generated from field: double limit = 7;
+   */
+  limit: number;
+
+  /**
+   * Unit shared by observed and limit (for example `ms`, `%`, `count`).
+   *
+   * @generated from field: string unit = 8;
+   */
+  unit: string;
+};
+
+/**
+ * Describes the message alis.evals.v1.InfraSloCheck.
+ * Use `create(InfraSloCheckSchema)` to create a new message.
+ */
+export declare const InfraSloCheckSchema: GenMessage<InfraSloCheck>;
+
+/**
+ * Result detail for a standalone infrastructure observation run.
+ *
+ * Produced by RunInfraObservation without load generation. Each case fetches
+ * Cloud Monitoring snapshots over a resolved lookback window for declared
+ * Cloud Run and Spanner targets.
+ *
+ * @generated from message alis.evals.v1.InfraObservationResults
+ */
+export declare type InfraObservationResults = Message<"alis.evals.v1.InfraObservationResults"> & {
+  /**
+   * Every infra observation case executed in this run, in execution order.
+   *
+   * @generated from field: repeated alis.evals.v1.InfraObservationResults.Case cases = 1;
+   */
+  cases: InfraObservationResults_Case[];
+};
+
+/**
+ * Describes the message alis.evals.v1.InfraObservationResults.
+ * Use `create(InfraObservationResultsSchema)` to create a new message.
+ */
+export declare const InfraObservationResultsSchema: GenMessage<InfraObservationResults>;
+
+/**
+ * The result of one infrastructure observation case.
+ *
+ * @generated from message alis.evals.v1.InfraObservationResults.Case
+ */
+export declare type InfraObservationResults_Case = Message<"alis.evals.v1.InfraObservationResults.Case"> & {
+  /**
+   * The case id.
+   * Example: peak-hours.observe-search
+   *
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * The rolled-up status for the case. Diagnostics-only in v1: PASSED when
+   * observation completes; FAILED only on runner or setup errors, not on
+   * infra threshold breach until infra SLO evaluators ship.
+   *
+   * @generated from field: alis.evals.v1.Status status = 2;
+   */
+  status: Status;
+
+  /**
+   * Resolved lookback duration for this case.
+   *
+   * @generated from field: google.protobuf.Duration lookback = 3;
+   */
+  lookback?: Duration | undefined;
+
+  /**
+   * Inclusive start of the settled observation window (UTC).
+   *
+   * @generated from field: google.protobuf.Timestamp window_start = 4;
+   */
+  windowStart?: Timestamp | undefined;
+
+  /**
+   * Exclusive end of the settled observation window (UTC).
+   *
+   * @generated from field: google.protobuf.Timestamp window_end = 5;
+   */
+  windowEnd?: Timestamp | undefined;
+
+  /**
+   * Server-side Cloud Run metrics for declared targets over this case's
+   * observation window. Empty when the suite declares no Cloud Run targets.
+   *
+   * @generated from field: repeated alis.evals.v1.CloudRunTargetSnapshot cloud_run = 6;
+   */
+  cloudRun: CloudRunTargetSnapshot[];
+
+  /**
+   * Server-side Spanner metrics for declared targets over this case's
+   * observation window. Empty when the suite declares no Spanner targets.
+   *
+   * @generated from field: repeated alis.evals.v1.SpannerTargetSnapshot spanner = 7;
+   */
+  spanner: SpannerTargetSnapshot[];
+
+  /**
+   * Infrastructure SLO check outcomes. Diagnostics-only in v1: always empty
+   * on the wire until infra SLO evaluators ship.
+   *
+   * @generated from field: repeated alis.evals.v1.InfraSloCheck infra_checks = 8;
+   */
+  infraChecks: InfraSloCheck[];
+};
+
+/**
+ * Describes the message alis.evals.v1.InfraObservationResults.Case.
+ * Use `create(InfraObservationResults_CaseSchema)` to create a new message.
+ */
+export declare const InfraObservationResults_CaseSchema: GenMessage<InfraObservationResults_Case>;
 
 /**
  * The request message for RunIntegrationTest.
@@ -1283,6 +1866,116 @@ export declare type RunAgentEvalResponse = Message<"alis.evals.v1.RunAgentEvalRe
 export declare const RunAgentEvalResponseSchema: GenMessage<RunAgentEvalResponse>;
 
 /**
+ * The request message for RunInfraObservation.
+ *
+ * @generated from message alis.evals.v1.RunInfraObservationRequest
+ */
+export declare type RunInfraObservationRequest = Message<"alis.evals.v1.RunInfraObservationRequest"> & {
+  /**
+   * The infra observation case ids to execute.
+   *
+   * If empty, all cases registered for infra observation are executed.
+   * If non-empty, only registered cases whose id matches an entry are
+   * executed.
+   *
+   * A qualified id `suite.case` selects one case. A suite id `suite`
+   * selects all cases in that suite; shared setup and teardown for the suite
+   * run once per suite.
+   *
+   * @generated from field: repeated string case_ids = 1;
+   */
+  caseIds: string[];
+
+  /**
+   * The batch ID to associate with the runs produced by this operation.
+   *
+   * @generated from field: optional string batch_id = 2;
+   */
+  batchId?: string | undefined;
+
+  /**
+   * Highest-precedence lookback override when set. When unset, the server
+   * resolves lookback from per-case and suite defaults.
+   *
+   * @generated from field: optional google.protobuf.Duration lookback = 3;
+   */
+  lookback?: Duration | undefined;
+};
+
+/**
+ * Describes the message alis.evals.v1.RunInfraObservationRequest.
+ * Use `create(RunInfraObservationRequestSchema)` to create a new message.
+ */
+export declare const RunInfraObservationRequestSchema: GenMessage<RunInfraObservationRequest>;
+
+/**
+ * Metadata for a RunInfraObservation long-running operation while it is in
+ * progress.
+ *
+ * @generated from message alis.evals.v1.RunInfraObservationMetadata
+ */
+export declare type RunInfraObservationMetadata = Message<"alis.evals.v1.RunInfraObservationMetadata"> & {
+  /**
+   * The number of infra observation cases selected after filter resolution.
+   *
+   * @generated from field: int32 case_count = 1;
+   */
+  caseCount: number;
+
+  /**
+   * The number of cases finished so far. This value increases monotonically
+   * during the run.
+   *
+   * @generated from field: int32 completed_case_count = 2;
+   */
+  completedCaseCount: number;
+
+  /**
+   * The number of suites selected for this operation.
+   *
+   * @generated from field: int32 suite_count = 3;
+   */
+  suiteCount: number;
+
+  /**
+   * The number of suites finished so far. This value increases monotonically
+   * during the run.
+   *
+   * @generated from field: int32 completed_suite_count = 4;
+   */
+  completedSuiteCount: number;
+};
+
+/**
+ * Describes the message alis.evals.v1.RunInfraObservationMetadata.
+ * Use `create(RunInfraObservationMetadataSchema)` to create a new message.
+ */
+export declare const RunInfraObservationMetadataSchema: GenMessage<RunInfraObservationMetadata>;
+
+/**
+ * The response message for RunInfraObservation, stored in the completed
+ * Operation.
+ *
+ * @generated from message alis.evals.v1.RunInfraObservationResponse
+ */
+export declare type RunInfraObservationResponse = Message<"alis.evals.v1.RunInfraObservationResponse"> & {
+  /**
+   * The resource names of all runs produced by this operation.
+   *
+   * Each entry has the format `runs/{run_id}`.
+   *
+   * @generated from field: repeated string runs = 1;
+   */
+  runs: string[];
+};
+
+/**
+ * Describes the message alis.evals.v1.RunInfraObservationResponse.
+ * Use `create(RunInfraObservationResponseSchema)` to create a new message.
+ */
+export declare const RunInfraObservationResponseSchema: GenMessage<RunInfraObservationResponse>;
+
+/**
  * Event published when a completed test or evaluation run is ready for
  * persistence and downstream consumers (for example BigQuery or Pub/Sub).
  *
@@ -1303,6 +1996,127 @@ export declare type RunPublishedEvent = Message<"alis.evals.v1.RunPublishedEvent
  * Use `create(RunPublishedEventSchema)` to create a new message.
  */
 export declare const RunPublishedEventSchema: GenMessage<RunPublishedEvent>;
+
+/**
+ * Role of an infrastructure target within a load or observation case.
+ *
+ * ENTRY marks the service under direct test (for example the Cloud Run service
+ * receiving generated load). DEPENDENCY marks downstream services or data stores
+ * observed for correlation (for example internal Cloud Run hops or Spanner).
+ *
+ * @generated from enum alis.evals.v1.InfraTargetRole
+ */
+export enum InfraTargetRole {
+  /**
+   * Default value. Must not appear on completed results.
+   *
+   * @generated from enum value: INFRA_TARGET_ROLE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * The primary service receiving traffic or acting as the case entrypoint.
+   *
+   * @generated from enum value: INFRA_TARGET_ROLE_ENTRY = 1;
+   */
+  ENTRY = 1,
+
+  /**
+   * A downstream service or datastore observed alongside the entry target.
+   *
+   * @generated from enum value: INFRA_TARGET_ROLE_DEPENDENCY = 2;
+   */
+  DEPENDENCY = 2,
+}
+
+/**
+ * Describes the enum alis.evals.v1.InfraTargetRole.
+ */
+export declare const InfraTargetRoleSchema: GenEnum<InfraTargetRole>;
+
+/**
+ * Outcome of fetching infrastructure metrics for one target from Cloud
+ * Monitoring.
+ *
+ * Partial per-metric failure may still yield OK when at least one metric
+ * succeeded; details are recorded in fetch_message on the snapshot.
+ *
+ * @generated from enum alis.evals.v1.InfraFetchStatus
+ */
+export enum InfraFetchStatus {
+  /**
+   * Default value. Must not appear on completed results.
+   *
+   * @generated from enum value: INFRA_FETCH_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * At least one metric was fetched successfully for this target.
+   *
+   * @generated from enum value: INFRA_FETCH_STATUS_OK = 1;
+   */
+  OK = 1,
+
+  /**
+   * The Monitoring API was unreachable or returned no usable data.
+   *
+   * @generated from enum value: INFRA_FETCH_STATUS_UNAVAILABLE = 2;
+   */
+  UNAVAILABLE = 2,
+
+  /**
+   * The fetch exceeded its per-target timeout.
+   *
+   * @generated from enum value: INFRA_FETCH_STATUS_TIMEOUT = 3;
+   */
+  TIMEOUT = 3,
+
+  /**
+   * The caller lacked permission to read metrics for this target.
+   *
+   * @generated from enum value: INFRA_FETCH_STATUS_PERMISSION_DENIED = 4;
+   */
+  PERMISSION_DENIED = 4,
+}
+
+/**
+ * Describes the enum alis.evals.v1.InfraFetchStatus.
+ */
+export declare const InfraFetchStatusSchema: GenEnum<InfraFetchStatus>;
+
+/**
+ * Infrastructure resource kind referenced by infra SLO checks and snapshots.
+ *
+ * @generated from enum alis.evals.v1.InfraKind
+ */
+export enum InfraKind {
+  /**
+   * Default value. Must not appear on completed results.
+   *
+   * @generated from enum value: INFRA_KIND_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * A Google Cloud Run service revision scope.
+   *
+   * @generated from enum value: INFRA_KIND_CLOUD_RUN = 1;
+   */
+  CLOUD_RUN = 1,
+
+  /**
+   * A Cloud Spanner instance and database scope.
+   *
+   * @generated from enum value: INFRA_KIND_SPANNER = 2;
+   */
+  SPANNER = 2,
+}
+
+/**
+ * Describes the enum alis.evals.v1.InfraKind.
+ */
+export declare const InfraKindSchema: GenEnum<InfraKind>;
 
 /**
  * Outcome status for runs, cases, checks, metrics, and rubric dimensions.
@@ -1407,6 +2221,22 @@ export declare const TestService: GenService<{
   runAgentEval: {
     methodKind: "unary";
     input: typeof RunAgentEvalRequestSchema;
+    output: typeof OperationSchema;
+  },
+  /**
+   * Observes server-side infrastructure metrics without generating load.
+   * Fetches Cloud Monitoring snapshots for declared infrastructure targets, such as Cloud Run and Spanner
+   * over a configurable lookback window (for example peak-hour observation via an external scheduler).
+   *
+   * Returns a long-running operation. Poll GetOperation or wait on the operation
+   * name until done. The operation completes successfully when execution finishes;
+   * inspect each Run status and snapshot fetch_status in the published payload.
+   *
+   * @generated from rpc alis.evals.v1.TestService.RunInfraObservation
+   */
+  runInfraObservation: {
+    methodKind: "unary";
+    input: typeof RunInfraObservationRequestSchema;
     output: typeof OperationSchema;
   },
 }>;

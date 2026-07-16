@@ -12,7 +12,7 @@ import { file_google_rpc_status } from "../../../google/rpc/status_pb";
  * Describes the file alis/evals/v1/evaluation.proto.
  */
 export const file_alis_evals_v1_evaluation = /*@__PURE__*/
-  fileDesc("Ch5hbGlzL2V2YWxzL3YxL2V2YWx1YXRpb24ucHJvdG8SDWFsaXMuZXZhbHMudjEi9QQKA1J1bhIMCgRuYW1lGAIgASgJEhUKCGJhdGNoX2lkGAMgASgJSAGIAQESJQoEdHlwZRgEIAEoDjIXLmFsaXMuZXZhbHMudjEuUnVuLlR5cGUSJQoGc3RhdHVzGAUgASgOMhUuYWxpcy5ldmFscy52MS5TdGF0dXMSQQoQaW50ZWdyYXRpb25fdGVzdBgGIAEoCzIlLmFsaXMuZXZhbHMudjEuSW50ZWdyYXRpb25UZXN0UmVzdWx0c0gAEjMKCWxvYWRfdGVzdBgHIAEoCzIeLmFsaXMuZXZhbHMudjEuTG9hZFRlc3RSZXN1bHRzSAASNQoKYWdlbnRfZXZhbBgIIAEoCzIfLmFsaXMuZXZhbHMudjEuQWdlbnRFdmFsUmVzdWx0c0gAEi4KCnN0YXJ0X3RpbWUYFSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEiwKCGVuZF90aW1lGBYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIRCglvcGVyYXRpb24YFyABKAkSIQoFZXJyb3IYGCABKAsyEi5nb29nbGUucnBjLlN0YXR1cxIvCgtjcmVhdGVfdGltZRgZIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASGQoRZ29vZ2xlX3Byb2plY3RfaWQYGiABKAkiUQoEVHlwZRIUChBUWVBFX1VOU1BFQ0lGSUVEEAASFAoQSU5URUdSQVRJT05fVEVTVBABEg0KCUxPQURfVEVTVBACEg4KCkFHRU5UX0VWQUwQA0IGCgRkYXRhQgsKCV9iYXRjaF9pZEoECAEQAiLLAgoWSW50ZWdyYXRpb25UZXN0UmVzdWx0cxI5CgVjYXNlcxgBIAMoCzIqLmFsaXMuZXZhbHMudjEuSW50ZWdyYXRpb25UZXN0UmVzdWx0cy5DYXNlGvUBCgRDYXNlEgoKAmlkGAEgASgJEiUKBnN0YXR1cxgCIAEoDjIVLmFsaXMuZXZhbHMudjEuU3RhdHVzEkAKBmNoZWNrcxgDIAMoCzIwLmFsaXMuZXZhbHMudjEuSW50ZWdyYXRpb25UZXN0UmVzdWx0cy5DYXNlLkNoZWNrEisKCGR1cmF0aW9uGAQgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uGksKBUNoZWNrEgoKAmlkGAEgASgJEiUKBnN0YXR1cxgCIAEoDjIVLmFsaXMuZXZhbHMudjEuU3RhdHVzEg8KB21lc3NhZ2UYAyABKAki7wwKD0xvYWRUZXN0UmVzdWx0cxIyCgVjYXNlcxgBIAMoCzIjLmFsaXMuZXZhbHMudjEuTG9hZFRlc3RSZXN1bHRzLkNhc2UalQIKBENhc2USCgoCaWQYASABKAkSJQoGc3RhdHVzGAIgASgOMhUuYWxpcy5ldmFscy52MS5TdGF0dXMSNwoHc3VtbWFyeRgDIAEoCzImLmFsaXMuZXZhbHMudjEuTG9hZFRlc3RSZXN1bHRzLlN1bW1hcnkSNwoGY2hlY2tzGAQgAygLMicuYWxpcy5ldmFscy52MS5Mb2FkVGVzdFJlc3VsdHMuU2xvQ2hlY2sSOwoEdGFncxgFIAMoCzItLmFsaXMuZXZhbHMudjEuTG9hZFRlc3RSZXN1bHRzLkNhc2UuVGFnc0VudHJ5GisKCVRhZ3NFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBGrEFCgdTdW1tYXJ5EjQKBG1vZGUYASABKA4yJi5hbGlzLmV2YWxzLnYxLlJ1bkxvYWRUZXN0UmVxdWVzdC5Nb2RlEhIKCnRhcmdldF9xcHMYAiABKAESEwoLY29uY3VycmVuY3kYAyABKAUSKwoIZHVyYXRpb24YBCABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb24SFQoNcmVxdWVzdF9jb3VudBgFIAEoAxITCgtlcnJvcl9jb3VudBgGIAEoAxISCgphY3R1YWxfcXBzGAcgASgBEkIKB2xhdGVuY3kYCCABKAsyMS5hbGlzLmV2YWxzLnYxLkxvYWRUZXN0UmVzdWx0cy5MYXRlbmN5UGVyY2VudGlsZXMSUAoOZXJyb3JzX2J5X2NvZGUYCSADKAsyOC5hbGlzLmV2YWxzLnYxLkxvYWRUZXN0UmVzdWx0cy5TdW1tYXJ5LkVycm9yc0J5Q29kZUVudHJ5EhUKDWRyb3BwZWRfY291bnQYCiABKAMSGgoSY2hlY2tfcGFzc2VkX2NvdW50GAsgASgDEhoKEmNoZWNrX2ZhaWxlZF9jb3VudBgMIAEoAxI8CgZzdHJlYW0YDSABKAsyLC5hbGlzLmV2YWxzLnYxLkxvYWRUZXN0UmVzdWx0cy5TdHJlYW1TdW1tYXJ5EjwKCnFwc19zdGFnZXMYDiADKAsyKC5hbGlzLmV2YWxzLnYxLkxvYWRUZXN0UmVzdWx0cy5Mb2FkU3RhZ2USRAoSY29uY3VycmVuY3lfc3RhZ2VzGA8gAygLMiguYWxpcy5ldmFscy52MS5Mb2FkVGVzdFJlc3VsdHMuTG9hZFN0YWdlGjMKEUVycm9yc0J5Q29kZUVudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoAzoCOAEaSAoJTG9hZFN0YWdlEisKCGR1cmF0aW9uGAEgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uEg4KBnRhcmdldBgCIAEoARqbAgoNU3RyZWFtU3VtbWFyeRIUCgxzdHJlYW1fY291bnQYASABKAMSGwoTbWVzc2FnZXNfc2VudF90b3RhbBgCIAEoAxI/CgR0dGZiGAMgASgLMjEuYWxpcy5ldmFscy52MS5Mb2FkVGVzdFJlc3VsdHMuTGF0ZW5jeVBlcmNlbnRpbGVzEksKEHJlc3BvbnNlX2xhdGVuY3kYBCABKAsyMS5hbGlzLmV2YWxzLnYxLkxvYWRUZXN0UmVzdWx0cy5MYXRlbmN5UGVyY2VudGlsZXMSSQoOdG90YWxfZHVyYXRpb24YBSABKAsyMS5hbGlzLmV2YWxzLnYxLkxvYWRUZXN0UmVzdWx0cy5MYXRlbmN5UGVyY2VudGlsZXMadQoSTGF0ZW5jeVBlcmNlbnRpbGVzEg4KBnA1MF9tcxgBIAEoARIOCgZwOTVfbXMYAiABKAESDgoGcDk5X21zGAMgASgBEg4KBm1pbl9tcxgEIAEoARIPCgdtZWFuX21zGAUgASgBEg4KBm1heF9tcxgGIAEoARp9CghTbG9DaGVjaxIKCgJpZBgBIAEoCRIlCgZzdGF0dXMYAiABKA4yFS5hbGlzLmV2YWxzLnYxLlN0YXR1cxIPCgdtZXNzYWdlGAMgASgJEhAKCG9ic2VydmVkGAQgASgBEg0KBWxpbWl0GAUgASgBEgwKBHVuaXQYBiABKAki9AUKEEFnZW50RXZhbFJlc3VsdHMSMwoFY2FzZXMYASADKAsyJC5hbGlzLmV2YWxzLnYxLkFnZW50RXZhbFJlc3VsdHMuQ2FzZRI4CgVqdWRnZRgCIAEoCzIpLmFsaXMuZXZhbHMudjEuQWdlbnRFdmFsUmVzdWx0cy5KdWRnZUluZm8aZgoJSnVkZ2VJbmZvEg0KBW1vZGVsGAEgASgJEhUKDW1vZGVsX3ZlcnNpb24YAiABKAkSGAoQanVkZ2VfY2FsbF9jb3VudBgDIAEoAxIZChFqdWRnZV9lcnJvcl9jb3VudBgEIAEoAxqIBAoEQ2FzZRIKCgJpZBgBIAEoCRIlCgZzdGF0dXMYAiABKA4yFS5hbGlzLmV2YWxzLnYxLlN0YXR1cxIrCghkdXJhdGlvbhgDIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbhISCgpzZXNzaW9uX2lkGAQgASgJEjwKB21ldHJpY3MYBSADKAsyKy5hbGlzLmV2YWxzLnYxLkFnZW50RXZhbFJlc3VsdHMuQ2FzZS5NZXRyaWMazQIKBk1ldHJpYxIKCgJpZBgBIAEoCRIlCgZzdGF0dXMYAiABKA4yFS5hbGlzLmV2YWxzLnYxLlN0YXR1cxISCgVzY29yZRgDIAEoAUgAiAEBEhEKCXRocmVzaG9sZBgEIAEoARIPCgdtZXNzYWdlGAUgASgJEkcKBnJ1YnJpYxgGIAMoCzI3LmFsaXMuZXZhbHMudjEuQWdlbnRFdmFsUmVzdWx0cy5DYXNlLk1ldHJpYy5SdWJyaWNTY29yZRqEAQoLUnVicmljU2NvcmUSCgoCaWQYASABKAkSJQoGc3RhdHVzGAIgASgOMhUuYWxpcy5ldmFscy52MS5TdGF0dXMSEgoFc2NvcmUYAyABKAFIAIgBARIWCglyYXRpb25hbGUYBCABKAlIAYgBAUIICgZfc2NvcmVCDAoKX3JhdGlvbmFsZUIICgZfc2NvcmUiUQoZUnVuSW50ZWdyYXRpb25UZXN0UmVxdWVzdBIVCghiYXRjaF9pZBgBIAEoCUgAiAEBEhAKCGNhc2VfaWRzGAIgAygJQgsKCV9iYXRjaF9pZCKCAQoaUnVuSW50ZWdyYXRpb25UZXN0TWV0YWRhdGESEgoKY2FzZV9jb3VudBgBIAEoBRIcChRjb21wbGV0ZWRfY2FzZV9jb3VudBgCIAEoBRITCgtzdWl0ZV9jb3VudBgDIAEoBRIdChVjb21wbGV0ZWRfc3VpdGVfY291bnQYBCABKAUiKgoaUnVuSW50ZWdyYXRpb25UZXN0UmVzcG9uc2USDAoEcnVucxgBIAMoCSLkAQoSUnVuTG9hZFRlc3RSZXF1ZXN0EjQKBG1vZGUYASABKA4yJi5hbGlzLmV2YWxzLnYxLlJ1bkxvYWRUZXN0UmVxdWVzdC5Nb2RlEhAKCGNhc2VfaWRzGAIgAygJEhUKCGJhdGNoX2lkGAMgASgJSACIAQEiYgoETW9kZRIUChBNT0RFX1VOU1BFQ0lGSUVEEAASCwoHTUlOSU1BTBABEhAKDENPTlNFUlZBVElWRRACEgwKCE1PREVSQVRFEAMSCAoESElHSBAEEg0KCUxVRElDUk9VUxAFQgsKCV9iYXRjaF9pZCJ7ChNSdW5Mb2FkVGVzdE1ldGFkYXRhEhIKCmNhc2VfY291bnQYASABKAUSHAoUY29tcGxldGVkX2Nhc2VfY291bnQYAiABKAUSEwoLc3VpdGVfY291bnQYAyABKAUSHQoVY29tcGxldGVkX3N1aXRlX2NvdW50GAQgASgFIiMKE1J1bkxvYWRUZXN0UmVzcG9uc2USDAoEcnVucxgBIAMoCSInChNSdW5BZ2VudEV2YWxSZXF1ZXN0EhAKCGNhc2VfaWRzGAEgAygJInwKFFJ1bkFnZW50RXZhbE1ldGFkYXRhEhIKCmNhc2VfY291bnQYASABKAUSHAoUY29tcGxldGVkX2Nhc2VfY291bnQYAiABKAUSEwoLc3VpdGVfY291bnQYAyABKAUSHQoVY29tcGxldGVkX3N1aXRlX2NvdW50GAQgASgFIiQKFFJ1bkFnZW50RXZhbFJlc3BvbnNlEgwKBHJ1bnMYASADKAkiNAoRUnVuUHVibGlzaGVkRXZlbnQSHwoDcnVuGAEgASgLMhIuYWxpcy5ldmFscy52MS5SdW4qSwoGU3RhdHVzEhYKElNUQVRVU19VTlNQRUNJRklFRBAAEgoKBlBBU1NFRBABEgoKBkZBSUxFRBACEhEKDU5PVF9FVkFMVUFURUQQAzKvAwoLVGVzdFNlcnZpY2USmgEKElJ1bkludGVncmF0aW9uVGVzdBIoLmFsaXMuZXZhbHMudjEuUnVuSW50ZWdyYXRpb25UZXN0UmVxdWVzdBodLmdvb2dsZS5sb25ncnVubmluZy5PcGVyYXRpb24iO8pBOAoaUnVuSW50ZWdyYXRpb25UZXN0UmVzcG9uc2USGlJ1bkludGVncmF0aW9uVGVzdE1ldGFkYXRhEn4KC1J1bkxvYWRUZXN0EiEuYWxpcy5ldmFscy52MS5SdW5Mb2FkVGVzdFJlcXVlc3QaHS5nb29nbGUubG9uZ3J1bm5pbmcuT3BlcmF0aW9uIi3KQSoKE1J1bkxvYWRUZXN0UmVzcG9uc2USE1J1bkxvYWRUZXN0TWV0YWRhdGESggEKDFJ1bkFnZW50RXZhbBIiLmFsaXMuZXZhbHMudjEuUnVuQWdlbnRFdmFsUmVxdWVzdBodLmdvb2dsZS5sb25ncnVubmluZy5PcGVyYXRpb24iL8pBLAoUUnVuQWdlbnRFdmFsUmVzcG9uc2USFFJ1bkFnZW50RXZhbE1ldGFkYXRhQhVaE2dvLmFsaXMuYnVpbGQvZXZhbHNiBnByb3RvMw", [file_google_longrunning_operations, file_google_protobuf_duration, file_google_protobuf_timestamp, file_google_rpc_status]);
+  fileDesc("Ch5hbGlzL2V2YWxzL3YxL2V2YWx1YXRpb24ucHJvdG8SDWFsaXMuZXZhbHMudjEi4AUKA1J1bhIMCgRuYW1lGAIgASgJEhUKCGJhdGNoX2lkGAMgASgJSAGIAQESJQoEdHlwZRgEIAEoDjIXLmFsaXMuZXZhbHMudjEuUnVuLlR5cGUSJQoGc3RhdHVzGAUgASgOMhUuYWxpcy5ldmFscy52MS5TdGF0dXMSQQoQaW50ZWdyYXRpb25fdGVzdBgGIAEoCzIlLmFsaXMuZXZhbHMudjEuSW50ZWdyYXRpb25UZXN0UmVzdWx0c0gAEjMKCWxvYWRfdGVzdBgHIAEoCzIeLmFsaXMuZXZhbHMudjEuTG9hZFRlc3RSZXN1bHRzSAASNQoKYWdlbnRfZXZhbBgIIAEoCzIfLmFsaXMuZXZhbHMudjEuQWdlbnRFdmFsUmVzdWx0c0gAEkMKEWluZnJhX29ic2VydmF0aW9uGAkgASgLMiYuYWxpcy5ldmFscy52MS5JbmZyYU9ic2VydmF0aW9uUmVzdWx0c0gAEi4KCnN0YXJ0X3RpbWUYFSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEiwKCGVuZF90aW1lGBYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIRCglvcGVyYXRpb24YFyABKAkSJgoFZXJyb3IYGCABKAsyEi5nb29nbGUucnBjLlN0YXR1c0gCiAEBEi8KC2NyZWF0ZV90aW1lGBkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIZChFnb29nbGVfcHJvamVjdF9pZBgaIAEoCSJoCgRUeXBlEhQKEFRZUEVfVU5TUEVDSUZJRUQQABIUChBJTlRFR1JBVElPTl9URVNUEAESDQoJTE9BRF9URVNUEAISDgoKQUdFTlRfRVZBTBADEhUKEUlORlJBX09CU0VSVkFUSU9OEARCBgoEZGF0YUILCglfYmF0Y2hfaWRCCAoGX2Vycm9ySgQIARACIssCChZJbnRlZ3JhdGlvblRlc3RSZXN1bHRzEjkKBWNhc2VzGAEgAygLMiouYWxpcy5ldmFscy52MS5JbnRlZ3JhdGlvblRlc3RSZXN1bHRzLkNhc2Ua9QEKBENhc2USCgoCaWQYASABKAkSJQoGc3RhdHVzGAIgASgOMhUuYWxpcy5ldmFscy52MS5TdGF0dXMSQAoGY2hlY2tzGAMgAygLMjAuYWxpcy5ldmFscy52MS5JbnRlZ3JhdGlvblRlc3RSZXN1bHRzLkNhc2UuQ2hlY2sSKwoIZHVyYXRpb24YBCABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb24aSwoFQ2hlY2sSCgoCaWQYASABKAkSJQoGc3RhdHVzGAIgASgOMhUuYWxpcy5ldmFscy52MS5TdGF0dXMSDwoHbWVzc2FnZRgDIAEoCSJ1ChJMYXRlbmN5UGVyY2VudGlsZXMSDgoGcDUwX21zGAEgASgBEg4KBnA5NV9tcxgCIAEoARIOCgZwOTlfbXMYAyABKAESDgoGbWluX21zGAQgASgBEg8KB21lYW5fbXMYBSABKAESDgoGbWF4X21zGAYgASgBIu0MCg9Mb2FkVGVzdFJlc3VsdHMSMgoFY2FzZXMYASADKAsyIy5hbGlzLmV2YWxzLnYxLkxvYWRUZXN0UmVzdWx0cy5DYXNlGroDCgRDYXNlEgoKAmlkGAEgASgJEiUKBnN0YXR1cxgCIAEoDjIVLmFsaXMuZXZhbHMudjEuU3RhdHVzEjcKB3N1bW1hcnkYAyABKAsyJi5hbGlzLmV2YWxzLnYxLkxvYWRUZXN0UmVzdWx0cy5TdW1tYXJ5EjcKBmNoZWNrcxgEIAMoCzInLmFsaXMuZXZhbHMudjEuTG9hZFRlc3RSZXN1bHRzLlNsb0NoZWNrEjsKBHRhZ3MYBSADKAsyLS5hbGlzLmV2YWxzLnYxLkxvYWRUZXN0UmVzdWx0cy5DYXNlLlRhZ3NFbnRyeRI4CgljbG91ZF9ydW4YBiADKAsyJS5hbGlzLmV2YWxzLnYxLkNsb3VkUnVuVGFyZ2V0U25hcHNob3QSNQoHc3Bhbm5lchgHIAMoCzIkLmFsaXMuZXZhbHMudjEuU3Bhbm5lclRhcmdldFNuYXBzaG90EjIKDGluZnJhX2NoZWNrcxgIIAMoCzIcLmFsaXMuZXZhbHMudjEuSW5mcmFTbG9DaGVjaxorCglUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ARqxBQoHU3VtbWFyeRI0CgRtb2RlGAEgASgOMiYuYWxpcy5ldmFscy52MS5SdW5Mb2FkVGVzdFJlcXVlc3QuTW9kZRISCgp0YXJnZXRfcXBzGAIgASgBEhMKC2NvbmN1cnJlbmN5GAMgASgFEisKCGR1cmF0aW9uGAQgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uEhUKDXJlcXVlc3RfY291bnQYBSABKAMSEwoLZXJyb3JfY291bnQYBiABKAMSEgoKYWN0dWFsX3FwcxgHIAEoARIyCgdsYXRlbmN5GAggASgLMiEuYWxpcy5ldmFscy52MS5MYXRlbmN5UGVyY2VudGlsZXMSUAoOZXJyb3JzX2J5X2NvZGUYCSADKAsyOC5hbGlzLmV2YWxzLnYxLkxvYWRUZXN0UmVzdWx0cy5TdW1tYXJ5LkVycm9yc0J5Q29kZUVudHJ5EhUKDWRyb3BwZWRfY291bnQYCiABKAMSGgoSY2hlY2tfcGFzc2VkX2NvdW50GAsgASgDEhoKEmNoZWNrX2ZhaWxlZF9jb3VudBgMIAEoAxJBCgZzdHJlYW0YDSABKAsyLC5hbGlzLmV2YWxzLnYxLkxvYWRUZXN0UmVzdWx0cy5TdHJlYW1TdW1tYXJ5SACIAQESPAoKcXBzX3N0YWdlcxgOIAMoCzIoLmFsaXMuZXZhbHMudjEuTG9hZFRlc3RSZXN1bHRzLkxvYWRTdGFnZRJEChJjb25jdXJyZW5jeV9zdGFnZXMYDyADKAsyKC5hbGlzLmV2YWxzLnYxLkxvYWRUZXN0UmVzdWx0cy5Mb2FkU3RhZ2UaMwoRRXJyb3JzQnlDb2RlRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgDOgI4AUIJCgdfc3RyZWFtGkgKCUxvYWRTdGFnZRIrCghkdXJhdGlvbhgBIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbhIOCgZ0YXJnZXQYAiABKAEa6wEKDVN0cmVhbVN1bW1hcnkSFAoMc3RyZWFtX2NvdW50GAEgASgDEhsKE21lc3NhZ2VzX3NlbnRfdG90YWwYAiABKAMSLwoEdHRmYhgDIAEoCzIhLmFsaXMuZXZhbHMudjEuTGF0ZW5jeVBlcmNlbnRpbGVzEjsKEHJlc3BvbnNlX2xhdGVuY3kYBCABKAsyIS5hbGlzLmV2YWxzLnYxLkxhdGVuY3lQZXJjZW50aWxlcxI5Cg50b3RhbF9kdXJhdGlvbhgFIAEoCzIhLmFsaXMuZXZhbHMudjEuTGF0ZW5jeVBlcmNlbnRpbGVzGn0KCFNsb0NoZWNrEgoKAmlkGAEgASgJEiUKBnN0YXR1cxgCIAEoDjIVLmFsaXMuZXZhbHMudjEuU3RhdHVzEg8KB21lc3NhZ2UYAyABKAkSEAoIb2JzZXJ2ZWQYBCABKAESDQoFbGltaXQYBSABKAESDAoEdW5pdBgGIAEoCSKtBgoQQWdlbnRFdmFsUmVzdWx0cxIzCgVjYXNlcxgBIAMoCzIkLmFsaXMuZXZhbHMudjEuQWdlbnRFdmFsUmVzdWx0cy5DYXNlEj0KBWp1ZGdlGAIgASgLMikuYWxpcy5ldmFscy52MS5BZ2VudEV2YWxSZXN1bHRzLkp1ZGdlSW5mb0gAiAEBGn0KCUp1ZGdlSW5mbxINCgVtb2RlbBgBIAEoCRIaCg1tb2RlbF92ZXJzaW9uGAIgASgJSACIAQESGAoQanVkZ2VfY2FsbF9jb3VudBgDIAEoAxIZChFqdWRnZV9lcnJvcl9jb3VudBgEIAEoA0IQCg5fbW9kZWxfdmVyc2lvbhqbBAoEQ2FzZRIKCgJpZBgBIAEoCRIlCgZzdGF0dXMYAiABKA4yFS5hbGlzLmV2YWxzLnYxLlN0YXR1cxIrCghkdXJhdGlvbhgDIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbhISCgpzZXNzaW9uX2lkGAQgASgJEjwKB21ldHJpY3MYBSADKAsyKy5hbGlzLmV2YWxzLnYxLkFnZW50RXZhbFJlc3VsdHMuQ2FzZS5NZXRyaWMa4AIKBk1ldHJpYxIKCgJpZBgBIAEoCRIlCgZzdGF0dXMYAiABKA4yFS5hbGlzLmV2YWxzLnYxLlN0YXR1cxISCgVzY29yZRgDIAEoAUgAiAEBEhYKCXRocmVzaG9sZBgEIAEoAUgBiAEBEg8KB21lc3NhZ2UYBSABKAkSRwoGcnVicmljGAYgAygLMjcuYWxpcy5ldmFscy52MS5BZ2VudEV2YWxSZXN1bHRzLkNhc2UuTWV0cmljLlJ1YnJpY1Njb3JlGoQBCgtSdWJyaWNTY29yZRIKCgJpZBgBIAEoCRIlCgZzdGF0dXMYAiABKA4yFS5hbGlzLmV2YWxzLnYxLlN0YXR1cxISCgVzY29yZRgDIAEoAUgAiAEBEhYKCXJhdGlvbmFsZRgEIAEoCUgBiAEBQggKBl9zY29yZUIMCgpfcmF0aW9uYWxlQggKBl9zY29yZUIMCgpfdGhyZXNob2xkQggKBl9qdWRnZSJxChFDbG91ZFJ1blRhcmdldFJlZhISCgpwcm9qZWN0X2lkGAEgASgJEg4KBnJlZ2lvbhgCIAEoCRIUCgxzZXJ2aWNlX25hbWUYAyABKAkSFQoIcmV2aXNpb24YBCABKAlIAIgBAUILCglfcmV2aXNpb24iXwoQU3Bhbm5lclRhcmdldFJlZhISCgpwcm9qZWN0X2lkGAEgASgJEhMKC2luc3RhbmNlX2lkGAIgASgJEhAKCGxvY2F0aW9uGAMgASgJEhAKCGRhdGFiYXNlGAQgASgJIokDCg9DbG91ZFJ1bk1ldHJpY3MSFQoNcmVxdWVzdF9jb3VudBgBIAEoAxI3CgdsYXRlbmN5GAIgASgLMiEuYWxpcy5ldmFscy52MS5MYXRlbmN5UGVyY2VudGlsZXNIAIgBARIbCg5lcnJvcl81eHhfcmF0ZRgDIAEoAUgBiAEBEh8KEm1heF9pbnN0YW5jZV9jb3VudBgEIAEoAUgCiAEBEiAKE2NwdV91dGlsaXphdGlvbl9wOTkYBSABKAFIA4gBARIjChZtZW1vcnlfdXRpbGl6YXRpb25fcDk5GAYgASgBSASIAQESIAoTc3RhcnR1cF9sYXRlbmN5X3A5ORgHIAEoAUgFiAEBQgoKCF9sYXRlbmN5QhEKD19lcnJvcl81eHhfcmF0ZUIVChNfbWF4X2luc3RhbmNlX2NvdW50QhYKFF9jcHVfdXRpbGl6YXRpb25fcDk5QhkKF19tZW1vcnlfdXRpbGl6YXRpb25fcDk5QhYKFF9zdGFydHVwX2xhdGVuY3lfcDk5IpgCCg5TcGFubmVyTWV0cmljcxITCgtxdWVyeV9jb3VudBgBIAEoAxIZChFxdWVyeV9lcnJvcl9jb3VudBgCIAEoAxI7CgthcGlfbGF0ZW5jeRgDIAEoCzIhLmFsaXMuZXZhbHMudjEuTGF0ZW5jeVBlcmNlbnRpbGVzSACIAQESPQoNcXVlcnlfbGF0ZW5jeRgEIAEoCzIhLmFsaXMuZXZhbHMudjEuTGF0ZW5jeVBlcmNlbnRpbGVzSAGIAQESIAoTY3B1X3V0aWxpemF0aW9uX21heBgFIAEoAUgCiAEBQg4KDF9hcGlfbGF0ZW5jeUIQCg5fcXVlcnlfbGF0ZW5jeUIWChRfY3B1X3V0aWxpemF0aW9uX21heCL8AgoWQ2xvdWRSdW5UYXJnZXRTbmFwc2hvdBIKCgJpZBgBIAEoCRIsCgRyb2xlGAIgASgOMh4uYWxpcy5ldmFscy52MS5JbmZyYVRhcmdldFJvbGUSMAoGdGFyZ2V0GAMgASgLMiAuYWxpcy5ldmFscy52MS5DbG91ZFJ1blRhcmdldFJlZhIwCgx3aW5kb3dfc3RhcnQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi4KCndpbmRvd19lbmQYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjUKDGZldGNoX3N0YXR1cxgGIAEoDjIfLmFsaXMuZXZhbHMudjEuSW5mcmFGZXRjaFN0YXR1cxIaCg1mZXRjaF9tZXNzYWdlGAcgASgJSACIAQESLwoHbWV0cmljcxgIIAEoCzIeLmFsaXMuZXZhbHMudjEuQ2xvdWRSdW5NZXRyaWNzQhAKDl9mZXRjaF9tZXNzYWdlIvkCChVTcGFubmVyVGFyZ2V0U25hcHNob3QSCgoCaWQYASABKAkSLAoEcm9sZRgCIAEoDjIeLmFsaXMuZXZhbHMudjEuSW5mcmFUYXJnZXRSb2xlEi8KBnRhcmdldBgDIAEoCzIfLmFsaXMuZXZhbHMudjEuU3Bhbm5lclRhcmdldFJlZhIwCgx3aW5kb3dfc3RhcnQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi4KCndpbmRvd19lbmQYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjUKDGZldGNoX3N0YXR1cxgGIAEoDjIfLmFsaXMuZXZhbHMudjEuSW5mcmFGZXRjaFN0YXR1cxIaCg1mZXRjaF9tZXNzYWdlGAcgASgJSACIAQESLgoHbWV0cmljcxgIIAEoCzIdLmFsaXMuZXZhbHMudjEuU3Bhbm5lck1ldHJpY3NCEAoOX2ZldGNoX21lc3NhZ2Ui1AEKDUluZnJhU2xvQ2hlY2sSJgoEa2luZBgBIAEoDjIYLmFsaXMuZXZhbHMudjEuSW5mcmFLaW5kEhEKCXRhcmdldF9pZBgCIAEoCRIQCghjaGVja19pZBgDIAEoCRIlCgZzdGF0dXMYBCABKA4yFS5hbGlzLmV2YWxzLnYxLlN0YXR1cxIUCgdtZXNzYWdlGAUgASgJSACIAQESEAoIb2JzZXJ2ZWQYBiABKAESDQoFbGltaXQYByABKAESDAoEdW5pdBgIIAEoCUIKCghfbWVzc2FnZSLFAwoXSW5mcmFPYnNlcnZhdGlvblJlc3VsdHMSOgoFY2FzZXMYASADKAsyKy5hbGlzLmV2YWxzLnYxLkluZnJhT2JzZXJ2YXRpb25SZXN1bHRzLkNhc2Ua7QIKBENhc2USCgoCaWQYASABKAkSJQoGc3RhdHVzGAIgASgOMhUuYWxpcy5ldmFscy52MS5TdGF0dXMSKwoIbG9va2JhY2sYAyABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb24SMAoMd2luZG93X3N0YXJ0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIuCgp3aW5kb3dfZW5kGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBI4CgljbG91ZF9ydW4YBiADKAsyJS5hbGlzLmV2YWxzLnYxLkNsb3VkUnVuVGFyZ2V0U25hcHNob3QSNQoHc3Bhbm5lchgHIAMoCzIkLmFsaXMuZXZhbHMudjEuU3Bhbm5lclRhcmdldFNuYXBzaG90EjIKDGluZnJhX2NoZWNrcxgIIAMoCzIcLmFsaXMuZXZhbHMudjEuSW5mcmFTbG9DaGVjayJRChlSdW5JbnRlZ3JhdGlvblRlc3RSZXF1ZXN0EhUKCGJhdGNoX2lkGAEgASgJSACIAQESEAoIY2FzZV9pZHMYAiADKAlCCwoJX2JhdGNoX2lkIoIBChpSdW5JbnRlZ3JhdGlvblRlc3RNZXRhZGF0YRISCgpjYXNlX2NvdW50GAEgASgFEhwKFGNvbXBsZXRlZF9jYXNlX2NvdW50GAIgASgFEhMKC3N1aXRlX2NvdW50GAMgASgFEh0KFWNvbXBsZXRlZF9zdWl0ZV9jb3VudBgEIAEoBSIqChpSdW5JbnRlZ3JhdGlvblRlc3RSZXNwb25zZRIMCgRydW5zGAEgAygJIuQBChJSdW5Mb2FkVGVzdFJlcXVlc3QSNAoEbW9kZRgBIAEoDjImLmFsaXMuZXZhbHMudjEuUnVuTG9hZFRlc3RSZXF1ZXN0Lk1vZGUSEAoIY2FzZV9pZHMYAiADKAkSFQoIYmF0Y2hfaWQYAyABKAlIAIgBASJiCgRNb2RlEhQKEE1PREVfVU5TUEVDSUZJRUQQABILCgdNSU5JTUFMEAESEAoMQ09OU0VSVkFUSVZFEAISDAoITU9ERVJBVEUQAxIICgRISUdIEAQSDQoJTFVESUNST1VTEAVCCwoJX2JhdGNoX2lkInsKE1J1bkxvYWRUZXN0TWV0YWRhdGESEgoKY2FzZV9jb3VudBgBIAEoBRIcChRjb21wbGV0ZWRfY2FzZV9jb3VudBgCIAEoBRITCgtzdWl0ZV9jb3VudBgDIAEoBRIdChVjb21wbGV0ZWRfc3VpdGVfY291bnQYBCABKAUiIwoTUnVuTG9hZFRlc3RSZXNwb25zZRIMCgRydW5zGAEgAygJIicKE1J1bkFnZW50RXZhbFJlcXVlc3QSEAoIY2FzZV9pZHMYASADKAkifAoUUnVuQWdlbnRFdmFsTWV0YWRhdGESEgoKY2FzZV9jb3VudBgBIAEoBRIcChRjb21wbGV0ZWRfY2FzZV9jb3VudBgCIAEoBRITCgtzdWl0ZV9jb3VudBgDIAEoBRIdChVjb21wbGV0ZWRfc3VpdGVfY291bnQYBCABKAUiJAoUUnVuQWdlbnRFdmFsUmVzcG9uc2USDAoEcnVucxgBIAMoCSKRAQoaUnVuSW5mcmFPYnNlcnZhdGlvblJlcXVlc3QSEAoIY2FzZV9pZHMYASADKAkSFQoIYmF0Y2hfaWQYAiABKAlIAIgBARIwCghsb29rYmFjaxgDIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbkgBiAEBQgsKCV9iYXRjaF9pZEILCglfbG9va2JhY2sigwEKG1J1bkluZnJhT2JzZXJ2YXRpb25NZXRhZGF0YRISCgpjYXNlX2NvdW50GAEgASgFEhwKFGNvbXBsZXRlZF9jYXNlX2NvdW50GAIgASgFEhMKC3N1aXRlX2NvdW50GAMgASgFEh0KFWNvbXBsZXRlZF9zdWl0ZV9jb3VudBgEIAEoBSIrChtSdW5JbmZyYU9ic2VydmF0aW9uUmVzcG9uc2USDAoEcnVucxgBIAMoCSI0ChFSdW5QdWJsaXNoZWRFdmVudBIfCgNydW4YASABKAsyEi5hbGlzLmV2YWxzLnYxLlJ1bipzCg9JbmZyYVRhcmdldFJvbGUSIQodSU5GUkFfVEFSR0VUX1JPTEVfVU5TUEVDSUZJRUQQABIbChdJTkZSQV9UQVJHRVRfUk9MRV9FTlRSWRABEiAKHElORlJBX1RBUkdFVF9ST0xFX0RFUEVOREVOQ1kQAiq/AQoQSW5mcmFGZXRjaFN0YXR1cxIiCh5JTkZSQV9GRVRDSF9TVEFUVVNfVU5TUEVDSUZJRUQQABIZChVJTkZSQV9GRVRDSF9TVEFUVVNfT0sQARIiCh5JTkZSQV9GRVRDSF9TVEFUVVNfVU5BVkFJTEFCTEUQAhIeChpJTkZSQV9GRVRDSF9TVEFUVVNfVElNRU9VVBADEigKJElORlJBX0ZFVENIX1NUQVRVU19QRVJNSVNTSU9OX0RFTklFRBAEKlkKCUluZnJhS2luZBIaChZJTkZSQV9LSU5EX1VOU1BFQ0lGSUVEEAASGAoUSU5GUkFfS0lORF9DTE9VRF9SVU4QARIWChJJTkZSQV9LSU5EX1NQQU5ORVIQAipLCgZTdGF0dXMSFgoSU1RBVFVTX1VOU1BFQ0lGSUVEEAASCgoGUEFTU0VEEAESCgoGRkFJTEVEEAISEQoNTk9UX0VWQUxVQVRFRBADMtAECgtUZXN0U2VydmljZRKaAQoSUnVuSW50ZWdyYXRpb25UZXN0EiguYWxpcy5ldmFscy52MS5SdW5JbnRlZ3JhdGlvblRlc3RSZXF1ZXN0Gh0uZ29vZ2xlLmxvbmdydW5uaW5nLk9wZXJhdGlvbiI7ykE4ChpSdW5JbnRlZ3JhdGlvblRlc3RSZXNwb25zZRIaUnVuSW50ZWdyYXRpb25UZXN0TWV0YWRhdGESfgoLUnVuTG9hZFRlc3QSIS5hbGlzLmV2YWxzLnYxLlJ1bkxvYWRUZXN0UmVxdWVzdBodLmdvb2dsZS5sb25ncnVubmluZy5PcGVyYXRpb24iLcpBKgoTUnVuTG9hZFRlc3RSZXNwb25zZRITUnVuTG9hZFRlc3RNZXRhZGF0YRKCAQoMUnVuQWdlbnRFdmFsEiIuYWxpcy5ldmFscy52MS5SdW5BZ2VudEV2YWxSZXF1ZXN0Gh0uZ29vZ2xlLmxvbmdydW5uaW5nLk9wZXJhdGlvbiIvykEsChRSdW5BZ2VudEV2YWxSZXNwb25zZRIUUnVuQWdlbnRFdmFsTWV0YWRhdGESngEKE1J1bkluZnJhT2JzZXJ2YXRpb24SKS5hbGlzLmV2YWxzLnYxLlJ1bkluZnJhT2JzZXJ2YXRpb25SZXF1ZXN0Gh0uZ29vZ2xlLmxvbmdydW5uaW5nLk9wZXJhdGlvbiI9ykE6ChtSdW5JbmZyYU9ic2VydmF0aW9uUmVzcG9uc2USG1J1bkluZnJhT2JzZXJ2YXRpb25NZXRhZGF0YUIVWhNnby5hbGlzLmJ1aWxkL2V2YWxzYgZwcm90bzM", [file_google_longrunning_operations, file_google_protobuf_duration, file_google_protobuf_timestamp, file_google_rpc_status]);
 
 /**
  * Describes the message alis.evals.v1.Run.
@@ -57,122 +57,185 @@ export const IntegrationTestResults_Case_CheckSchema = /*@__PURE__*/
   messageDesc(file_alis_evals_v1_evaluation, 1, 0, 0);
 
 /**
+ * Describes the message alis.evals.v1.LatencyPercentiles.
+ * Use `create(LatencyPercentilesSchema)` to create a new message.
+ */
+export const LatencyPercentilesSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 2);
+
+/**
  * Describes the message alis.evals.v1.LoadTestResults.
  * Use `create(LoadTestResultsSchema)` to create a new message.
  */
 export const LoadTestResultsSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 2);
+  messageDesc(file_alis_evals_v1_evaluation, 3);
 
 /**
  * Describes the message alis.evals.v1.LoadTestResults.Case.
  * Use `create(LoadTestResults_CaseSchema)` to create a new message.
  */
 export const LoadTestResults_CaseSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 2, 0);
+  messageDesc(file_alis_evals_v1_evaluation, 3, 0);
 
 /**
  * Describes the message alis.evals.v1.LoadTestResults.Summary.
  * Use `create(LoadTestResults_SummarySchema)` to create a new message.
  */
 export const LoadTestResults_SummarySchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 2, 1);
+  messageDesc(file_alis_evals_v1_evaluation, 3, 1);
 
 /**
  * Describes the message alis.evals.v1.LoadTestResults.LoadStage.
  * Use `create(LoadTestResults_LoadStageSchema)` to create a new message.
  */
 export const LoadTestResults_LoadStageSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 2, 2);
+  messageDesc(file_alis_evals_v1_evaluation, 3, 2);
 
 /**
  * Describes the message alis.evals.v1.LoadTestResults.StreamSummary.
  * Use `create(LoadTestResults_StreamSummarySchema)` to create a new message.
  */
 export const LoadTestResults_StreamSummarySchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 2, 3);
-
-/**
- * Describes the message alis.evals.v1.LoadTestResults.LatencyPercentiles.
- * Use `create(LoadTestResults_LatencyPercentilesSchema)` to create a new message.
- */
-export const LoadTestResults_LatencyPercentilesSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 2, 4);
+  messageDesc(file_alis_evals_v1_evaluation, 3, 3);
 
 /**
  * Describes the message alis.evals.v1.LoadTestResults.SloCheck.
  * Use `create(LoadTestResults_SloCheckSchema)` to create a new message.
  */
 export const LoadTestResults_SloCheckSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 2, 5);
+  messageDesc(file_alis_evals_v1_evaluation, 3, 4);
 
 /**
  * Describes the message alis.evals.v1.AgentEvalResults.
  * Use `create(AgentEvalResultsSchema)` to create a new message.
  */
 export const AgentEvalResultsSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 3);
+  messageDesc(file_alis_evals_v1_evaluation, 4);
 
 /**
  * Describes the message alis.evals.v1.AgentEvalResults.JudgeInfo.
  * Use `create(AgentEvalResults_JudgeInfoSchema)` to create a new message.
  */
 export const AgentEvalResults_JudgeInfoSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 3, 0);
+  messageDesc(file_alis_evals_v1_evaluation, 4, 0);
 
 /**
  * Describes the message alis.evals.v1.AgentEvalResults.Case.
  * Use `create(AgentEvalResults_CaseSchema)` to create a new message.
  */
 export const AgentEvalResults_CaseSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 3, 1);
+  messageDesc(file_alis_evals_v1_evaluation, 4, 1);
 
 /**
  * Describes the message alis.evals.v1.AgentEvalResults.Case.Metric.
  * Use `create(AgentEvalResults_Case_MetricSchema)` to create a new message.
  */
 export const AgentEvalResults_Case_MetricSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 3, 1, 0);
+  messageDesc(file_alis_evals_v1_evaluation, 4, 1, 0);
 
 /**
  * Describes the message alis.evals.v1.AgentEvalResults.Case.Metric.RubricScore.
  * Use `create(AgentEvalResults_Case_Metric_RubricScoreSchema)` to create a new message.
  */
 export const AgentEvalResults_Case_Metric_RubricScoreSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 3, 1, 0, 0);
+  messageDesc(file_alis_evals_v1_evaluation, 4, 1, 0, 0);
+
+/**
+ * Describes the message alis.evals.v1.CloudRunTargetRef.
+ * Use `create(CloudRunTargetRefSchema)` to create a new message.
+ */
+export const CloudRunTargetRefSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 5);
+
+/**
+ * Describes the message alis.evals.v1.SpannerTargetRef.
+ * Use `create(SpannerTargetRefSchema)` to create a new message.
+ */
+export const SpannerTargetRefSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 6);
+
+/**
+ * Describes the message alis.evals.v1.CloudRunMetrics.
+ * Use `create(CloudRunMetricsSchema)` to create a new message.
+ */
+export const CloudRunMetricsSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 7);
+
+/**
+ * Describes the message alis.evals.v1.SpannerMetrics.
+ * Use `create(SpannerMetricsSchema)` to create a new message.
+ */
+export const SpannerMetricsSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 8);
+
+/**
+ * Describes the message alis.evals.v1.CloudRunTargetSnapshot.
+ * Use `create(CloudRunTargetSnapshotSchema)` to create a new message.
+ */
+export const CloudRunTargetSnapshotSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 9);
+
+/**
+ * Describes the message alis.evals.v1.SpannerTargetSnapshot.
+ * Use `create(SpannerTargetSnapshotSchema)` to create a new message.
+ */
+export const SpannerTargetSnapshotSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 10);
+
+/**
+ * Describes the message alis.evals.v1.InfraSloCheck.
+ * Use `create(InfraSloCheckSchema)` to create a new message.
+ */
+export const InfraSloCheckSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 11);
+
+/**
+ * Describes the message alis.evals.v1.InfraObservationResults.
+ * Use `create(InfraObservationResultsSchema)` to create a new message.
+ */
+export const InfraObservationResultsSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 12);
+
+/**
+ * Describes the message alis.evals.v1.InfraObservationResults.Case.
+ * Use `create(InfraObservationResults_CaseSchema)` to create a new message.
+ */
+export const InfraObservationResults_CaseSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 12, 0);
 
 /**
  * Describes the message alis.evals.v1.RunIntegrationTestRequest.
  * Use `create(RunIntegrationTestRequestSchema)` to create a new message.
  */
 export const RunIntegrationTestRequestSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 4);
+  messageDesc(file_alis_evals_v1_evaluation, 13);
 
 /**
  * Describes the message alis.evals.v1.RunIntegrationTestMetadata.
  * Use `create(RunIntegrationTestMetadataSchema)` to create a new message.
  */
 export const RunIntegrationTestMetadataSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 5);
+  messageDesc(file_alis_evals_v1_evaluation, 14);
 
 /**
  * Describes the message alis.evals.v1.RunIntegrationTestResponse.
  * Use `create(RunIntegrationTestResponseSchema)` to create a new message.
  */
 export const RunIntegrationTestResponseSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 6);
+  messageDesc(file_alis_evals_v1_evaluation, 15);
 
 /**
  * Describes the message alis.evals.v1.RunLoadTestRequest.
  * Use `create(RunLoadTestRequestSchema)` to create a new message.
  */
 export const RunLoadTestRequestSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 7);
+  messageDesc(file_alis_evals_v1_evaluation, 16);
 
 /**
  * Describes the enum alis.evals.v1.RunLoadTestRequest.Mode.
  */
 export const RunLoadTestRequest_ModeSchema = /*@__PURE__*/
-  enumDesc(file_alis_evals_v1_evaluation, 7, 0);
+  enumDesc(file_alis_evals_v1_evaluation, 16, 0);
 
 /**
  * Load intensity presets, ordered as an ascending scale from minimal to
@@ -189,48 +252,119 @@ export const RunLoadTestRequest_Mode = /*@__PURE__*/
  * Use `create(RunLoadTestMetadataSchema)` to create a new message.
  */
 export const RunLoadTestMetadataSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 8);
+  messageDesc(file_alis_evals_v1_evaluation, 17);
 
 /**
  * Describes the message alis.evals.v1.RunLoadTestResponse.
  * Use `create(RunLoadTestResponseSchema)` to create a new message.
  */
 export const RunLoadTestResponseSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 9);
+  messageDesc(file_alis_evals_v1_evaluation, 18);
 
 /**
  * Describes the message alis.evals.v1.RunAgentEvalRequest.
  * Use `create(RunAgentEvalRequestSchema)` to create a new message.
  */
 export const RunAgentEvalRequestSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 10);
+  messageDesc(file_alis_evals_v1_evaluation, 19);
 
 /**
  * Describes the message alis.evals.v1.RunAgentEvalMetadata.
  * Use `create(RunAgentEvalMetadataSchema)` to create a new message.
  */
 export const RunAgentEvalMetadataSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 11);
+  messageDesc(file_alis_evals_v1_evaluation, 20);
 
 /**
  * Describes the message alis.evals.v1.RunAgentEvalResponse.
  * Use `create(RunAgentEvalResponseSchema)` to create a new message.
  */
 export const RunAgentEvalResponseSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 12);
+  messageDesc(file_alis_evals_v1_evaluation, 21);
+
+/**
+ * Describes the message alis.evals.v1.RunInfraObservationRequest.
+ * Use `create(RunInfraObservationRequestSchema)` to create a new message.
+ */
+export const RunInfraObservationRequestSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 22);
+
+/**
+ * Describes the message alis.evals.v1.RunInfraObservationMetadata.
+ * Use `create(RunInfraObservationMetadataSchema)` to create a new message.
+ */
+export const RunInfraObservationMetadataSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 23);
+
+/**
+ * Describes the message alis.evals.v1.RunInfraObservationResponse.
+ * Use `create(RunInfraObservationResponseSchema)` to create a new message.
+ */
+export const RunInfraObservationResponseSchema = /*@__PURE__*/
+  messageDesc(file_alis_evals_v1_evaluation, 24);
 
 /**
  * Describes the message alis.evals.v1.RunPublishedEvent.
  * Use `create(RunPublishedEventSchema)` to create a new message.
  */
 export const RunPublishedEventSchema = /*@__PURE__*/
-  messageDesc(file_alis_evals_v1_evaluation, 13);
+  messageDesc(file_alis_evals_v1_evaluation, 25);
+
+/**
+ * Describes the enum alis.evals.v1.InfraTargetRole.
+ */
+export const InfraTargetRoleSchema = /*@__PURE__*/
+  enumDesc(file_alis_evals_v1_evaluation, 0);
+
+/**
+ * Role of an infrastructure target within a load or observation case.
+ *
+ * ENTRY marks the service under direct test (for example the Cloud Run service
+ * receiving generated load). DEPENDENCY marks downstream services or data stores
+ * observed for correlation (for example internal Cloud Run hops or Spanner).
+ *
+ * @generated from enum alis.evals.v1.InfraTargetRole
+ */
+export const InfraTargetRole = /*@__PURE__*/
+  tsEnum(InfraTargetRoleSchema);
+
+/**
+ * Describes the enum alis.evals.v1.InfraFetchStatus.
+ */
+export const InfraFetchStatusSchema = /*@__PURE__*/
+  enumDesc(file_alis_evals_v1_evaluation, 1);
+
+/**
+ * Outcome of fetching infrastructure metrics for one target from Cloud
+ * Monitoring.
+ *
+ * Partial per-metric failure may still yield OK when at least one metric
+ * succeeded; details are recorded in fetch_message on the snapshot.
+ *
+ * @generated from enum alis.evals.v1.InfraFetchStatus
+ */
+export const InfraFetchStatus = /*@__PURE__*/
+  tsEnum(InfraFetchStatusSchema);
+
+/**
+ * Describes the enum alis.evals.v1.InfraKind.
+ */
+export const InfraKindSchema = /*@__PURE__*/
+  enumDesc(file_alis_evals_v1_evaluation, 2);
+
+/**
+ * Infrastructure resource kind referenced by infra SLO checks and snapshots.
+ *
+ * @generated from enum alis.evals.v1.InfraKind
+ */
+export const InfraKind = /*@__PURE__*/
+  tsEnum(InfraKindSchema);
 
 /**
  * Describes the enum alis.evals.v1.Status.
  */
 export const StatusSchema = /*@__PURE__*/
-  enumDesc(file_alis_evals_v1_evaluation, 0);
+  enumDesc(file_alis_evals_v1_evaluation, 3);
 
 /**
  * Outcome status for runs, cases, checks, metrics, and rubric dimensions.
