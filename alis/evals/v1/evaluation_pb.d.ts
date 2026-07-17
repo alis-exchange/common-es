@@ -394,6 +394,52 @@ export declare type LoadTestResults = Message<"alis.evals.v1.LoadTestResults"> &
 export declare const LoadTestResultsSchema: GenMessage<LoadTestResults>;
 
 /**
+ * Key/value entry for string-valued associative fields on the wire.
+ *
+ * @generated from message alis.evals.v1.LoadTestResults.StringEntry
+ */
+export declare type LoadTestResults_StringEntry = Message<"alis.evals.v1.LoadTestResults.StringEntry"> & {
+  /**
+   * @generated from field: string key = 1;
+   */
+  key: string;
+
+  /**
+   * @generated from field: string value = 2;
+   */
+  value: string;
+};
+
+/**
+ * Describes the message alis.evals.v1.LoadTestResults.StringEntry.
+ * Use `create(LoadTestResults_StringEntrySchema)` to create a new message.
+ */
+export declare const LoadTestResults_StringEntrySchema: GenMessage<LoadTestResults_StringEntry>;
+
+/**
+ * Key/value entry for int64-valued associative fields on the wire.
+ *
+ * @generated from message alis.evals.v1.LoadTestResults.Int64Entry
+ */
+export declare type LoadTestResults_Int64Entry = Message<"alis.evals.v1.LoadTestResults.Int64Entry"> & {
+  /**
+   * @generated from field: string key = 1;
+   */
+  key: string;
+
+  /**
+   * @generated from field: int64 value = 2;
+   */
+  value: bigint;
+};
+
+/**
+ * Describes the message alis.evals.v1.LoadTestResults.Int64Entry.
+ * Use `create(LoadTestResults_Int64EntrySchema)` to create a new message.
+ */
+export declare const LoadTestResults_Int64EntrySchema: GenMessage<LoadTestResults_Int64Entry>;
+
+/**
  * The result of one load case.
  *
  * @generated from message alis.evals.v1.LoadTestResults.Case
@@ -435,9 +481,9 @@ export declare type LoadTestResults_Case = Message<"alis.evals.v1.LoadTestResult
    * model name, RPC method, or dataset slice). Empty when the case declares
    * no tags.
    *
-   * @generated from field: map<string, string> tags = 5;
+   * @generated from field: repeated alis.evals.v1.LoadTestResults.StringEntry tags = 5;
    */
-  tags: { [key: string]: string };
+  tags: LoadTestResults_StringEntry[];
 
   /**
    * Server-side Cloud Run metrics for declared targets over this case's
@@ -541,9 +587,9 @@ export declare type LoadTestResults_Summary = Message<"alis.evals.v1.LoadTestRes
    * Request errors grouped by canonical gRPC status code name (for example
    * `UNAVAILABLE` or `DEADLINE_EXCEEDED`). Values sum to error_count.
    *
-   * @generated from field: map<string, int64> errors_by_code = 9;
+   * @generated from field: repeated alis.evals.v1.LoadTestResults.Int64Entry errors_by_code = 9;
    */
-  errorsByCode: { [key: string]: bigint };
+  errorsByCode: LoadTestResults_Int64Entry[];
 
   /**
    * Scheduled request ticks that were not dispatched because all workers
