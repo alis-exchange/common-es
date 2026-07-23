@@ -508,6 +508,14 @@ export declare type LoadTestResults_Case = Message<"alis.evals.v1.LoadTestResult
    * @generated from field: repeated alis.evals.v1.InfraSloCheck infra_checks = 8;
    */
   infraChecks: InfraSloCheck[];
+
+  /**
+   * Developer and framework validation outcomes for this case in declaration
+   * order. Integration cases continue using checks instead.
+   *
+   * @generated from field: repeated alis.evals.v1.Validation validations = 9;
+   */
+  validations: Validation[];
 };
 
 /**
@@ -517,8 +525,6 @@ export declare type LoadTestResults_Case = Message<"alis.evals.v1.LoadTestResult
 export declare const LoadTestResults_CaseSchema: GenMessage<LoadTestResults_Case>;
 
 /**
- * Aggregate performance metrics for one load case.
- *
  * @generated from message alis.evals.v1.LoadTestResults.Summary
  */
 export declare type LoadTestResults_Summary = Message<"alis.evals.v1.LoadTestResults.Summary"> & {
@@ -907,6 +913,14 @@ export declare type AgentEvalResults_Case = Message<"alis.evals.v1.AgentEvalResu
    * @generated from field: repeated alis.evals.v1.AgentEvalResults.Case.Metric metrics = 5;
    */
   metrics: AgentEvalResults_Case_Metric[];
+
+  /**
+   * Developer and framework validation outcomes for this case in declaration
+   * order. Integration cases continue using checks instead.
+   *
+   * @generated from field: repeated alis.evals.v1.Validation validations = 6;
+   */
+  validations: Validation[];
 };
 
 /**
@@ -1539,6 +1553,14 @@ export declare type InfraObservationResults_Case = Message<"alis.evals.v1.InfraO
    * @generated from field: repeated alis.evals.v1.InfraSloCheck infra_checks = 8;
    */
   infraChecks: InfraSloCheck[];
+
+  /**
+   * Developer and framework validation outcomes for this case in declaration
+   * order. Integration cases continue using checks instead.
+   *
+   * @generated from field: repeated alis.evals.v1.Validation validations = 9;
+   */
+  validations: Validation[];
 };
 
 /**
@@ -2020,6 +2042,40 @@ export declare type RunInfraObservationResponse = Message<"alis.evals.v1.RunInfr
  * Use `create(RunInfraObservationResponseSchema)` to create a new message.
  */
 export declare const RunInfraObservationResponseSchema: GenMessage<RunInfraObservationResponse>;
+
+/**
+ * General validation outcome for specialized eval case branches.
+ *
+ * @generated from message alis.evals.v1.Validation
+ */
+export declare type Validation = Message<"alis.evals.v1.Validation"> & {
+  /**
+   * Stable validation identifier (for example a rule id or `_evals.case`).
+   *
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * Validation outcome.
+   *
+   * @generated from field: alis.evals.v1.Status status = 2;
+   */
+  status: Status;
+
+  /**
+   * Human-readable detail when status is not PASSED. Empty on pass.
+   *
+   * @generated from field: string message = 3;
+   */
+  message: string;
+};
+
+/**
+ * Describes the message alis.evals.v1.Validation.
+ * Use `create(ValidationSchema)` to create a new message.
+ */
+export declare const ValidationSchema: GenMessage<Validation>;
 
 /**
  * Event published when a completed test or evaluation run is ready for
