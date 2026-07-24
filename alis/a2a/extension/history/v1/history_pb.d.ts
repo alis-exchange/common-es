@@ -614,6 +614,34 @@ export declare type AppendThreadEventResponse = Message<"alis.a2a.extension.hist
 export declare const AppendThreadEventResponseSchema: GenMessage<AppendThreadEventResponse>;
 
 /**
+ * Request to set thread display name.
+ *
+ * @generated from message alis.a2a.extension.history.v1.SetThreadDisplayNameRequest
+ */
+export declare type SetThreadDisplayNameRequest = Message<"alis.a2a.extension.history.v1.SetThreadDisplayNameRequest"> & {
+  /**
+   * The Thread resource name.
+   * Format: threads/{context_id}
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * The new display name.
+   *
+   * @generated from field: string display_name = 2;
+   */
+  displayName: string;
+};
+
+/**
+ * Describes the message alis.a2a.extension.history.v1.SetThreadDisplayNameRequest.
+ * Use `create(SetThreadDisplayNameRequestSchema)` to create a new message.
+ */
+export declare const SetThreadDisplayNameRequestSchema: GenMessage<SetThreadDisplayNameRequest>;
+
+/**
  * Manages persisted A2A conversation threads and their events, including
  * thread listing, event appends, event streaming, and IAM policy access.
  *
@@ -739,6 +767,16 @@ export declare const ThreadService: GenService<{
     methodKind: "server_streaming";
     input: typeof StreamThreadEventsRequestSchema;
     output: typeof ThreadEventSchema;
+  },
+  /**
+   * Set thread display name.
+   *
+   * @generated from rpc alis.a2a.extension.history.v1.ThreadService.SetThreadDisplayName
+   */
+  setThreadDisplayName: {
+    methodKind: "unary";
+    input: typeof SetThreadDisplayNameRequestSchema;
+    output: typeof ThreadSchema;
   },
 }>;
 
