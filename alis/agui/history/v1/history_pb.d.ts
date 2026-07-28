@@ -33,7 +33,8 @@ export declare type Thread = Message<"alis.agui.history.v1.Thread"> & {
   name: string;
 
   /**
-   * Generated display name from the first user message in the thread.
+   * The display name of the thread. Generated at creation from the first user
+   * message, and may be changed afterwards via UpdateThread.
    *
    * @generated from field: string display_name = 2;
    */
@@ -321,6 +322,36 @@ export declare type DeleteThreadRequest = Message<"alis.agui.history.v1.DeleteTh
 export declare const DeleteThreadRequestSchema: GenMessage<DeleteThreadRequest>;
 
 /**
+ * Request to update a thread.
+ *
+ * @generated from message alis.agui.history.v1.UpdateThreadRequest
+ */
+export declare type UpdateThreadRequest = Message<"alis.agui.history.v1.UpdateThreadRequest"> & {
+  /**
+   * The thread resource to update.
+   * The resource name is required.
+   * Format: threads/{thread_id}
+   *
+   * @generated from field: alis.agui.history.v1.Thread thread = 1;
+   */
+  thread?: Thread | undefined;
+
+  /**
+   * A field mask controlling which fields are updated.
+   * Only "display_name" is supported. Defaults to "display_name" when unset.
+   *
+   * @generated from field: google.protobuf.FieldMask update_mask = 2;
+   */
+  updateMask?: FieldMask | undefined;
+};
+
+/**
+ * Describes the message alis.agui.history.v1.UpdateThreadRequest.
+ * Use `create(UpdateThreadRequestSchema)` to create a new message.
+ */
+export declare const UpdateThreadRequestSchema: GenMessage<UpdateThreadRequest>;
+
+/**
  * Request to get per-user thread state.
  *
  * @generated from message alis.agui.history.v1.GetUserThreadStateRequest
@@ -476,6 +507,16 @@ export declare const ThreadService: GenService<{
     methodKind: "unary";
     input: typeof UpdateUserThreadStateRequestSchema;
     output: typeof UserThreadStateSchema;
+  },
+  /**
+   * Updates mutable thread metadata.
+   *
+   * @generated from rpc alis.agui.history.v1.ThreadService.UpdateThread
+   */
+  updateThread: {
+    methodKind: "unary";
+    input: typeof UpdateThreadRequestSchema;
+    output: typeof ThreadSchema;
   },
 }>;
 
